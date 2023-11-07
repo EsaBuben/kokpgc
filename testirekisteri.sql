@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2023 at 09:52 AM
+-- Generation Time: Nov 07, 2023 at 10:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `testirekisteri`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `functionality`
+--
+
+CREATE TABLE `functionality` (
+  `functionality_id` int(11) NOT NULL,
+  `ref_project_id` int(11) NOT NULL,
+  `ref_test_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -62,6 +74,13 @@ CREATE TABLE `user` (
 --
 
 --
+-- Indexes for table `functionality`
+--
+ALTER TABLE `functionality`
+  ADD PRIMARY KEY (`functionality_id`,`ref_project_id`,`ref_test_id`),
+  ADD KEY `ref_project_id` (`ref_project_id`);
+
+--
 -- Indexes for table `project`
 --
 ALTER TABLE `project`
@@ -85,6 +104,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `functionality`
+--
+ALTER TABLE `functionality`
+  MODIFY `functionality_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
@@ -101,6 +126,12 @@ ALTER TABLE `user`
 --
 
 --
+-- Constraints for table `functionality`
+--
+ALTER TABLE `functionality`
+  ADD CONSTRAINT `functionality_ibfk_1` FOREIGN KEY (`ref_project_id`) REFERENCES `project` (`Project_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `projectrole`
 --
 ALTER TABLE `projectrole`
@@ -111,4 +142,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
