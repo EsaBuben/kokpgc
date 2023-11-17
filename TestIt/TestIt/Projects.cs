@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace TestIt
 {
-    internal class Projects
+    class Projects
     {
+        private string projectName;
+        Functionality[] funk;
+
+        public Projects(string projectName)
+        {
+            this.projectName = projectName;
+            funk = new Functionality[10];
+        }
+
+
     }
 }
