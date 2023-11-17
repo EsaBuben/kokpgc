@@ -12,7 +12,7 @@ namespace TestIt
 {
     class SqlExample
     {
-        static void Main(string[] args)
+        private void Juttu(string[] args)
         {
             // This is used to make the actual connection, change the details as needed, if using XAMPP, you can check the port from the UI
             MySqlConnection connection = new MySqlConnection("server=localhost;user=root;database=testirekisteri;port=3306;password=;");
