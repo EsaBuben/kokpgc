@@ -37,7 +37,7 @@ namespace TestIt
             }
             return proge;
         }
-       public List<Project> ShowAll()
+       public List<Project> SelectAll()
         {
             string query = "SELECT Project_Name FROM project";
             MySqlCommand commandDatabase = CallStack(query);

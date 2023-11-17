@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TestIt
 {
@@ -15,6 +16,7 @@ namespace TestIt
         public Viewer()
         {
             InitializeComponent();
+            listBox1.Items.AddRange(Controller.Listaa().ToArray());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,5 +34,6 @@ namespace TestIt
         {
             
         }
+
     }
 }
