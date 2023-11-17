@@ -22,9 +22,6 @@ namespace TestIt
             // insert project entity.
             string query = "INSERT INTO project (Project_Name) VALUES ('" + proge.ProjectName + "')";
             MySqlCommand commandDatabase = CallStack(query);
-            //MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            //databaseConnection.Open();
-            //MySqlCommand commandDatabase = new MySqlCommand(query, databaseConnection);
             commandDatabase.ExecuteNonQuery();
         }
         public Project Find(string projectName)
@@ -56,7 +53,7 @@ namespace TestIt
         public void Delete(int projectId)
         {
             // delete project entity.
-            string query = "DELETE CASCADE FROM project WHERE Project_ID = '" + projectId + "'";
+            string query = "DELETE FROM project WHERE Project_ID = '" + projectId + "'";
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }

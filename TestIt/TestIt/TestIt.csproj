@@ -101,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller.cs" />
     <Compile Include="mysqlexample.cs" />
     <Compile Include="ProjectGateway.cs" />
     <Compile Include="Viewer.cs">
