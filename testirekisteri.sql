@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2023 at 10:07 AM
--- Server version: 10.4.28-MariaDB
+-- Generation Time: 21.11.2023 klo 13:52
+-- Palvelimen versio: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,19 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `functionality`
+-- Rakenne taululle `functionality`
 --
 
 CREATE TABLE `functionality` (
   `functionality_id` int(11) NOT NULL,
-  `ref_project_id` int(11) NOT NULL,
-  `ref_test_id` int(11) NOT NULL
+  `ref_project_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `project`
+-- Rakenne taululle `instruction`
+--
+
+CREATE TABLE `instruction` (
+  `instruction_id` int(11) NOT NULL,
+  `ref_test_id` int(11) NOT NULL,
+  `info` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `project`
 --
 
 CREATE TABLE `project` (
@@ -47,7 +58,7 @@ CREATE TABLE `project` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `projectrole`
+-- Rakenne taululle `projectrole`
 --
 
 CREATE TABLE `projectrole` (
@@ -59,14 +70,56 @@ CREATE TABLE `projectrole` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Rakenne taululle `result`
+--
+
+CREATE TABLE `result` (
+  `result_id` int(11) NOT NULL,
+  `acceptance` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `ref_user_id` int(11) NOT NULL,
+  `time` datetime NOT NULL,
+  `ref_test_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `test`
+--
+
+CREATE TABLE `test` (
+  `test_id` int(11) NOT NULL,
+  `ref_functionality_id` int(11) NOT NULL,
+  `responsible_user_id` int(11) DEFAULT NULL,
+  `priority` int(11) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `user`
 --
 
 CREATE TABLE `user` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(100) NOT NULL,
-  `responsible` varchar(100) DEFAULT NULL,
   `profile_name` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `userstory`
+--
+
+CREATE TABLE `userstory` (
+  `userstory_id` int(11) NOT NULL,
+  `ref_functionality_id` int(11) NOT NULL,
+  `given_text` varchar(100) DEFAULT NULL,
+  `when_text` varchar(100) DEFAULT NULL,
+  `then_text` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -77,8 +130,16 @@ CREATE TABLE `user` (
 -- Indexes for table `functionality`
 --
 ALTER TABLE `functionality`
-  ADD PRIMARY KEY (`functionality_id`,`ref_project_id`,`ref_test_id`),
-  ADD KEY `ref_project_id` (`ref_project_id`);
+  ADD PRIMARY KEY (`functionality_id`),
+  ADD KEY `ref_project_id` (`ref_project_id`),
+  ADD KEY `functionality_id` (`functionality_id`);
+
+--
+-- Indexes for table `instruction`
+--
+ALTER TABLE `instruction`
+  ADD PRIMARY KEY (`instruction_id`),
+  ADD KEY `ref_test_id` (`ref_test_id`);
 
 --
 -- Indexes for table `project`
@@ -94,10 +155,33 @@ ALTER TABLE `projectrole`
   ADD KEY `ref_user_id` (`ref_user_id`);
 
 --
+-- Indexes for table `result`
+--
+ALTER TABLE `result`
+  ADD PRIMARY KEY (`result_id`),
+  ADD KEY `ref_user_id` (`ref_user_id`),
+  ADD KEY `ref_test_id` (`ref_test_id`);
+
+--
+-- Indexes for table `test`
+--
+ALTER TABLE `test`
+  ADD PRIMARY KEY (`test_id`),
+  ADD KEY `ref_functionality_id` (`ref_functionality_id`),
+  ADD KEY `responsible_user_id` (`responsible_user_id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `userstory`
+--
+ALTER TABLE `userstory`
+  ADD PRIMARY KEY (`userstory_id`),
+  ADD KEY `ref_functionality_id` (`ref_functionality_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -122,21 +206,47 @@ ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Rajoitteet vedostauluille
 --
 
 --
--- Constraints for table `functionality`
+-- Rajoitteet taululle `functionality`
 --
 ALTER TABLE `functionality`
   ADD CONSTRAINT `functionality_ibfk_1` FOREIGN KEY (`ref_project_id`) REFERENCES `project` (`Project_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `projectrole`
+-- Rajoitteet taululle `instruction`
+--
+ALTER TABLE `instruction`
+  ADD CONSTRAINT `instruction_ibfk_1` FOREIGN KEY (`ref_test_id`) REFERENCES `test` (`test_id`);
+
+--
+-- Rajoitteet taululle `projectrole`
 --
 ALTER TABLE `projectrole`
   ADD CONSTRAINT `projectrole_ibfk_1` FOREIGN KEY (`ref_project_id`) REFERENCES `project` (`Project_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `projectrole_ibfk_2` FOREIGN KEY (`ref_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Rajoitteet taululle `test`
+--
+ALTER TABLE `test`
+  ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`),
+  ADD CONSTRAINT `test_ibfk_2` FOREIGN KEY (`responsible_user_id`) REFERENCES `user` (`user_id`),
+  ADD CONSTRAINT `test_ibfk_3` FOREIGN KEY (`test_id`) REFERENCES `result` (`ref_test_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Rajoitteet taululle `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `result` (`ref_user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Rajoitteet taululle `userstory`
+--
+ALTER TABLE `userstory`
+  ADD CONSTRAINT `userstory_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
