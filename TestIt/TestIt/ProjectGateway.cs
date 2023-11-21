@@ -24,6 +24,7 @@ namespace TestIt
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }
+
         public Project Find(string projectName)
         {
             // find project entity.
@@ -39,13 +40,13 @@ namespace TestIt
         }
        public List<Project> SelectAll()
         {
-            string query = "SELECT Project_Name FROM project";
+            string query = "SELECT * FROM project";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
             List<Project> allTheStuff = new List<Project>();
             while (reader.Read())
             {
-                Project proge = new Project(reader.GetString(0));
+                Project proge = new Project(reader.GetString(1), reader.GetInt32(0));
                 allTheStuff.Add(proge);
             }
             return allTheStuff;
