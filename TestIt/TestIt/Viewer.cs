@@ -28,7 +28,7 @@ namespace TestIt
                 return;
             }
             Project proge = Controller.Kutsu(textBox1.Text);
-            listBox1.Items.Add(proge);
+            listBox1.Items.Add(proge.ProjectID + " " + proge.ProjectName);
             textBox1.Text = "";
             MessageBox.Show("Project " + proge.ProjectName + " has been added");
 

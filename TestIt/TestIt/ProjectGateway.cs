@@ -23,6 +23,14 @@ namespace TestIt
             string query = "INSERT INTO project (Project_Name) VALUES ('" + proge.ProjectName + "')";
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
+            query = "SELECT Project_ID FROM project WHERE Project_Name = '" + proge.ProjectName + "'";
+            commandDatabase = CallStack(query);
+            MySqlDataReader reader = commandDatabase.ExecuteReader();
+            while (reader.Read())
+            {
+                proge.ProjectID = reader.GetInt32(0);
+            }
+            reader.Close();
         }
 
         public Project Find(string projectName)
@@ -36,8 +44,11 @@ namespace TestIt
             {
                 proge.ProjectName = reader.GetString(1);
             }
+            reader.Close();
             return proge;
+            
         }
+
        public List<Project> SelectAll()
         {
             string query = "SELECT * FROM project";

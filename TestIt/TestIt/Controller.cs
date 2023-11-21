@@ -17,6 +17,8 @@ namespace TestIt
             Project proge = new Project(text);
             ProjectGateway progeWay = new ProjectGateway();
             progeWay.Insert(proge);
+
+
             return proge;
         }
         public static List<Project> Listaa()
