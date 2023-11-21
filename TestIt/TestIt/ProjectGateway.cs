@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace TestIt
 {
-    class ProjectGateway
+    class ProjectGateway : AbstractGateway
     {
-        public string connectionString;
-        public ProjectGateway()
+        public ProjectGateway() : base()
         {
-            this.connectionString = "server=localhost;user=root;database=testirekisteri;port=3306;password=;";
-
         }
         public void Insert(Project proge)
         {
@@ -70,12 +68,12 @@ namespace TestIt
             commandDatabase.ExecuteNonQuery();
         }
 
-       private MySqlCommand CallStack(string q)
-        {
-            MySqlConnection databaseConnection = new MySqlConnection(connectionString);
-            databaseConnection.Open();
-            MySqlCommand commandDatabase = new MySqlCommand(q, databaseConnection);
-            return commandDatabase;
-        }
+       //private MySqlCommand CallStack(string q)
+       // {
+       //     MySqlConnection databaseConnection = new MySqlConnection(connectionString);
+       //     databaseConnection.Open();
+       //     MySqlCommand commandDatabase = new MySqlCommand(q, databaseConnection);
+       //     return commandDatabase;
+       // }
     }
 }

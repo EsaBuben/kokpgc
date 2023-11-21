@@ -38,7 +38,7 @@ namespace TestIt
         }
         public override string ToString()
         {
-            return projectID + " " + projectName;
+            return $"{projectID}, {ProjectName}";
         }
     }
 }

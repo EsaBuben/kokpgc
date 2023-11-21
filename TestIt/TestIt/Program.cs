@@ -12,9 +12,10 @@ namespace TestIt
         static void Main(string[] args)
         {
             Application.Run(new Viewer());
-            //////Project proge = new Project("Sillisalaatti");
-            ////ProjectGateway progeGate = new ProjectGateway();
-            ////progeGate.Insert(proge);
+            //Project proge = new Project("Sillisalaatti");
+            //ProjectGateway progeGate = new ProjectGateway();
+            //progeGate.Insert(proge);
+            //Functionality funkka = new Functionality("Sallasilaatti", proge.ProjectID);
             //////progeGate.Delete(7);
             //////progeGate.Delete(8);
             ////List<Project> progeList = progeGate.SelectAll();
