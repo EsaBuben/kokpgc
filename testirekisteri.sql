@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 21.11.2023 klo 13:52
--- Palvelimen versio: 10.4.28-MariaDB
+-- Generation Time: Nov 24, 2023 at 11:23 AM
+-- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,24 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `testirekisteri`
+-- Database: `testirekisteria`
 --
 
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `functionality`
+-- Table structure for table `functionality`
 --
 
 CREATE TABLE `functionality` (
   `functionality_id` int(11) NOT NULL,
-  `ref_project_id` int(11) NOT NULL
+  `ref_project_id` int(11) NOT NULL,
+  `functionality_name` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `instruction`
+-- Table structure for table `instruction`
 --
 
 CREATE TABLE `instruction` (
@@ -47,7 +49,7 @@ CREATE TABLE `instruction` (
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `project`
+-- Table structure for table `project`
 --
 
 CREATE TABLE `project` (
@@ -55,10 +57,11 @@ CREATE TABLE `project` (
   `Project_Name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `projectrole`
+-- Table structure for table `projectrole`
 --
 
 CREATE TABLE `projectrole` (
@@ -70,7 +73,7 @@ CREATE TABLE `projectrole` (
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `result`
+-- Table structure for table `result`
 --
 
 CREATE TABLE `result` (
@@ -85,7 +88,7 @@ CREATE TABLE `result` (
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `test`
+-- Table structure for table `test`
 --
 
 CREATE TABLE `test` (
@@ -99,7 +102,7 @@ CREATE TABLE `test` (
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -111,7 +114,7 @@ CREATE TABLE `user` (
 -- --------------------------------------------------------
 
 --
--- Rakenne taululle `userstory`
+-- Table structure for table `userstory`
 --
 
 CREATE TABLE `userstory` (
@@ -191,13 +194,13 @@ ALTER TABLE `userstory`
 -- AUTO_INCREMENT for table `functionality`
 --
 ALTER TABLE `functionality`
-  MODIFY `functionality_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `functionality_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `Project_ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Project_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -205,31 +208,36 @@ ALTER TABLE `project`
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
+
+-- AUTO_INCREMENT for table `user`
 --
--- Rajoitteet vedostauluille
+ALTER TABLE `test`
+  MODIFY `test_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- Constraints for dumped tables
 --
 
 --
--- Rajoitteet taululle `functionality`
+-- Constraints for table `functionality`
 --
 ALTER TABLE `functionality`
   ADD CONSTRAINT `functionality_ibfk_1` FOREIGN KEY (`ref_project_id`) REFERENCES `project` (`Project_ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Rajoitteet taululle `instruction`
+-- Constraints for table `instruction`
 --
 ALTER TABLE `instruction`
   ADD CONSTRAINT `instruction_ibfk_1` FOREIGN KEY (`ref_test_id`) REFERENCES `test` (`test_id`);
 
 --
--- Rajoitteet taululle `projectrole`
+-- Constraints for table `projectrole`
 --
 ALTER TABLE `projectrole`
   ADD CONSTRAINT `projectrole_ibfk_1` FOREIGN KEY (`ref_project_id`) REFERENCES `project` (`Project_ID`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `projectrole_ibfk_2` FOREIGN KEY (`ref_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Rajoitteet taululle `test`
+-- Constraints for table `test`
 --
 ALTER TABLE `test`
   ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`),
@@ -237,13 +245,13 @@ ALTER TABLE `test`
   ADD CONSTRAINT `test_ibfk_3` FOREIGN KEY (`test_id`) REFERENCES `result` (`ref_test_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Rajoitteet taululle `user`
+-- Constraints for table `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `result` (`ref_user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Rajoitteet taululle `userstory`
+-- Constraints for table `userstory`
 --
 ALTER TABLE `userstory`
   ADD CONSTRAINT `userstory_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`);
