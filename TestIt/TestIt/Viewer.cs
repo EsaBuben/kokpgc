@@ -17,7 +17,6 @@ namespace TestIt
         {
             InitializeComponent();
             listBox1.Items.AddRange(Controller.Listaa().ToArray());
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -44,5 +43,6 @@ namespace TestIt
             
         }
 
+        
     }
 }

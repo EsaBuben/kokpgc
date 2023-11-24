@@ -20,10 +20,6 @@ namespace TestIt
             progeWay.Insert(proge);
             return proge;
         }
-        //public static Functionality funkyKutsu(Project proge, string nimi, string given, string when, string then)
-        //{
-
-        //}
         public static List<Project> Listaa()
         {
             //Projektien listaus
@@ -31,5 +27,13 @@ namespace TestIt
             List<Project> allTheStuff = progeWay.SelectAll();
             return allTheStuff;
         }
+        //public static List<Functionality> ListaaFunktiot()
+        //{
+        //    //List all functionalities under a project chosen from the listbox.
+        //    FunctionalityGateway funkyWay = new FunctionalityGateway();
+        //    List<Functionality> funkies = funkyWay.SelectAll();
+        //    return funkies;
+            
+        //}
     }
 }

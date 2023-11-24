@@ -11,7 +11,7 @@ namespace TestIt
     {
         static void Main(string[] args)
         {
-          //  Application.Run(new Viewer());
+            Application.Run(new Viewer());
             //Project proge = new Project("Sillisalaatti");
             //ProjectGateway progeGate = new ProjectGateway();
             //progeGate.Insert(proge);
@@ -24,16 +24,16 @@ namespace TestIt
             ////    Console.WriteLine(progeList[i]);
             ////}
 
-            Test test = new Test(10, "testi", 0, 1);
-            TestGateway testgateway = new TestGateway();
-            testgateway.InsertNew(test);
-            List<Test> testlist = testgateway.SelectAll();
-            foreach (Test t in testlist )
-            {
-                Console.WriteLine(t.ToString());
-            }
+            //Test test = new Test(10, "testi", 0, 1);
+            //TestGateway testgateway = new TestGateway();
+            //testgateway.InsertNew(test);
+            //List<Test> testlist = testgateway.SelectAll();
+            //foreach (Test t in testlist )
+            //{
+            //    Console.WriteLine(t.ToString());
+            //}
 
-            Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }
