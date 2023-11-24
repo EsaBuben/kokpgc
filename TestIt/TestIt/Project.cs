@@ -11,21 +11,18 @@ namespace TestIt
     class Project
     {
         private string projectName;
-        private int projectID;
-        Functionality[] funk;
-        private const int MAX = 10;
+        protected int projectID;
 
         public Project(string projectName)
         {
             this.projectName = projectName;
-            funk = new Functionality[MAX];
         }
         public Project(string projectName, int projectID)
         {
             this.projectID = projectID;
             this.ProjectName = projectName;
-            funk = new Functionality[MAX];
         }
+
         public string ProjectName
         {
             get { return projectName; }
