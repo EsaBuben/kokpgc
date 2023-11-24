@@ -12,6 +12,7 @@ namespace TestIt
         static void Main(string[] args)
         {
             Application.Run(new Viewer());
+            Console.WriteLine("Kakka haisee pahalle");
             //Project proge = new Project("Sillisalaatti");
             //ProjectGateway progeGate = new ProjectGateway();
             //progeGate.Insert(proge);
