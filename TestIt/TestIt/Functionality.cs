@@ -20,6 +20,10 @@ namespace TestIt
         private Project project;
         protected int refID;
 
+        public Functionality()
+        {
+
+        }
         public Functionality(string name)
         {
             this.FunctionalityName = name;
