@@ -37,16 +37,19 @@ namespace TestIt
                            "WHERE functionality_name = '" + functionalityName + "'";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
-            Functionality funky = new Functionality(functionalityName);
+            Functionality funky = new Functionality();
             while (reader.Read())
             {
-                funky.FunctionalityName = reader.GetString(1);
+                funky.FunctionalityName = reader.GetString(2);
+                funky.FunctionalityID = reader.GetInt32(0);
+                funky.RefID = reader.GetInt32(1);
             }
+
             reader.Close();
             return funky;
 
         }
-
+        /*
         public List<Project> SelectAll()
         {
             string query = "SELECT * FROM project";
@@ -67,6 +70,6 @@ namespace TestIt
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }
-        
+        */
     }
 }
