@@ -14,9 +14,9 @@ namespace TestIt
         private string functionalityName;
         private int functionalityID;
         private int projectID;
-        private string given;
-        private string when;
-        private string then;
+        // private string given;
+        // private string when;
+        // private string then;
 
         public Functionality(string functionalityName, int projectID)
         {
