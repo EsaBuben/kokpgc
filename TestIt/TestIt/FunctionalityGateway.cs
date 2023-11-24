@@ -1,53 +1,53 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using System.Data.SqlClient;
-using System.Collections;
-using System.Runtime.CompilerServices;
 
 namespace TestIt
 {
-    class ProjectGateway : AbstractGateway
+    internal class FunctionalityGateway : AbstractGateway
     {
-        public ProjectGateway() : base()
+        public FunctionalityGateway() : base()
         {
         }
-        public void Insert(Project proge)
+        public void Insert(Functionality funky)
         {
-            // insert project entity.
-            string query = "INSERT INTO project (Project_Name) VALUES ('" + proge.ProjectName + "')";
+            // insert functionality entity.
+            string query = "INSERT INTO functionality (functionality_name, ref_project_id)" +
+                           " VALUES ('" + funky.FunctionalityName + "', '"+ funky.RefID +"' )";
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
-            query = "SELECT Project_ID FROM project WHERE Project_Name = '" + proge.ProjectName + "'";
+            query = "SELECT functionality_id FROM functionality " +
+                    "WHERE functionality_Name = '" + funky.FunctionalityName + "'";
             commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
             while (reader.Read())
             {
-                proge.ProjectID = reader.GetInt32(0);
+                funky.FunctionalityID = reader.GetInt32(0);
             }
             reader.Close();
         }
-
-        public Project Find(string projectName)
+        
+        public Functionality Find(string functionalityName)
         {
             // find project entity.
-            string query = "SELECT * FROM project WHERE Project_Name = '" + projectName + "'";
+            string query = "SELECT * FROM functionality " +
+                           "WHERE functionality_name = '" + functionalityName + "'";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
-            Project proge = new Project(projectName);
+            Functionality funky = new Functionality(functionalityName);
             while (reader.Read())
             {
-                proge.ProjectName = reader.GetString(1);
+                funky.FunctionalityName = reader.GetString(1);
             }
             reader.Close();
-            return proge;
-            
+            return funky;
+
         }
 
-       public List<Project> SelectAll()
+        public List<Project> SelectAll()
         {
             string query = "SELECT * FROM project";
             MySqlCommand commandDatabase = CallStack(query);
@@ -67,5 +67,6 @@ namespace TestIt
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }
+        
     }
 }
