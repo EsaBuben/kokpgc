@@ -63,7 +63,13 @@ namespace TestIt
            while (reader.Read())
            {
                Test test = new Test(reader.GetInt32(0),reader.GetString(4),reader.GetInt32(3), reader.GetInt32(1));
-               test.Responsible_user_id = reader.GetInt32(2);
+               //reader.GetOrdinal("responsible_user_id");
+               if(!reader.isDBNull(reader.GetOrdinal("responsible_user_id"))){
+                 test.Responsible_user_id = reader.GetInt32(2);
+               }else{
+                 test.Responsible_user_id = null;
+               }
+
                testlist.Add(test);
            }
            return testlist;
