@@ -39,7 +39,7 @@ namespace TestIt
         this.refFunctionalityID = refFunctionalityID;
       }
 
-      public int Id{
+      public int ID{
         get{return this.testID;}
         set{this.testID = value;}
       }

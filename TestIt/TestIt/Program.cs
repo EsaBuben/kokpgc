@@ -26,7 +26,7 @@ namespace TestIt
 
             //Test test = new Test(10, "testi", 0, 1);
             //TestGateway testgateway = new TestGateway();
-            //testgateway.InsertNew(test);
+            //testgateway.Insert(test);
             //List<Test> testlist = testgateway.SelectAll();
             //foreach (Test t in testlist )
             //{

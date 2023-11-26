@@ -14,7 +14,7 @@ namespace TestIt
     {
       public TestGateway():base(){}
 
-      public void InsertNew(Test test)
+      public void Insert(Test test)
       {
         string query = @"
         INSERT INTO
@@ -29,7 +29,7 @@ namespace TestIt
         cmd.Parameters.AddWithValue("@priority", test.Priority);
         cmd.ExecuteNonQuery();
 
-        test.Id = GetIdByName(test.Name);
+        test.ID = GetIdByName(test.Name);
       }
 
       public int GetIdByName(string name){
@@ -62,13 +62,21 @@ namespace TestIt
            List<Test> testlist = new List<Test>();
            while (reader.Read())
            {
-               Test test = new Test(reader.GetInt32(0),reader.GetString(4),reader.GetInt32(3), reader.GetInt32(1));
-               //reader.GetOrdinal("responsible_user_id");
-               if(!reader.isDBNull(reader.GetOrdinal("responsible_user_id"))){
+               Test test = new Test();
+               //Adding values
+               test.ID = reader.GetInt32(0);
+               test.ref_func_id = reader.GetInt32(1);
+               test.Priority = reader.GetInt32(3);
+               test.Name = reader.GetString(4);
+
+               if(!reader.IsDBNull(reader.GetOrdinal("responsible_user_id"))){
                  test.Responsible_user_id = reader.GetInt32(2);
-               }else{
-                 test.Responsible_user_id = null;
                }
+               //else{
+               //reader.GetOrdinal("responsible_user_id");
+               //   test.Responsible_user_id = -1;
+               // }
+
 
                testlist.Add(test);
            }
