@@ -7,14 +7,15 @@ using System.Threading.Tasks;
 
 namespace TestIt
 {
-    internal class FunctionalityGateway : AbstractGateway
+    internal class FunctionalityGateway : AbstractGateway, IGateway
     {
         public FunctionalityGateway() : base()
         {
         }
-        public void Insert(Functionality funky)
+        public void Insert(Object func)
         {
             // insert functionality entity.
+            Functionality funky = (Functionality)func;
             string query = "INSERT INTO functionality (functionality_name, ref_project_id)" +
                            " VALUES ('" + funky.FunctionalityName + "', '"+ funky.RefID +"' )";
             MySqlCommand commandDatabase = CallStack(query);
