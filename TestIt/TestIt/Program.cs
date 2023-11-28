@@ -12,39 +12,13 @@ namespace TestIt
     {
         static void Main(string[] args)
         {
-            // Application.Run(new Viewer());
-            //Project proge = new Project("Sillisalaatti");
-            //ProjectGateway progeGate = new ProjectGateway();
-            //progeGate.Insert(proge);
-            //Functionality funkka = new Functionality("Sallasilaatti", proge.ProjectID);
-            //////progeGate.Delete(7);
-            //////progeGate.Delete(8);
-            ////List<Project> progeList = progeGate.SelectAll();
-            ////for (int i = 0; i < progeList.Count; i++)
-            ////{
-            ////    Console.WriteLine(progeList[i]);
-            ////}
+            Viewer viewer = new Viewer();
+            Application.Run(viewer);
+            //Project proge = new Project("Testi");
+            //Controller.AddNew(proge, DataObjectType.Project);
+            //Functionality funktio = new Functionality(proge, "Testi");
+            //Controller.AddNew(funktio, DataObjectType.Functionality);
 
-            //Test test = new Test(10, "testi", 0, 1);
-            //TestGateway testgateway = new TestGateway();
-            //testgateway.Insert(test);
-            //List<Test> testlist = testgateway.SelectAll();
-            //foreach (Test t in testlist )
-            //{
-            //    Console.WriteLine(t.ToString());
-            //}
-
-
-            // Test test = new Test(10, "new testi", 0, 8);
-            // test = (Test)Controller.Kutsu(test, DataObjectType.Test);
-            // TestGateway testgateway = new TestGateway();
-            // List<Test> testlist = testgateway.SelectAll();
-            // foreach (Test t in testlist )
-            // {
-            //    Console.WriteLine(t.ToString());
-            // }
-            //
-            // Console.ReadLine();
         }
     }
 }

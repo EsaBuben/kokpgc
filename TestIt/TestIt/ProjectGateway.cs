@@ -48,18 +48,22 @@ namespace TestIt
             
         }
 
-       public List<Project> SelectAll()
+       public List<Object> SelectAll()
         {
             string query = "SELECT * FROM project";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
-            List<Project> allTheStuff = new List<Project>();
+            List<Object> allTheStuff = new List<Object>();
             while (reader.Read())
             {
                 Project proge = new Project(reader.GetString(1), reader.GetInt32(0));
                 allTheStuff.Add(proge);
             }
             return allTheStuff;
+        }
+        public List<Object> SelectAll(int d)
+        {
+            return null;
         }
         public void Delete(int projectId)
         {

@@ -51,14 +51,14 @@ namespace TestIt
 
         }
         
-        public List<Functionality> SelectAll(Project proge)
+        public List<Object> SelectAll(int proge)
         {
             // select all functionality entities under a project.
             string query = "SELECT * FROM functionality " +
-                           "WHERE ref_project_id = '" + proge.ProjectID + "'";
+                           "WHERE ref_project_id = '" + proge + "'";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
-            List<Functionality> funkies = new List<Functionality>();
+            List<Object> funkies = new List<Object>();
             while (reader.Read())
             {
                 Functionality funky = new Functionality();
@@ -69,7 +69,10 @@ namespace TestIt
             }
             reader.Close();
             return funkies;
-            
+        }
+        public List<Object> SelectAll()
+        {
+            return null;
         }
         public void Delete(int funkyId)
         {

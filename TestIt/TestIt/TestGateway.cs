@@ -55,12 +55,12 @@ namespace TestIt
         return id;
         }
 
-      public List<Test> SelectAll()
+      public List<Object> SelectAll()
        {
            string query = "SELECT * FROM test";
            MySqlCommand cmd = CallStack(query);
            MySqlDataReader reader = cmd.ExecuteReader();
-           List<Test> testlist = new List<Test>();
+           List<Object> testlist = new List<Object>();
            while (reader.Read())
            {
                Test test = new Test();
@@ -83,7 +83,11 @@ namespace TestIt
            }
            return testlist;
        }
-       public void Delete(int testId)
+        public List<Object> SelectAll(int d)
+        {
+            return null;
+        }
+        public void Delete(int testId)
        {
            // delete project entity.
            string query = @"

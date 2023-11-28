@@ -9,5 +9,7 @@ namespace TestIt
     public interface IGateway 
     {
         void Insert(Object obj);
+        List<Object> SelectAll();
+        List<Object> SelectAll(int id);
     }
 }
