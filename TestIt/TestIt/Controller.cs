@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
@@ -10,15 +11,28 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TestIt
 {
+    public enum DataObjectType
+    {
+        Test,
+        Project,
+        Functionality
+    }
     class Controller
     {
-        public static Project Kutsu(string text)
+        public static Object AddNew(Object obj, DataObjectType type)
         {
-            //Projektin lisäys tietokantaan
-            Project proge = new Project(text);
-            ProjectGateway progeWay = new ProjectGateway();
-            progeWay.Insert(proge);
-            return proge;
+            IGateway gateway;
+            switch(type)
+            {
+                case DataObjectType.Project:
+                    gateway = new ProjectGateway();
+                    gateway.Insert(obj);
+                    break;
+                default:
+                break;
+            }
+            return obj;
+            
         }
         public static List<Project> Listaa()
         {
