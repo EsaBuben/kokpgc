@@ -10,14 +10,15 @@ using System.Runtime.CompilerServices;
 
 namespace TestIt
 {
-    class ProjectGateway : AbstractGateway
+    class ProjectGateway : AbstractGateway, IGateway
     {
         public ProjectGateway() : base()
         {
         }
-        public void Insert(Project proge)
+        public void Insert(Object obj)
         {
             // insert project entity.
+            Project proge = (Project)obj;
             string query = "INSERT INTO project (Project_Name) VALUES ('" + proge.ProjectName + "')";
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
