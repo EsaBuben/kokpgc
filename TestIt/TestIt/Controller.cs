@@ -13,9 +13,10 @@ namespace TestIt
 {
     public enum DataObjectType
     {
-        Test,
         Project,
-        Functionality
+        Functionality,
+        Test,
+        Result
     }
     class Controller
     {
@@ -42,13 +43,48 @@ namespace TestIt
             return obj;
 
         }
-        public static List<Project> Listaa()
+        public static Object Listaa(int id, DataObjectType type)
         {
-            //Projektien listaus
-            ProjectGateway progeWay = new ProjectGateway();
-            List<Project> allTheStuff = progeWay.SelectAll();
-            return allTheStuff;
+            IGateway gateway;
+            switch (type)
+            {
+                case DataObjectType.Test:
+                    gateway = new TestGateway();
+                    return gateway.SelectAll();
+                case DataObjectType.Functionality:
+                    gateway = new FunctionalityGateway();
+                    return gateway.SelectAll(id);
+                default:
+                    break;
+            }
+            return null;
+
         }
+        public static List<Object> Listaa(DataObjectType type)
+        {
+            IGateway gateway;
+            switch (type)
+            {
+                case DataObjectType.Project:
+                    gateway = new ProjectGateway();
+                    return gateway.SelectAll();
+                case DataObjectType.Test:
+                    gateway = new TestGateway();
+                    return gateway.SelectAll();
+                default:
+                    break;
+            }
+            return null;
+
+        }
+
+        //public static List<Project> Listaa()
+        //{
+        //    //Projektien listaus
+        //    ProjectGateway progeWay = new ProjectGateway();
+        //    List<Project> allTheStuff = progeWay.SelectAll();
+        //    return allTheStuff;
+        //}
 
     }
 }

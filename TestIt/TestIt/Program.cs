@@ -14,6 +14,11 @@ namespace TestIt
         {
             Viewer viewer = new Viewer();
             Application.Run(viewer);
+            //Project proge = new Project("Testi");
+            //Controller.AddNew(proge, DataObjectType.Project);
+            //Functionality funktio = new Functionality(proge, "Testi");
+            //Controller.AddNew(funktio, DataObjectType.Functionality);
+
         }
     }
 }

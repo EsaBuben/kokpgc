@@ -14,26 +14,29 @@ namespace TestIt
     public partial class Viewer : Form
     {
         BindingSource bindingSource = new BindingSource();
+        DataObjectType curry = DataObjectType.Project;
 
 
         public Viewer()
         {
             InitializeComponent();
-            //listBox1.Items.AddRange(Controller.Listaa().ToArray());
-            bindingSource.DataSource = Controller.Listaa();
+            bindingSource.DataSource = Controller.Listaa(curry);
             dataGridView1.DataSource = bindingSource;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bindingSource.DataSource = Controller.Listaa();
+            curry = DataObjectType.Project;
+            bindingSource.DataSource = Controller.Listaa(curry);
             dataGridView1.DataSource = bindingSource;
-
-       }
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            curry++;
+            int id = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value;
+            Console.WriteLine(id);
+            bindingSource.DataSource = Controller.Listaa(id, curry);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -42,7 +45,7 @@ namespace TestIt
             Controller.AddNew(proge, DataObjectType.Project);
             MessageBox.Show("Project " + proge.ProjectName + " has been added");
             text_label1.Text = "";
-            bindingSource.DataSource = Controller.Listaa();
+            bindingSource.DataSource = Controller.Listaa(DataObjectType.Project);
             dataGridView1.DataSource = bindingSource;
         }
         
