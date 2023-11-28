@@ -41,7 +41,7 @@ namespace TestIt
 
         MySqlCommand cmd = CallStack(query);
         cmd.Parameters.AddWithValue("@name", name);
-        //1
+        
         MySqlDataReader reader = cmd.ExecuteReader();
         if (reader.HasRows)
         {
