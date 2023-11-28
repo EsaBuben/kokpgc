@@ -28,6 +28,10 @@ namespace TestIt
                     gateway = new ProjectGateway();
                     gateway.Insert(obj);
                     break;
+                case DataObjectType.Test:
+                    gateway = new TestGateway();
+                    gateway.Insert(obj);
+                    break;
                 default:
                 break;
             }
