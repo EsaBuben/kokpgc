@@ -13,11 +13,38 @@ namespace TestIt
 {
     public partial class Viewer : Form
     {
+        BindingSource bindingSource = new BindingSource();
+
+
         public Viewer()
         {
             InitializeComponent();
             //listBox1.Items.AddRange(Controller.Listaa().ToArray());
+            bindingSource.DataSource = Controller.Listaa();
+            dataGridView1.DataSource = bindingSource;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bindingSource.DataSource = Controller.Listaa();
+            dataGridView1.DataSource = bindingSource;
+
+       }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Project proge = Controller.Kutsu(text_label1.Text);
+            MessageBox.Show("Project " + proge.ProjectName + " has been added");
+            text_label1.Text = "";
+        }
+        
+
+        
 
         //private void button1_Click(object sender, EventArgs e)
         //{
@@ -35,14 +62,14 @@ namespace TestIt
 
         //private void textBox1_TextChanged(object sender, EventArgs e)
         //{
-            
+
         //}
 
         //private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         //{
-            
+
         //}
 
-        
+
     }
 }
