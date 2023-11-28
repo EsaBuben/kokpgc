@@ -10,12 +10,13 @@ using System.Runtime.CompilerServices;
 
 namespace TestIt
 {
-    class TestGateway : AbstractGateway
+    class TestGateway : AbstractGateway, IGateway
     {
       public TestGateway():base(){}
 
-      public void Insert(Test test)
+      public void Insert(Object obj)
       {
+        Test test = (Test)obj;
         string query = @"
         INSERT INTO
         test (name, ref_functionality_id, priority)
@@ -41,7 +42,7 @@ namespace TestIt
 
         MySqlCommand cmd = CallStack(query);
         cmd.Parameters.AddWithValue("@name", name);
-        
+
         MySqlDataReader reader = cmd.ExecuteReader();
         if (reader.HasRows)
         {

@@ -7,12 +7,12 @@ using System.Windows.Forms;
 
 namespace TestIt
 {
+
     internal class Program
     {
         static void Main(string[] args)
         {
-            Application.Run(new Viewer());
-            Console.WriteLine("Kakka haisee pahalle");
+            // Application.Run(new Viewer());
             //Project proge = new Project("Sillisalaatti");
             //ProjectGateway progeGate = new ProjectGateway();
             //progeGate.Insert(proge);
@@ -34,7 +34,17 @@ namespace TestIt
             //    Console.WriteLine(t.ToString());
             //}
 
-            //Console.ReadLine();
+
+            // Test test = new Test(10, "new testi", 0, 8);
+            // test = (Test)Controller.Kutsu(test, DataObjectType.Test);
+            // TestGateway testgateway = new TestGateway();
+            // List<Test> testlist = testgateway.SelectAll();
+            // foreach (Test t in testlist )
+            // {
+            //    Console.WriteLine(t.ToString());
+            // }
+            //
+            // Console.ReadLine();
         }
     }
 }
