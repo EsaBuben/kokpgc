@@ -13,9 +13,11 @@ namespace TestIt
 {
     public enum DataObjectType
     {
-        Test,
         Project,
-        Functionality
+        Functionality,
+        Test,
+        Result,
+        User
     }
     class Controller
     {
