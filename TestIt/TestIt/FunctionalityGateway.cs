@@ -37,33 +37,43 @@ namespace TestIt
                            "WHERE functionality_name = '" + functionalityName + "'";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
-            Functionality funky = new Functionality(functionalityName);
+            Functionality funky = new Functionality();
             while (reader.Read())
             {
-                funky.FunctionalityName = reader.GetString(1);
+                funky.FunctionalityName = reader.GetString(2);
+                funky.FunctionalityID = reader.GetInt32(0);
+                funky.RefID = reader.GetInt32(1);
             }
+
             reader.Close();
             return funky;
 
         }
-
-        public List<Project> SelectAll()
+        
+        public List<Functionality> SelectAll(Project proge)
         {
-            string query = "SELECT * FROM project";
+            // select all functionality entities under a project.
+            string query = "SELECT * FROM functionality " +
+                           "WHERE ref_project_id = '" + proge.ProjectID + "'";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
-            List<Project> allTheStuff = new List<Project>();
+            List<Functionality> funkies = new List<Functionality>();
             while (reader.Read())
             {
-                Project proge = new Project(reader.GetString(1), reader.GetInt32(0));
-                allTheStuff.Add(proge);
+                Functionality funky = new Functionality();
+                funky.FunctionalityName = reader.GetString(2);
+                funky.FunctionalityID = reader.GetInt32(0);
+                funky.RefID = reader.GetInt32(1);
+                funkies.Add(funky);
             }
-            return allTheStuff;
+            reader.Close();
+            return funkies;
+            
         }
-        public void Delete(int projectId)
+        public void Delete(int funkyId)
         {
             // delete project entity.
-            string query = "DELETE FROM project WHERE Project_ID = '" + projectId + "'";
+            string query = "DELETE FROM functionality WHERE functionality_id = '" + funkyId + "'";
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }

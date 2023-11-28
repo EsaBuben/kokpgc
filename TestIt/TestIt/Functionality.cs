@@ -20,17 +20,18 @@ namespace TestIt
         private Project project;
         protected int refID;
 
+        public Functionality()
+        {
+
+        }
         public Functionality(string name)
         {
             this.FunctionalityName = name;
         }
-        public Functionality(Project project, string functionalityName, string given, string when, string then)
+        public Functionality(Project project, string functionalityName)
         {
             this.project = project;
             this.functionalityName = functionalityName;
-            this.given = given;
-            this.when = when;
-            this.then = then;
             this.refID = project.ProjectID;
 
         }
@@ -66,7 +67,7 @@ namespace TestIt
         }
         public override string ToString()
         {
-            return $"{refID} {functionalityID}, {functionalityName}, {given}, {when}, {then}";
+            return $"{refID} {functionalityID}, {functionalityName}";
         }
 
 

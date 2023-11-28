@@ -9,12 +9,12 @@ namespace TestIt
 {
     abstract class AbstractGateway
     {
-        
+
         protected string connectionString;
         protected MySqlConnection databaseConnection;
         public AbstractGateway()
         {
-        connectionString = "server=localhost;user=root;database=testirekisteria;port=3306;password=;";
+        connectionString = "server=localhost;user=root;database=testirekisteri;port=3306;password=;";
         }
         public MySqlCommand CallStack(string q)
         {

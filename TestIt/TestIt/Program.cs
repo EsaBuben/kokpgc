@@ -25,7 +25,16 @@ namespace TestIt
             ////    Console.WriteLine(progeList[i]);
             ////}
 
-            ////Console.ReadLine();
+            //Test test = new Test(10, "testi", 0, 1);
+            //TestGateway testgateway = new TestGateway();
+            //testgateway.Insert(test);
+            //List<Test> testlist = testgateway.SelectAll();
+            //foreach (Test t in testlist )
+            //{
+            //    Console.WriteLine(t.ToString());
+            //}
+
+            //Console.ReadLine();
         }
     }
 }
