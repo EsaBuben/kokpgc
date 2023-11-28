@@ -27,13 +27,6 @@ namespace TestIt
             List<Project> allTheStuff = progeWay.SelectAll();
             return allTheStuff;
         }
-        //public static List<Functionality> ListaaFunktiot()
-        //{
-        //    //List all functionalities under a project chosen from the listbox.
-        //    FunctionalityGateway funkyWay = new FunctionalityGateway();
-        //    List<Functionality> funkies = funkyWay.SelectAll();
-        //    return funkies;
-            
-        //}
+        
     }
 }
