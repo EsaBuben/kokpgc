@@ -12,7 +12,8 @@ namespace TestIt
     {
         static void Main(string[] args)
         {
-
+            Viewer viewer = new Viewer();
+            Application.Run(viewer);
         }
     }
 }

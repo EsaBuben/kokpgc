@@ -38,9 +38,12 @@ namespace TestIt
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Project proge = Controller.Kutsu(text_label1.Text);
+            Project proge = new Project(text_label1.Text);
+            Controller.AddNew(proge, DataObjectType.Project);
             MessageBox.Show("Project " + proge.ProjectName + " has been added");
             text_label1.Text = "";
+            bindingSource.DataSource = Controller.Listaa();
+            dataGridView1.DataSource = bindingSource;
         }
         
 
