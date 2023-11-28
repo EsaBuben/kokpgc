@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2023 at 11:23 AM
+-- Generation Time: Nov 28, 2023 at 11:52 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `testirekisteria`
+-- Database: `testirekisteri`
 --
 
 -- --------------------------------------------------------
@@ -32,7 +32,6 @@ CREATE TABLE `functionality` (
   `ref_project_id` int(11) NOT NULL,
   `functionality_name` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 
 -- --------------------------------------------------------
 
@@ -57,6 +56,15 @@ CREATE TABLE `project` (
   `Project_Name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `project`
+--
+
+INSERT INTO `project` (`Project_ID`, `Project_Name`) VALUES
+(9, 'ainii tää on tyhjä'),
+(10, 'Sillisalaatti'),
+(11, 'Sillisalaatti'),
+(12, 'Sillisalaatti');
 
 -- --------------------------------------------------------
 
@@ -200,7 +208,13 @@ ALTER TABLE `functionality`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `Project_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `Project_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `test`
+--
+ALTER TABLE `test`
+  MODIFY `test_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -208,11 +222,6 @@ ALTER TABLE `project`
 ALTER TABLE `user`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
-
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `test`
-  MODIFY `test_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
@@ -237,18 +246,19 @@ ALTER TABLE `projectrole`
   ADD CONSTRAINT `projectrole_ibfk_2` FOREIGN KEY (`ref_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `result`
+--
+ALTER TABLE `result`
+  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`ref_test_id`) REFERENCES `test` (`test_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`ref_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `test`
 --
 ALTER TABLE `test`
   ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`),
   ADD CONSTRAINT `test_ibfk_2` FOREIGN KEY (`responsible_user_id`) REFERENCES `user` (`user_id`),
-  
-
---
--- Constraints for table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `result` (`ref_user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `test_ibfk_3` FOREIGN KEY (`test_id`) REFERENCES `result` (`ref_test_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `userstory`

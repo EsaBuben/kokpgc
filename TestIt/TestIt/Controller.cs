@@ -6,7 +6,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-//using System.Windows.Navigation;
+using System.Windows.Navigation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace TestIt
@@ -30,6 +30,10 @@ namespace TestIt
                     break;
                 case DataObjectType.Test:
                     gateway = new TestGateway();
+                    gateway.Insert(obj);
+                    break;
+                case DataObjectType.Functionality:
+                    gateway = new FunctionalityGateway();
                     gateway.Insert(obj);
                     break;
                 default:
