@@ -104,6 +104,7 @@
     <Compile Include="AbstractGateway.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="FunctionalityGateway.cs" />
+    <Compile Include="GatewayConstructor.cs" />
     <Compile Include="IGateway.cs" />
     <Compile Include="mysqlexample.cs" />
     <Compile Include="ProjectGateway.cs" />

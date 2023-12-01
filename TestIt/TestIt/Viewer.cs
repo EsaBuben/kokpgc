@@ -35,7 +35,6 @@ namespace TestIt
         {
             curry++;
             int id = (int)dataGridView1[e.ColumnIndex, e.RowIndex].Value;
-            Console.WriteLine(id);
             bindingSource.DataSource = Controller.Listaa(id, curry);
         }
 
@@ -48,9 +47,28 @@ namespace TestIt
             bindingSource.DataSource = Controller.Listaa(DataObjectType.Project);
             dataGridView1.DataSource = bindingSource;
         }
-        
 
-        
+        private void Viewer_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void text_label1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void text_label2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void text_label3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         //private void button1_Click(object sender, EventArgs e)
         //{

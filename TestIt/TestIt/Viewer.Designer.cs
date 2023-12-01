@@ -50,7 +50,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.button1.Location = new System.Drawing.Point(32, 38);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 29);
             this.button1.TabIndex = 0;
@@ -61,8 +61,8 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(343, 59);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(275, 98);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -80,9 +80,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(32, 98);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(207, 183);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -91,7 +91,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(19, 135);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 24);
             this.button2.TabIndex = 6;
@@ -102,26 +102,31 @@
             // text_label3
             // 
             this.text_label3.Location = new System.Drawing.Point(75, 94);
-            this.text_label3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.text_label3.Margin = new System.Windows.Forms.Padding(2);
             this.text_label3.Name = "text_label3";
             this.text_label3.Size = new System.Drawing.Size(68, 20);
             this.text_label3.TabIndex = 5;
+            this.text_label3.Visible = false;
+            this.text_label3.TextChanged += new System.EventHandler(this.text_label3_TextChanged);
             // 
             // text_label2
             // 
             this.text_label2.Location = new System.Drawing.Point(75, 56);
-            this.text_label2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.text_label2.Margin = new System.Windows.Forms.Padding(2);
             this.text_label2.Name = "text_label2";
             this.text_label2.Size = new System.Drawing.Size(68, 20);
             this.text_label2.TabIndex = 4;
+            this.text_label2.Visible = false;
+            this.text_label2.TextChanged += new System.EventHandler(this.text_label2_TextChanged);
             // 
             // text_label1
             // 
             this.text_label1.Location = new System.Drawing.Point(75, 23);
-            this.text_label1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.text_label1.Margin = new System.Windows.Forms.Padding(2);
             this.text_label1.Name = "text_label1";
             this.text_label1.Size = new System.Drawing.Size(68, 20);
             this.text_label1.TabIndex = 3;
+            this.text_label1.TextChanged += new System.EventHandler(this.text_label1_TextChanged);
             // 
             // label3
             // 
@@ -132,6 +137,7 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "label3";
+            this.label3.Visible = false;
             // 
             // label2
             // 
@@ -142,16 +148,17 @@
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
+            this.label2.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 28);
+            this.label1.Location = new System.Drawing.Point(19, 26);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Nimi:";
             // 
             // Viewer
             // 
@@ -163,6 +170,7 @@
             this.Controls.Add(this.button1);
             this.Name = "Viewer";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Viewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
