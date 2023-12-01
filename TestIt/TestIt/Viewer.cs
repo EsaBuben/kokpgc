@@ -29,7 +29,7 @@ namespace TestIt
 
         private void button1_Click(object sender, EventArgs e)
         {
-            curry = DataObjectType.Project;
+            curry--;
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
         }
@@ -62,6 +62,7 @@ namespace TestIt
                     Taulukko.DataSource = bindingSource;
                     break;
                 case DataObjectType.Test:
+
                     break;
                 case DataObjectType.Result:
                     break;
@@ -95,10 +96,6 @@ namespace TestIt
             bindingSource.DataSource = Controller.Listaa(DataObjectType.Project);
             Taulukko.DataSource = bindingSource;
             textBox1.Text = "";
-        }
-        private DataObjectType GetCurry()
-        {
-            return curry;
         }
         private void Viewer_Load(object sender, EventArgs e)
         {
