@@ -11,5 +11,6 @@ namespace TestIt
         void Insert(Object obj);
         List<Object> SelectAll();
         List<Object> SelectAll(int id);
+        void Delete(int id);
     }
 }

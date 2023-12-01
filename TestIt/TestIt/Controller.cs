@@ -36,11 +36,16 @@ namespace TestIt
             return gateway.SelectAll();
 
         }
-        public static Object Listaa(int id, DataObjectType type)
+        public static List<Object> Listaa(int id, DataObjectType type)
         {
           GatewayConstructor gateway = new GatewayConstructor(type);
           return gateway.SelectAll(id);
 
+        }
+        public static void RemoveItem(int id, DataObjectType typpi)
+        {
+            GatewayConstructor gateway = new GatewayConstructor(typpi);
+            gateway.Delete(id);
         }
 
         //public static List<Project> Listaa()

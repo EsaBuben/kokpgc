@@ -35,6 +35,11 @@ namespace TestIt
             this.refID = project.ProjectID;
 
         }
+        public Functionality(string functionalityName, int refID)
+        {
+            this.functionalityName = functionalityName;
+            this.refID = refID;
+        }
         public int FunctionalityID
         {
             get { return functionalityID; }

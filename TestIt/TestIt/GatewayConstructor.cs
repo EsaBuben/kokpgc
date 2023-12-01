@@ -26,7 +26,6 @@ namespace TestIt
             this.gateway = null;
             break;
           }
-      
         }
 
         public void Insert(Object obj){
@@ -40,10 +39,9 @@ namespace TestIt
         public List<Object> SelectAll(int id){
           return gateway.SelectAll(id);
         }
-
-
+        public void Delete(int id)
+        {
+            this.gateway.Delete(id);
+        }
     }
-
-
-
 }
