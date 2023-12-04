@@ -8,13 +8,21 @@ using System.Data.SqlClient;
 
 namespace TestIt
 {
+    public enum ResultStatus{
+      to_be_tested,
+      testing,
+      reported,
+      accepted
+    }
+
     public class Result
     {
       private int result_id;
-      private int ref_user_id;
       private int ref_test_id;
-
-      // private string acceptance;// result class overlaps with status
+      private int ref_user_id;
+      private string[] status_list = {"to be tested","currently under testing","results reported","accepted"};
+      private ResultStatus status;
+      //private string acceptance;// result class overlaps with status
       private string comment;
 
       private DateTime time;
@@ -22,6 +30,7 @@ namespace TestIt
       public Result(){
         this.result_id = -1;
         this.comment = "No comment";
+        this.status = ResultStatus.to_be_tested;
 
       }
 
@@ -35,15 +44,9 @@ namespace TestIt
         get{return this.result_id;}
         set{this.result_id = value;}
       }
-
-      public int Ref_test_id{
-        get{return this.Ref_test_id;}
-        set{this.Ref_test_id = value;}
-      }
-
-      public int Ref_user_id{
-        get{return this.Ref_user_id;}
-        set{this.Ref_user_id = value;}
+      public string Status{
+        get{return this.status_list[(int)this.status];}
+        set{this.status = value;}
       }
 
       public string Comment{
@@ -56,5 +59,14 @@ namespace TestIt
         set{this.time = value;}
       }
 
+      public int Ref_test_id{
+        get{return this.Ref_test_id;}
+        set{this.Ref_test_id = value;}
+      }
+
+      public int Ref_user_id{
+        get{return this.Ref_user_id;}
+        set{this.Ref_user_id = value;}
+      }
     }
 }

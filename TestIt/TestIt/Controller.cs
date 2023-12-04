@@ -15,10 +15,10 @@ namespace TestIt
     {
         Project,
         Functionality,
-        UserStory,
         Test,
         Result,
-        User
+        User,
+        UserStory
     }
     public class Controller
     {
