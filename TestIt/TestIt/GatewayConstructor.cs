@@ -19,6 +19,7 @@ namespace TestIt
             this.gateway = new TestGateway();
             break;
           case DataObjectType.Result:
+            this.gateway = new ResultGateway();
             break;
           case DataObjectType.User:
             break;
