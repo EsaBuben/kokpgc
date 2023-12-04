@@ -50,6 +50,7 @@ namespace TestIt
                 userStory.Visible = true;
             }
             else userStory.Visible = false;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -90,6 +91,18 @@ namespace TestIt
             Taulukko.DataSource = bindingSource;
             textBox1.Text = "";
         }
+        private void userStoryButton_Click(object sender, EventArgs e)
+        {
+            this.juttu = new UserStory(Convert.ToInt32(funcIdFeed.Text), givenFeed.Text, whenFeed.Text, thenFeed.Text);
+            Controller.AddNew(this.juttu, DataObjectType.UserStory);
+            bindingSource.DataSource = Controller.Listaa(Convert.ToInt32(funcIdFeed.Text), curry);
+            Taulukko.DataSource = bindingSource;
+            funcIdFeed.Text = "";
+            givenFeed.Text = "";
+            whenFeed.Text = "";
+            thenFeed.Text = "";
+            
+        }
         private void Viewer_Load(object sender, EventArgs e)
         {
 
@@ -121,6 +134,11 @@ namespace TestIt
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userStory_Enter(object sender, EventArgs e)
         {
 
         }

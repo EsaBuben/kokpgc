@@ -15,11 +15,12 @@ namespace TestIt
     {
         Project,
         Functionality,
+        UserStory,
         Test,
         Result,
         User
     }
-    class Controller
+    public class Controller
     {
         public static Object AddNew(Object obj, DataObjectType type)
         {

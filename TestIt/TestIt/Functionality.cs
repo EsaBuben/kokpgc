@@ -10,13 +10,11 @@ using System.Windows;
 namespace TestIt
 {
 
-    internal class Functionality
+    public class Functionality : UserStory
     {
         private string functionalityName;
         private int functionalityID;
-        private string given;
-        private string when;
-        private string then;
+        UserStory story;
         private Project project;
         protected int refID;
 
@@ -40,6 +38,12 @@ namespace TestIt
             this.functionalityName = functionalityName;
             this.refID = refID;
         }
+        public Functionality(string name, int refID, string given, string when, string then)
+        {
+            this.functionalityName = name;
+            this.refID = refID;
+            story = new UserStory(this.functionalityID, given, when, then);
+        }
         public int FunctionalityID
         {
             get { return functionalityID; }
@@ -55,20 +59,10 @@ namespace TestIt
             get { return refID; }
             set { refID = value; }
         }
-        public string Given
+        public UserStory Story
         {
-            get { return given; }
-            set { given = value; }
-        }
-        public string When
-        {
-            get { return when; }
-            set { when = value; }
-        }
-        public string Then
-        {
-            get { return then; }
-            set { then = value; }
+            get { return story; }
+            set { story = value; }
         }
         public override string ToString()
         {

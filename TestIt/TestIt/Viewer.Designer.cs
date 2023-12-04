@@ -32,8 +32,8 @@
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.text_label3 = new System.Windows.Forms.TextBox();
-            this.text_label2 = new System.Windows.Forms.TextBox();
+            this.whenFeed = new System.Windows.Forms.TextBox();
+            this.givenFeed = new System.Windows.Forms.TextBox();
             this.text_label1 = new System.Windows.Forms.TextBox();
             this.When = new System.Windows.Forms.Label();
             this.Given = new System.Windows.Forms.Label();
@@ -43,9 +43,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Then = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.thenFeed = new System.Windows.Forms.TextBox();
             this.userStory = new System.Windows.Forms.GroupBox();
             this.userStoryButton = new System.Windows.Forms.Button();
+            this.funcIdText = new System.Windows.Forms.Label();
+            this.funcIdFeed = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -106,23 +108,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // text_label3
+            // whenFeed
             // 
-            this.text_label3.Location = new System.Drawing.Point(81, 49);
-            this.text_label3.Margin = new System.Windows.Forms.Padding(2);
-            this.text_label3.Name = "text_label3";
-            this.text_label3.Size = new System.Drawing.Size(100, 20);
-            this.text_label3.TabIndex = 5;
-            this.text_label3.TextChanged += new System.EventHandler(this.text_label3_TextChanged);
+            this.whenFeed.Location = new System.Drawing.Point(81, 84);
+            this.whenFeed.Margin = new System.Windows.Forms.Padding(2);
+            this.whenFeed.Name = "whenFeed";
+            this.whenFeed.Size = new System.Drawing.Size(100, 20);
+            this.whenFeed.TabIndex = 5;
+            this.whenFeed.TextChanged += new System.EventHandler(this.text_label3_TextChanged);
             // 
-            // text_label2
+            // givenFeed
             // 
-            this.text_label2.Location = new System.Drawing.Point(81, 18);
-            this.text_label2.Margin = new System.Windows.Forms.Padding(2);
-            this.text_label2.Name = "text_label2";
-            this.text_label2.Size = new System.Drawing.Size(100, 20);
-            this.text_label2.TabIndex = 4;
-            this.text_label2.TextChanged += new System.EventHandler(this.text_label2_TextChanged);
+            this.givenFeed.Location = new System.Drawing.Point(81, 53);
+            this.givenFeed.Margin = new System.Windows.Forms.Padding(2);
+            this.givenFeed.Name = "givenFeed";
+            this.givenFeed.Size = new System.Drawing.Size(100, 20);
+            this.givenFeed.TabIndex = 4;
+            this.givenFeed.TextChanged += new System.EventHandler(this.text_label2_TextChanged);
             // 
             // text_label1
             // 
@@ -136,7 +138,7 @@
             // When
             // 
             this.When.AutoSize = true;
-            this.When.Location = new System.Drawing.Point(19, 49);
+            this.When.Location = new System.Drawing.Point(19, 84);
             this.When.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.When.Name = "When";
             this.When.Size = new System.Drawing.Size(36, 13);
@@ -146,7 +148,7 @@
             // Given
             // 
             this.Given.AutoSize = true;
-            this.Given.Location = new System.Drawing.Point(19, 18);
+            this.Given.Location = new System.Drawing.Point(19, 53);
             this.Given.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Given.Name = "Given";
             this.Given.Size = new System.Drawing.Size(35, 13);
@@ -210,44 +212,64 @@
             // Then
             // 
             this.Then.AutoSize = true;
-            this.Then.Location = new System.Drawing.Point(19, 81);
+            this.Then.Location = new System.Drawing.Point(19, 116);
             this.Then.Name = "Then";
             this.Then.Size = new System.Drawing.Size(32, 13);
             this.Then.TabIndex = 7;
             this.Then.Text = "Then";
             // 
-            // textBox2
+            // thenFeed
             // 
-            this.textBox2.Location = new System.Drawing.Point(81, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
+            this.thenFeed.Location = new System.Drawing.Point(81, 116);
+            this.thenFeed.Name = "thenFeed";
+            this.thenFeed.Size = new System.Drawing.Size(100, 20);
+            this.thenFeed.TabIndex = 8;
             // 
             // userStory
             // 
+            this.userStory.Controls.Add(this.funcIdFeed);
+            this.userStory.Controls.Add(this.funcIdText);
             this.userStory.Controls.Add(this.userStoryButton);
-            this.userStory.Controls.Add(this.text_label2);
-            this.userStory.Controls.Add(this.textBox2);
+            this.userStory.Controls.Add(this.givenFeed);
+            this.userStory.Controls.Add(this.thenFeed);
             this.userStory.Controls.Add(this.When);
             this.userStory.Controls.Add(this.Given);
             this.userStory.Controls.Add(this.Then);
-            this.userStory.Controls.Add(this.text_label3);
+            this.userStory.Controls.Add(this.whenFeed);
             this.userStory.Location = new System.Drawing.Point(32, 294);
             this.userStory.Name = "userStory";
-            this.userStory.Size = new System.Drawing.Size(207, 139);
+            this.userStory.Size = new System.Drawing.Size(207, 177);
             this.userStory.TabIndex = 9;
             this.userStory.TabStop = false;
             this.userStory.Text = "UserStory";
             this.userStory.Visible = false;
+            this.userStory.Enter += new System.EventHandler(this.userStory_Enter);
             // 
             // userStoryButton
             // 
-            this.userStoryButton.Location = new System.Drawing.Point(22, 110);
+            this.userStoryButton.Location = new System.Drawing.Point(22, 145);
             this.userStoryButton.Name = "userStoryButton";
             this.userStoryButton.Size = new System.Drawing.Size(106, 23);
             this.userStoryButton.TabIndex = 9;
             this.userStoryButton.Text = "Add UserStory";
             this.userStoryButton.UseVisualStyleBackColor = true;
+            this.userStoryButton.Click += new System.EventHandler(this.userStoryButton_Click);
+            // 
+            // funcIdText
+            // 
+            this.funcIdText.AutoSize = true;
+            this.funcIdText.Location = new System.Drawing.Point(22, 20);
+            this.funcIdText.Name = "funcIdText";
+            this.funcIdText.Size = new System.Drawing.Size(80, 13);
+            this.funcIdText.TabIndex = 10;
+            this.funcIdText.Text = "Functionality ID";
+            // 
+            // funcIdFeed
+            // 
+            this.funcIdFeed.Location = new System.Drawing.Point(109, 20);
+            this.funcIdFeed.Name = "funcIdFeed";
+            this.funcIdFeed.Size = new System.Drawing.Size(72, 20);
+            this.funcIdFeed.TabIndex = 11;
             // 
             // Viewer
             // 
@@ -278,8 +300,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView Taulukko;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox text_label3;
-        private System.Windows.Forms.TextBox text_label2;
+        private System.Windows.Forms.TextBox whenFeed;
+        private System.Windows.Forms.TextBox givenFeed;
         private System.Windows.Forms.TextBox text_label1;
         private System.Windows.Forms.Label When;
         private System.Windows.Forms.Label Given;
@@ -289,9 +311,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox thenFeed;
         private System.Windows.Forms.Label Then;
         private System.Windows.Forms.GroupBox userStory;
         private System.Windows.Forms.Button userStoryButton;
+        private System.Windows.Forms.Label funcIdText;
+        private System.Windows.Forms.TextBox funcIdFeed;
     }
 }

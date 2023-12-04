@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace TestIt
 {
-    class Project
+    public class Project
     {
         private string projectName;
         protected int projectID;

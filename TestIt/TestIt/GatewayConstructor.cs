@@ -15,6 +15,9 @@ namespace TestIt
           case DataObjectType.Functionality:
             this.gateway = new FunctionalityGateway();
             break;
+          case DataObjectType.UserStory:
+            this.gateway = new UserStoryGateway();
+            break;
           case DataObjectType.Test:
             this.gateway = new TestGateway();
             break;

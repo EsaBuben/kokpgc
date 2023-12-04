@@ -114,6 +114,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="TestGateway.cs" />
+    <Compile Include="UserStoryGateway.cs" />
     <Compile Include="Viewer.cs">
       <SubType>Form</SubType>
     </Compile>
