@@ -40,13 +40,22 @@ namespace TestIt
         this.comment = comment;
       }
 
+      public int getStatus(int status){
+        return (int)this.status;
+      }
+
+      public void setStatus(int status){
+        this.status = (ResultStatus)status;
+      }
+
+
       public int ID{
         get{return this.result_id;}
         set{this.result_id = value;}
       }
+
       public string Status{
-        get{return this.status_list[(int)this.status];}
-        set{this.status = value;}
+        get{return this.status_list[((int)this.status)];}
       }
 
       public string Comment{
