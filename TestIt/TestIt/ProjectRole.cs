@@ -27,14 +27,14 @@ namespace TestIt
 
         public int Ref_proj_id
         {
-            get { return this.Ref_proj_id; }
-            set { this.Ref_proj_id = value; }
+            get { return this.ref_proj_id; }
+            set { this.ref_proj_id = value; }
         }
 
         public int Ref_user_id
         {
-            get { return this.Ref_user_id; }
-            set { this.Ref_user_id = value; }
+            get { return this.ref_user_id; }
+            set { this.ref_user_id = value; }
         }
 
         public string Role
