@@ -1,0 +1,37 @@
+
+INSERT INTO project (Project_Name)
+VALUES ('Quantum Harmony Initiative'),
+       ('Nebula Nexus Exploration'),
+       ('Cerulean Dreamscape Odyssey');
+       
+INSERT INTO functionality (functionality_name, ref_project_id)
+VALUES ('User Authentication', (SELECT project_id FROM project WHERE project_name = 'Quantum Harmony Initiative')),
+       ('Task Tracking System', (SELECT project_id FROM project WHERE project_name = 'Nebula Nexus Exploration')),
+       ('Data Visualization Module',(SELECT project_id FROM project WHERE project_name = 'Nebula Nexus Exploration'));
+   
+INSERT INTO user (user_name)
+VALUES ('Alice'),
+       ('Bob'),
+       ('Charlie');
+       
+INSERT INTO test (name, priority, responsible_user_id, ref_functionality_id)
+VALUES ('Unit Test 1',10, (SELECT user_id FROM user WHERE user_name = 'Bob'), (SELECT functionality_id FROM functionality WHERE functionality_name = 'User Authentication')),
+       ('Integration Test A',4, (SELECT user_id FROM user WHERE user_name = 'Bob'), (SELECT functionality_id FROM functionality WHERE functionality_name = 'Data Visualization Module')),
+       ('Performance Test XYZ',1, (SELECT user_id FROM user WHERE user_name = 'Alice'), (SELECT functionality_id FROM functionality WHERE functionality_name = 'Data Visualization Module'));
+
+INSERT INTO result (comment, time, ref_user_id, ref_test_id, acceptance)
+VALUES ('Test passed successfully', '2023-12-01 14:30:00', (SELECT user_id FROM user WHERE user_name = 'Bob'), (SELECT test_id FROM test WHERE name = 'Unit Test 1'), 'accepted'),
+       ('Issues identified and reported', '2023-12-02 10:45:00', (SELECT user_id FROM user WHERE user_name = 'Charlie'), (SELECT test_id FROM test WHERE name = 'Integration Test A'), 'results reported'),
+       ('Currently under testing', '2023-12-03 09:15:00', (SELECT user_id FROM user WHERE user_name = 'Charlie'), (SELECT test_id FROM test WHERE name = 'Performance Test XYZ'), 'currently under testing');       
+
+
+INSERT INTO userstory (ref_functionality_id, given_text, when_text, then_text)
+VALUES ((SELECT functionality_id FROM functionality WHERE functionality_name = 'User Authentication'), 'As a registered user', 'when I log in', 'then I should see my personalized dashboard'),
+       ((SELECT functionality_id FROM functionality WHERE functionality_name = 'Task Tracking System'), 'As an admin', 'when I create a new project', 'then it should be added to the project list'),
+       ((SELECT functionality_id FROM functionality WHERE functionality_name = 'Data Visualization Module'), 'As a guest user', 'when I browse the homepage', 'then I should see featured content');
+
+
+INSERT INTO instruction (ref_test_id, info)
+VALUES ((SELECT test_id FROM test WHERE name = 'Unit Test 1'), 'Ensure all unit test cases cover the functionality thoroughly'),
+       ((SELECT test_id FROM test WHERE name = 'Integration Test A'), 'Integrate components A and B and verify their interaction'),
+       ((SELECT test_id FROM test WHERE name = 'Performance Test XYZ'), 'Run performance tests for scenario XYZ and analyze resource usage');
