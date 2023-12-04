@@ -86,8 +86,8 @@ namespace TestIt
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Controller.RemoveItem(Convert.ToInt32(textBox1.Text), DataObjectType.Project);
-            bindingSource.DataSource = Controller.Listaa(DataObjectType.Project);
+            Controller.RemoveItem(Convert.ToInt32(textBox1.Text), curry);
+            bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
             textBox1.Text = "";
         }
@@ -95,7 +95,7 @@ namespace TestIt
         {
             this.juttu = new UserStory(Convert.ToInt32(funcIdFeed.Text), givenFeed.Text, whenFeed.Text, thenFeed.Text);
             Controller.AddNew(this.juttu, DataObjectType.UserStory);
-            bindingSource.DataSource = Controller.Listaa(Convert.ToInt32(funcIdFeed.Text), curry);
+            bindingSource.DataSource = Controller.Listaa(valitutPalat, curry);
             Taulukko.DataSource = bindingSource;
             funcIdFeed.Text = "";
             givenFeed.Text = "";

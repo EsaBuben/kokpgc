@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TestIt
 {
@@ -56,7 +57,7 @@ namespace TestIt
             // select all functionality entities under a project.
             string query = "SELECT functionality_id, functionality_name, given_text, when_text, then_text " +
                            "FROM functionality " +
-                           "INNER JOIN userstory ON functionality_id = ref_functionality_id " +
+                           "LEFT OUTER JOIN userstory ON functionality_id = ref_functionality_id " +
                            "WHERE ref_project_id = '" + proge + "'";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
@@ -66,10 +67,20 @@ namespace TestIt
                 Functionality funky = new Functionality();
                 funky.FunctionalityName = reader.GetString(1);
                 funky.FunctionalityID = reader.GetInt32(0);
-                funky.Given = reader.GetString(2);
-                funky.When = reader.GetString(3);
-                funky.Then = reader.GetString(4);
                 funky.RefID = proge;
+                if (!reader.IsDBNull(reader.GetOrdinal("given_text")))
+                {
+                    funky.Given = reader.GetString(2);
+                    funky.When = reader.GetString(3);
+                    funky.Then = reader.GetString(4);
+                }
+                else
+                {
+                    funky.Given = "";
+                    funky.When = "";
+                    funky.Then = "";
+                }
+
                 funkies.Add(funky);
             }
             reader.Close();
