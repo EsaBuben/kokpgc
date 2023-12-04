@@ -29,9 +29,15 @@ namespace TestIt
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (curry > 0)
             curry--;
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
+            if (curry == DataObjectType.Functionality)
+            {
+                userStory.Visible = true;
+            }
+            else userStory.Visible = false;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,6 +45,11 @@ namespace TestIt
             curry++;
             valitutPalat = (int)Taulukko[1, e.RowIndex].Value;
             bindingSource.DataSource = Controller.Listaa(valitutPalat, curry);
+            if (curry == DataObjectType.Functionality)
+            {
+                userStory.Visible = true;
+            }
+            else userStory.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -71,24 +82,6 @@ namespace TestIt
                 default:
                     break;
             }
-            //if (DataObjectType.Project == curry)
-            //{
-            //    Project proge = new Project(text_label1.Text);
-            //    Controller.AddNew(proge, DataObjectType.Project);
-            //    MessageBox.Show("Project " + proge.ProjectName + " has been added");
-            //    text_label1.Text = "";
-            //    bindingSource.DataSource = Controller.Listaa(DataObjectType.Project);
-            //    Taulukko.DataSource = bindingSource;
-            //} else if (DataObjectType.Functionality == curry)
-            //{
-            //    Functionality funky = new Functionality(text_label1.Text);
-            //    Controller.AddNew(funky, DataObjectType.Functionality);
-            //    MessageBox.Show("Functionality " + funky.FunctionalityName + " has been added");
-            //    text_label1.Text = "";
-            //} else if (DataObjectType.Test == curry)
-            //{
-
-            //}
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -127,34 +120,9 @@ namespace TestIt
 
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
-
-
-
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    if (textBox1.Text == "" || textBox1.Text == " ")
-        //    {
-        //        MessageBox.Show("Please enter a project name.");
-        //        return;
-        //    }
-        //    Project proge = Controller.Kutsu(textBox1.Text);
-        //    listBox1.Items.Add(proge.ProjectID + ", " + proge.ProjectName);
-        //    textBox1.Text = "";
-        //    MessageBox.Show("Project " + proge.ProjectName + " has been added");
-
-        //}
-
-        //private void textBox1_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-
+        }
     }
 }
