@@ -8,7 +8,13 @@ using System.Data.SqlClient;
 
 namespace TestIt
 {
-    internal class User
+    public class User
     {
+        private int user_id;
+        private string user_name;
+        private string profile_name;
+
+
+
     }
 }
