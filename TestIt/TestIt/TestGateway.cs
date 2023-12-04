@@ -85,7 +85,35 @@ namespace TestIt
        }
         public List<Object> SelectAll(int d)
         {
-            return null;
+            string query = @"
+            SELECT *
+            FROM test
+            WHERE ref_functionality_id = @id";
+            MySqlCommand cmd = CallStack(query);
+            cmd.Parameters.AddWithValue("@id", id);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            List<Object> testlist = new List<Object>();
+            while (reader.Read())
+            {
+                Test test = new Test();
+                //Adding values
+                test.ID = reader.GetInt32(0);
+                test.ref_func_id = reader.GetInt32(1);
+                test.Priority = reader.GetInt32(3);
+                test.Name = reader.GetString(4);
+
+                if(!reader.IsDBNull(reader.GetOrdinal("responsible_user_id"))){
+                  test.Responsible_user_id = reader.GetInt32(2);
+                }
+                //else{
+                //reader.GetOrdinal("responsible_user_id");
+                //   test.Responsible_user_id = -1;
+                // }
+
+
+                testlist.Add(test);
+            }
+            return testlist;
         }
         public void Delete(int testId)
        {

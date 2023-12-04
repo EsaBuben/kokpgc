@@ -80,7 +80,7 @@ CREATE TABLE `projectrole` (
 
 CREATE TABLE `result` (
   `result_id` int(11) NOT NULL,
-  `acceptance` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `status` int(11) NOT NULL,
   `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
   `ref_user_id` int(11) NOT NULL,
   `time` datetime NOT NULL,
@@ -267,7 +267,7 @@ ALTER TABLE `test`
 -- Constraints for table `userstory`
 --
 ALTER TABLE `userstory`
-  ADD CONSTRAINT `userstory_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`);
+  ADD CONSTRAINT `userstory_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
