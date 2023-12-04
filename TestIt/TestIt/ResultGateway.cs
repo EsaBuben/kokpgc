@@ -8,12 +8,12 @@ using System.Data.SqlClient;
 
 namespace TestIt
 {
-    class ResultGateway:AbstractGateway
+    class ResultGateway:AbstractGateway, IGateway
     {
       public ResultGateway():base(){}
 
-      public void Insert(Result result){
-
+      public void Insert(Object obj){
+        Result result = (Result)obj;
         result.Time = DateTime.Now;
         string query = @"
         INSERT INTO
