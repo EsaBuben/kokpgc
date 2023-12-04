@@ -60,12 +60,6 @@ CREATE TABLE `project` (
 -- Dumping data for table `project`
 --
 
-INSERT INTO `project` (`Project_ID`, `Project_Name`) VALUES
-(9, 'ainii tää on tyhjä'),
-(10, 'Sillisalaatti'),
-(11, 'Sillisalaatti'),
-(12, 'Sillisalaatti');
-
 -- --------------------------------------------------------
 
 --
@@ -202,13 +196,13 @@ ALTER TABLE `userstory`
 -- AUTO_INCREMENT for table `functionality`
 --
 ALTER TABLE `functionality`
-  MODIFY `functionality_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `functionality_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `Project_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `Project_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -225,6 +219,15 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+ALTER TABLE `result`
+  MODIFY `result_id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `userstory`
+  MODIFY `userstory_id` int(11) NOT NULL AUTO_INCREMENT;
+
+  ALTER TABLE `instruction`
+    MODIFY `instruction_id` int(11) NOT NULL AUTO_INCREMENT;
+
 
 --
 -- Constraints for table `functionality`
@@ -257,8 +260,8 @@ ALTER TABLE `result`
 --
 ALTER TABLE `test`
   ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`),
-  ADD CONSTRAINT `test_ibfk_2` FOREIGN KEY (`responsible_user_id`) REFERENCES `user` (`user_id`),
-  ADD CONSTRAINT `test_ibfk_3` FOREIGN KEY (`test_id`) REFERENCES `result` (`ref_test_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `test_ibfk_2` FOREIGN KEY (`responsible_user_id`) REFERENCES `user` (`user_id`);
+
 
 --
 -- Constraints for table `userstory`
