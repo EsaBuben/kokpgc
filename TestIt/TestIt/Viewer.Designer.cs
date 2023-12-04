@@ -32,12 +32,12 @@
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.text_label1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.whenFeed = new System.Windows.Forms.TextBox();
             this.givenFeed = new System.Windows.Forms.TextBox();
-            this.text_label1 = new System.Windows.Forms.TextBox();
             this.When = new System.Windows.Forms.Label();
             this.Given = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -45,9 +45,9 @@
             this.Then = new System.Windows.Forms.Label();
             this.thenFeed = new System.Windows.Forms.TextBox();
             this.userStory = new System.Windows.Forms.GroupBox();
-            this.userStoryButton = new System.Windows.Forms.Button();
-            this.funcIdText = new System.Windows.Forms.Label();
             this.funcIdFeed = new System.Windows.Forms.TextBox();
+            this.funcIdText = new System.Windows.Forms.Label();
+            this.userStoryButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -74,12 +74,12 @@
             // 
             this.Taulukko.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Taulukko.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Taulukko.Location = new System.Drawing.Point(275, 98);
+            this.Taulukko.Location = new System.Drawing.Point(244, 98);
             this.Taulukko.Margin = new System.Windows.Forms.Padding(2);
             this.Taulukko.Name = "Taulukko";
             this.Taulukko.RowHeadersWidth = 62;
             this.Taulukko.RowTemplate.Height = 28;
-            this.Taulukko.Size = new System.Drawing.Size(589, 190);
+            this.Taulukko.Size = new System.Drawing.Size(895, 190);
             this.Taulukko.TabIndex = 1;
             this.Taulukko.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -108,6 +108,25 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // text_label1
+            // 
+            this.text_label1.Location = new System.Drawing.Point(75, 23);
+            this.text_label1.Margin = new System.Windows.Forms.Padding(2);
+            this.text_label1.Name = "text_label1";
+            this.text_label1.Size = new System.Drawing.Size(100, 20);
+            this.text_label1.TabIndex = 3;
+            this.text_label1.TextChanged += new System.EventHandler(this.text_label1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 26);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nimi:";
+            // 
             // whenFeed
             // 
             this.whenFeed.Location = new System.Drawing.Point(81, 84);
@@ -125,15 +144,6 @@
             this.givenFeed.Size = new System.Drawing.Size(100, 20);
             this.givenFeed.TabIndex = 4;
             this.givenFeed.TextChanged += new System.EventHandler(this.text_label2_TextChanged);
-            // 
-            // text_label1
-            // 
-            this.text_label1.Location = new System.Drawing.Point(75, 23);
-            this.text_label1.Margin = new System.Windows.Forms.Padding(2);
-            this.text_label1.Name = "text_label1";
-            this.text_label1.Size = new System.Drawing.Size(100, 20);
-            this.text_label1.TabIndex = 3;
-            this.text_label1.TextChanged += new System.EventHandler(this.text_label1_TextChanged);
             // 
             // When
             // 
@@ -155,16 +165,6 @@
             this.Given.TabIndex = 1;
             this.Given.Text = "Given";
             this.Given.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nimi:";
             // 
             // groupBox2
             // 
@@ -245,15 +245,12 @@
             this.userStory.Visible = false;
             this.userStory.Enter += new System.EventHandler(this.userStory_Enter);
             // 
-            // userStoryButton
+            // funcIdFeed
             // 
-            this.userStoryButton.Location = new System.Drawing.Point(22, 145);
-            this.userStoryButton.Name = "userStoryButton";
-            this.userStoryButton.Size = new System.Drawing.Size(106, 23);
-            this.userStoryButton.TabIndex = 9;
-            this.userStoryButton.Text = "Add UserStory";
-            this.userStoryButton.UseVisualStyleBackColor = true;
-            this.userStoryButton.Click += new System.EventHandler(this.userStoryButton_Click);
+            this.funcIdFeed.Location = new System.Drawing.Point(109, 20);
+            this.funcIdFeed.Name = "funcIdFeed";
+            this.funcIdFeed.Size = new System.Drawing.Size(72, 20);
+            this.funcIdFeed.TabIndex = 11;
             // 
             // funcIdText
             // 
@@ -264,12 +261,15 @@
             this.funcIdText.TabIndex = 10;
             this.funcIdText.Text = "Functionality ID";
             // 
-            // funcIdFeed
+            // userStoryButton
             // 
-            this.funcIdFeed.Location = new System.Drawing.Point(109, 20);
-            this.funcIdFeed.Name = "funcIdFeed";
-            this.funcIdFeed.Size = new System.Drawing.Size(72, 20);
-            this.funcIdFeed.TabIndex = 11;
+            this.userStoryButton.Location = new System.Drawing.Point(22, 145);
+            this.userStoryButton.Name = "userStoryButton";
+            this.userStoryButton.Size = new System.Drawing.Size(106, 23);
+            this.userStoryButton.TabIndex = 9;
+            this.userStoryButton.Text = "Add UserStory";
+            this.userStoryButton.UseVisualStyleBackColor = true;
+            this.userStoryButton.Click += new System.EventHandler(this.userStoryButton_Click);
             // 
             // Viewer
             // 

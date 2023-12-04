@@ -113,6 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="ResultGateway.cs" />
     <Compile Include="TestGateway.cs" />
     <Compile Include="UserStoryGateway.cs" />
     <Compile Include="Viewer.cs">
