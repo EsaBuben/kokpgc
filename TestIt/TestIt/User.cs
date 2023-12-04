@@ -14,7 +14,30 @@ namespace TestIt
         private string user_name;
         private string profile_name;
 
+        
 
+        public User(string user_name)
+        {
+            this.user_name = user_name;
+        }
+
+        public User(string user_name, int user_id)
+        {
+            this.user_name = user_name;
+            this.user_id = user_id;
+        }
+
+        public int UserID
+        { 
+            get { return user_id; }
+            set { this.user_id = value;}
+        }
+
+        public string UserName
+        {
+            get { return user_name; } 
+            set { this.user_name = value;}
+        }
 
     }
 }

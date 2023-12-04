@@ -83,7 +83,7 @@ namespace TestIt
            }
            return testlist;
        }
-        public List<Object> SelectAll(int d)
+        public List<Object> SelectAll(int id)
         {
             string query = @"
             SELECT *
