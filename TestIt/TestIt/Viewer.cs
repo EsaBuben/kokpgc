@@ -116,8 +116,9 @@ namespace TestIt
         }
         private void button3_Click(object sender, EventArgs e)
         {
+            
             Controller.RemoveItem(Convert.ToInt32(textBox1.Text), curry);
-            bindingSource.DataSource = Controller.Listaa(curry);
+            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
             Taulukko.DataSource = bindingSource;
             textBox1.Text = "";
         }
