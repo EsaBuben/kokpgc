@@ -49,16 +49,32 @@ namespace TestIt
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            curry++;
-            valitutPalat[(int)curry] = (int)Taulukko[1, e.RowIndex].Value;
-            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
-            otsikko.Text = curry.ToString();
-            if (curry == DataObjectType.Functionality)
+            if (e.RowIndex < 0)
             {
-                userStory.Visible = true;
+                MessageBox.Show("Älä vittu klikkaa siitä");
             }
-            else userStory.Visible = false;
-
+            else
+            {
+                curry++;
+                valitutPalat[(int)curry] = (int)Taulukko[1, e.RowIndex].Value;
+                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                otsikko.Text = curry.ToString();
+                userStory.Visible = false;
+                if (curry == DataObjectType.Functionality)
+                {
+                    userStory.Visible = true;
+                }
+                else if (curry == DataObjectType.Test)
+                {
+                    priorityFeed.Visible = true;
+                    priorityLabel.Visible = true;
+                }
+                else
+                {
+                    priorityFeed.Visible = false;
+                    priorityLabel.Visible = false;
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -82,7 +98,13 @@ namespace TestIt
                     Taulukko.DataSource = bindingSource;
                     break;
                 case DataObjectType.Test:
-
+                    this.juttu = new Test(text_label1.Text, Convert.ToInt32(priorityFeed.Text), valitutPalat[(int)curry]);
+                    Controller.AddNew(this.juttu, DataObjectType.Test);
+                    MessageBox.Show("Test " + ((Test)this.juttu).Name + " has been added");
+                    text_label1.Text = "";
+                    priorityFeed.Text = "";
+                    bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                    Taulukko.DataSource = bindingSource;
                     break;
                 case DataObjectType.Result:
                     break;
@@ -152,6 +174,11 @@ namespace TestIt
         }
 
         private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -49,6 +49,8 @@
             this.funcIdText = new System.Windows.Forms.Label();
             this.userStoryButton = new System.Windows.Forms.Button();
             this.otsikko = new System.Windows.Forms.Label();
+            this.priorityFeed = new System.Windows.Forms.TextBox();
+            this.priorityLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -61,13 +63,14 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
             this.button1.FlatAppearance.BorderSize = 10;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button1.Location = new System.Drawing.Point(32, 38);
+            this.button1.Location = new System.Drawing.Point(32, 21);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 29);
+            this.button1.Size = new System.Drawing.Size(181, 56);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Home";
+            this.button1.Text = "Sometimes you want to go back";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -86,6 +89,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.priorityLabel);
+            this.groupBox1.Controls.Add(this.priorityFeed);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.text_label1);
             this.groupBox1.Controls.Add(this.label1);
@@ -93,14 +98,14 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(207, 98);
+            this.groupBox1.Size = new System.Drawing.Size(207, 161);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(22, 57);
+            this.button2.Location = new System.Drawing.Point(22, 123);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 24);
@@ -172,7 +177,7 @@
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(32, 204);
+            this.groupBox2.Location = new System.Drawing.Point(32, 264);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(207, 84);
             this.groupBox2.TabIndex = 3;
@@ -237,7 +242,7 @@
             this.userStory.Controls.Add(this.Given);
             this.userStory.Controls.Add(this.Then);
             this.userStory.Controls.Add(this.whenFeed);
-            this.userStory.Location = new System.Drawing.Point(32, 294);
+            this.userStory.Location = new System.Drawing.Point(32, 354);
             this.userStory.Name = "userStory";
             this.userStory.Size = new System.Drawing.Size(207, 177);
             this.userStory.TabIndex = 9;
@@ -283,10 +288,30 @@
             this.otsikko.Text = "Project";
             this.otsikko.Click += new System.EventHandler(this.label2_Click_1);
             // 
+            // priorityFeed
+            // 
+            this.priorityFeed.Location = new System.Drawing.Point(75, 61);
+            this.priorityFeed.Name = "priorityFeed";
+            this.priorityFeed.Size = new System.Drawing.Size(100, 20);
+            this.priorityFeed.TabIndex = 7;
+            this.priorityFeed.Visible = false;
+            this.priorityFeed.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // priorityLabel
+            // 
+            this.priorityLabel.AutoSize = true;
+            this.priorityLabel.Location = new System.Drawing.Point(22, 61);
+            this.priorityLabel.Name = "priorityLabel";
+            this.priorityLabel.Size = new System.Drawing.Size(38, 13);
+            this.priorityLabel.TabIndex = 8;
+            this.priorityLabel.Text = "Priority";
+            this.priorityLabel.Visible = false;
+            // 
             // Viewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1150, 891);
             this.Controls.Add(this.otsikko);
             this.Controls.Add(this.userStory);
@@ -332,5 +357,7 @@
         private System.Windows.Forms.Label funcIdText;
         private System.Windows.Forms.TextBox funcIdFeed;
         private System.Windows.Forms.Label otsikko;
+        private System.Windows.Forms.TextBox priorityFeed;
+        private System.Windows.Forms.Label priorityLabel;
     }
 }
