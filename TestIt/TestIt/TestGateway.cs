@@ -125,6 +125,35 @@ namespace TestIt
            cmd.Parameters.AddWithValue("@testid", testId);
            cmd.ExecuteNonQuery();
        }
+        public Object Find(string name)
+        {
+            string query = @"
+            SELECT *
+            FROM test
+            WHERE name = @name";
+            MySqlCommand cmd = CallStack(query);
+            cmd.Parameters.AddWithValue("@name", name);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            Test test = new Test();
+            while (reader.Read())
+            {
+                test.ID = reader.GetInt32(0);
+                test.ref_func_id = reader.GetInt32(1);
+                test.Priority = reader.GetInt32(3);
+                test.Name = reader.GetString(4);
+
+                if (!reader.IsDBNull(reader.GetOrdinal("responsible_user_id")))
+                {
+                  test.Responsible_user_id = reader.GetInt32(2);
+                }
+                //else{
+                //reader.GetOrdinal("responsible_user_id");
+                //   test.Responsible_user_id = -1;
+                // }
+            }
+            reader.Close();
+            return test;
+        }
 
 
 

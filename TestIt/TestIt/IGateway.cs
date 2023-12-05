@@ -12,5 +12,6 @@ namespace TestIt
         List<Object> SelectAll();
         List<Object> SelectAll(int id);
         void Delete(int id);
+        Object Find(string t);
     }
 }
