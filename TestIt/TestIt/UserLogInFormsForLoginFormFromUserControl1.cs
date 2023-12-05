@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TestIt
 {
-    public partial class UserControl1 : UserControl
+    public partial class UserLogInFormsForLoginFormFromUserControl1 : Form
     {
-        public UserControl1()
+        public UserLogInFormsForLoginFormFromUserControl1()
         {
             InitializeComponent();
         }
