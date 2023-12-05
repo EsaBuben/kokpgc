@@ -80,11 +80,11 @@ CREATE TABLE `projectrole` (
 
 CREATE TABLE `result` (
   `result_id` int(11) NOT NULL,
+  `ref_user_id` int(11) NOT NULL,
+  `ref_test_id` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `comment` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
-  `ref_user_id` int(11) NOT NULL,
-  `time` datetime NOT NULL,
-  `ref_test_id` int(11) NOT NULL
+  `time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------

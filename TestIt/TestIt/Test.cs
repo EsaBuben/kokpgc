@@ -38,32 +38,37 @@ namespace TestIt
         this.priority = priority;
         this.refFunctionalityID = refFunctionalityID;
       }
-
-      public int ID{
+        public string Name
+        {
+            get { return this.name; }
+            set { this.name = value; }
+        }
+        public int ID
+        {
         get{return this.testID;}
         set{this.testID = value;}
-      }
-
-      public int ref_func_id{
+        }
+        public int Priority
+        {
+            get { return this.priority; }
+            set { this.priority = value; }
+        }
+        public int Responsible_user_id
+        {
+            get { return this.resp_user_id; }
+            set { this.resp_user_id = value; }
+        }
+        public int ref_func_id{
         get{return this.refFunctionalityID;}
         set{this.refFunctionalityID = value;}
       }
 
 
-      public string Name{
-        get{return this.name;}
-        set{this.name = value;}
-      }
 
-      public int Priority{
-        get{return this.priority;}
-        set{this.priority = value;}
-      }
 
-      public int Responsible_user_id{
-        get{return this.resp_user_id;}
-        set{this.resp_user_id = value;}
-      }
+
+
+      
 
       public override string ToString(){
         return $"{this.testID}: {this.name}";

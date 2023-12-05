@@ -15,14 +15,14 @@ namespace TestIt
     public partial class Viewer : Form
     {
         private Object juttu = new Object();
-        int valitutPalat;
+        int[] valitutPalat;
         BindingSource bindingSource = new BindingSource();
         DataObjectType curry = DataObjectType.Project;
-
 
         public Viewer()
         {
             InitializeComponent();
+            valitutPalat = new int[7];
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
         }
@@ -31,26 +31,50 @@ namespace TestIt
         {
             if (curry > 0)
             curry--;
-            bindingSource.DataSource = Controller.Listaa(curry);
-            Taulukko.DataSource = bindingSource;
             if (curry == DataObjectType.Functionality)
             {
+                otsikko.Text = curry.ToString();
+                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                Taulukko.DataSource = bindingSource;
                 userStory.Visible = true;
             }
-            else userStory.Visible = false;
+            else
+            {
+                otsikko.Text = curry.ToString();
+                userStory.Visible = false;
+                bindingSource.DataSource = Controller.Listaa(curry);
+                Taulukko.DataSource = bindingSource;
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            curry++;
-            valitutPalat = (int)Taulukko[1, e.RowIndex].Value;
-            bindingSource.DataSource = Controller.Listaa(valitutPalat, curry);
-            if (curry == DataObjectType.Functionality)
+            if (e.RowIndex < 0)
             {
-                userStory.Visible = true;
+                MessageBox.Show("Älä vittu klikkaa siitä");
             }
-            else userStory.Visible = false;
-
+            else
+            {
+                curry++;
+                valitutPalat[(int)curry] = (int)Taulukko[1, e.RowIndex].Value;
+                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                otsikko.Text = curry.ToString();
+                userStory.Visible = false;
+                if (curry == DataObjectType.Functionality)
+                {
+                    userStory.Visible = true;
+                }
+                else if (curry == DataObjectType.Test)
+                {
+                    priorityFeed.Visible = true;
+                    priorityLabel.Visible = true;
+                }
+                else
+                {
+                    priorityFeed.Visible = false;
+                    priorityLabel.Visible = false;
+                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -66,15 +90,21 @@ namespace TestIt
                     Taulukko.DataSource = bindingSource;
                     break;
                 case DataObjectType.Functionality:
-                    this.juttu = new Functionality(text_label1.Text, valitutPalat);
+                    this.juttu = new Functionality(text_label1.Text, valitutPalat[(int)curry]);
                     Controller.AddNew(this.juttu, DataObjectType.Functionality);
                     MessageBox.Show("Functionality " + ((Functionality)this.juttu).FunctionalityName + " has been added");
                     text_label1.Text = "";
-                    bindingSource.DataSource = Controller.Listaa(valitutPalat, curry);
+                    bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                     Taulukko.DataSource = bindingSource;
                     break;
                 case DataObjectType.Test:
-
+                    this.juttu = new Test(text_label1.Text, Convert.ToInt32(priorityFeed.Text), valitutPalat[(int)curry]);
+                    Controller.AddNew(this.juttu, DataObjectType.Test);
+                    MessageBox.Show("Test " + ((Test)this.juttu).Name + " has been added");
+                    text_label1.Text = "";
+                    priorityFeed.Text = "";
+                    bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                    Taulukko.DataSource = bindingSource;
                     break;
                 case DataObjectType.Result:
                     break;
@@ -95,7 +125,7 @@ namespace TestIt
         {
             this.juttu = new UserStory(Convert.ToInt32(funcIdFeed.Text), givenFeed.Text, whenFeed.Text, thenFeed.Text);
             Controller.AddNew(this.juttu, DataObjectType.UserStory);
-            bindingSource.DataSource = Controller.Listaa(valitutPalat, curry);
+            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
             Taulukko.DataSource = bindingSource;
             funcIdFeed.Text = "";
             givenFeed.Text = "";
@@ -139,6 +169,16 @@ namespace TestIt
         }
 
         private void userStory_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

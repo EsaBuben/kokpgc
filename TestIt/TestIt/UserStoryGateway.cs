@@ -28,21 +28,29 @@ namespace TestIt
             commandDatabase.ExecuteNonQuery();
         }
 
-        //public Project Find(string projectName)
-        //{
-        //    // find project entity.
-        //    string query = "SELECT * FROM project WHERE Project_Name = '" + projectName + "'";
-        //    MySqlCommand commandDatabase = CallStack(query);
-        //    MySqlDataReader reader = commandDatabase.ExecuteReader();
-        //    Project proge = new Project(projectName);
-        //    while (reader.Read())
-        //    {
-        //        proge.ProjectName = reader.GetString(1);
-        //    }
-        //    reader.Close();
-        //    return proge;
+        public Object Find(string t)
+        {
+            // find project entity.
+            int i = Convert.ToInt32(t);
+            string query = "SELECT * FROM userstory WHERE ref_functionality_id = '" + i + "'";
+            MySqlCommand commandDatabase = CallStack(query);
+            MySqlDataReader reader = commandDatabase.ExecuteReader();
+            UserStory story = new UserStory();
+            if (!reader.HasRows)
+            {
+                return null;
+            } else
+            while (reader.Read())
+            {
+                story.FunctionalityID = reader.GetInt32(0);
+                story.Given = reader.GetString(1);
+                story.When = reader.GetString(2);
+                story.Then = reader.GetString(3);
+            }
+            reader.Close();
+            return story;
 
-        //}
+        }
 
         public List<Object> SelectAll()
         {

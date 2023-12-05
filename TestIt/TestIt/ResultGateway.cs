@@ -17,32 +17,35 @@ namespace TestIt
         result.Time = DateTime.Now;
         string query = @"
         INSERT INTO
-        result (ref_user_id, ref_test_id, comment, time)
+        result (ref_user_id, ref_test_id, status, comment, time)
         VALUES
-        (@ref_user_id, @ref_test_id, @comment, @time)
+        (@ref_user_id, @ref_test_id, @status, @comment, @time)
         ";
 
         MySqlCommand cmd = CallStack(query);
 
         cmd.Parameters.AddWithValue("@ref_user_id", result.Ref_user_id);
         cmd.Parameters.AddWithValue("@ref_test_id", result.Ref_test_id);
+        cmd.Parameters.AddWithValue("@status", result.getStatus());
         cmd.Parameters.AddWithValue("@comment", result.Comment);
         cmd.Parameters.AddWithValue("@time", result.Time);
 
         cmd.ExecuteNonQuery();
 
-        result.ID = GetIdByDate(result.Time);
+        result.ID = GetId(result);
       }
 
-      public int GetIdByDate(DateTime date){
+      private int GetId(Result result){
         int id = -1;
 
         string query = @"
         SELECT result_id FROM result
-        WHERE time = '@time'";
+        WHERE ref_user_id = '@ref_user_id' AND ref_test_id = '@ref_test_id' AND status = @status ";
 
         MySqlCommand cmd = CallStack(query);
-        cmd.Parameters.AddWithValue("@time", date);
+        cmd.Parameters.AddWithValue("@ref_user_id", result.Ref_user_id);
+        cmd.Parameters.AddWithValue("@ref_test_id", result.Ref_test_id);
+        cmd.Parameters.AddWithValue("@status", result.getStatus());
 
         MySqlDataReader reader = cmd.ExecuteReader();
         if (reader.HasRows)
@@ -69,7 +72,7 @@ namespace TestIt
                result.ID = reader.GetInt32(0);
                result.Ref_user_id = reader.GetInt32(1);
                result.Ref_test_id = reader.GetInt32(2);
-               //result.Acceptance = reader.GetString(3);
+               result.setStatus(reader.GetInt32(3));
                result.Comment = reader.GetString(4);
                result.Time = reader.GetDateTime(5);
 
@@ -96,7 +99,7 @@ namespace TestIt
                 result.ID = reader.GetInt32(0);
                 result.Ref_user_id = reader.GetInt32(1);
                 result.Ref_test_id = reader.GetInt32(2);
-                //result.Acceptance = reader.GetString(3);
+                result.setStatus(reader.GetInt32(3));
                 result.Comment = reader.GetString(4);
                 result.Time = reader.GetDateTime(5);
 
@@ -115,8 +118,13 @@ namespace TestIt
            cmd.Parameters.AddWithValue("@id", id);
            cmd.ExecuteNonQuery();
        }
+        public Object Find(string t)
+        {
+            return null;
+        }
 
     }
+    
 
 
 }
