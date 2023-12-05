@@ -25,7 +25,15 @@ namespace TestIt
         public static Object AddNew(Object obj, DataObjectType type)
         {
             GatewayConstructor gateway = new GatewayConstructor(type);
-
+            if (type == DataObjectType.UserStory)
+            {
+                string a = Convert.ToString(((UserStory)obj).FunctionalityID);
+                if (gateway.Find(a) != null)
+                {
+                   return null;
+                } else gateway.Insert(obj);
+                  return obj;
+            }
             gateway.Insert(obj);
 
             return obj;

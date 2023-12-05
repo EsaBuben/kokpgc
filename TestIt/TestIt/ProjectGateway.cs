@@ -32,7 +32,7 @@ namespace TestIt
             reader.Close();
         }
 
-        public Project Find(string projectName)
+        public Object Find(string projectName)
         {
             // find project entity.
             string query = "SELECT * FROM project WHERE Project_Name = '" + projectName + "'";

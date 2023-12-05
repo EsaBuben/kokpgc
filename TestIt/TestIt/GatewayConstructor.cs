@@ -47,5 +47,9 @@ namespace TestIt
         {
             this.gateway.Delete(id);
         }
+        public Object Find(string t)
+        {
+            return this.gateway.Find(t);
+        }
     }
 }

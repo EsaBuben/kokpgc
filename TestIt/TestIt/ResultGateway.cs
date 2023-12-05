@@ -115,8 +115,13 @@ namespace TestIt
            cmd.Parameters.AddWithValue("@id", id);
            cmd.ExecuteNonQuery();
        }
+        public Object Find(string t)
+        {
+            return null;
+        }
 
     }
+    
 
 
 }

@@ -32,7 +32,7 @@ namespace TestIt
             reader.Close();
         }
         
-        public Functionality Find(string functionalityName)
+        public Object Find(string functionalityName)
         {
             // find project entity.
             string query = "SELECT * FROM functionality " +
