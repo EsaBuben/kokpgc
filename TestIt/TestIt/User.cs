@@ -15,7 +15,10 @@ namespace TestIt
         private string profile_name;
 
         
+        public User() 
+        {
 
+        }
         public User(string user_name)
         {
             this.user_name = user_name;

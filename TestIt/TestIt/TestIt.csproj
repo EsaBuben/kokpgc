@@ -115,6 +115,7 @@
     </Compile>
     <Compile Include="ResultGateway.cs" />
     <Compile Include="TestGateway.cs" />
+    <Compile Include="UserGateway.cs" />
     <Compile Include="UserStoryGateway.cs" />
     <Compile Include="Viewer.cs">
       <SubType>Form</SubType>
