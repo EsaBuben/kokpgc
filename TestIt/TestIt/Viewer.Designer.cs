@@ -48,6 +48,7 @@
             this.funcIdFeed = new System.Windows.Forms.TextBox();
             this.funcIdText = new System.Windows.Forms.Label();
             this.userStoryButton = new System.Windows.Forms.Button();
+            this.otsikko = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -271,11 +272,23 @@
             this.userStoryButton.UseVisualStyleBackColor = true;
             this.userStoryButton.Click += new System.EventHandler(this.userStoryButton_Click);
             // 
+            // otsikko
+            // 
+            this.otsikko.AutoSize = true;
+            this.otsikko.Font = new System.Drawing.Font("Bradley Hand ITC", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otsikko.Location = new System.Drawing.Point(238, 52);
+            this.otsikko.Name = "otsikko";
+            this.otsikko.Size = new System.Drawing.Size(95, 34);
+            this.otsikko.TabIndex = 10;
+            this.otsikko.Text = "Project";
+            this.otsikko.Click += new System.EventHandler(this.label2_Click_1);
+            // 
             // Viewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 891);
+            this.Controls.Add(this.otsikko);
             this.Controls.Add(this.userStory);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -292,6 +305,7 @@
             this.userStory.ResumeLayout(false);
             this.userStory.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -317,5 +331,6 @@
         private System.Windows.Forms.Button userStoryButton;
         private System.Windows.Forms.Label funcIdText;
         private System.Windows.Forms.TextBox funcIdFeed;
+        private System.Windows.Forms.Label otsikko;
     }
 }
