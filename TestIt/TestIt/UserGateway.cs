@@ -18,9 +18,12 @@ namespace TestIt
         public void Insert(Object obj)
         {
             User user = (User)obj;
-            string query = "INSERT INTO user (user_name, profile_name)" +
-                           " VALUES (@user_name, @profile_name)";
+            string query = "INSERT INTO user (user_name)" +
+                           " VALUES ('" + user.UserName + "')";
             MySqlCommand commandDatabase = CallStack(query);
+            commandDatabase.ExecuteNonQuery();
+            query = "SELECT user_id FROM user WHERE user_name = '" + user.UserName + "')";
+            commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
             while (reader.Read())
             {
@@ -31,8 +34,8 @@ namespace TestIt
 
         public Object Find(string username)
         {
-            string query = "SELECT * FROM user WHERE" +
-                           "WHERE functionality_name = '" + username + "'";
+            string query = "SELECT * FROM user" +
+                           "WHERE user_name = '" + username + "'";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
             User usr = new User();
