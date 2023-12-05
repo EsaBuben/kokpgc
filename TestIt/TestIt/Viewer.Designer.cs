@@ -31,6 +31,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.priorityLabel = new System.Windows.Forms.Label();
+            this.priorityFeed = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.text_label1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,12 +51,16 @@
             this.funcIdText = new System.Windows.Forms.Label();
             this.userStoryButton = new System.Windows.Forms.Button();
             this.otsikko = new System.Windows.Forms.Label();
-            this.priorityFeed = new System.Windows.Forms.TextBox();
-            this.priorityLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.userStory.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -102,6 +108,25 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add";
+            // 
+            // priorityLabel
+            // 
+            this.priorityLabel.AutoSize = true;
+            this.priorityLabel.Location = new System.Drawing.Point(22, 61);
+            this.priorityLabel.Name = "priorityLabel";
+            this.priorityLabel.Size = new System.Drawing.Size(38, 13);
+            this.priorityLabel.TabIndex = 8;
+            this.priorityLabel.Text = "Priority";
+            this.priorityLabel.Visible = false;
+            // 
+            // priorityFeed
+            // 
+            this.priorityFeed.Location = new System.Drawing.Point(75, 61);
+            this.priorityFeed.Name = "priorityFeed";
+            this.priorityFeed.Size = new System.Drawing.Size(100, 20);
+            this.priorityFeed.TabIndex = 7;
+            this.priorityFeed.Visible = false;
+            this.priorityFeed.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button2
             // 
@@ -288,24 +313,54 @@
             this.otsikko.Text = "Project";
             this.otsikko.Click += new System.EventHandler(this.label2_Click_1);
             // 
-            // priorityFeed
+            // label2
             // 
-            this.priorityFeed.Location = new System.Drawing.Point(75, 61);
-            this.priorityFeed.Name = "priorityFeed";
-            this.priorityFeed.Size = new System.Drawing.Size(100, 20);
-            this.priorityFeed.TabIndex = 7;
-            this.priorityFeed.Visible = false;
-            this.priorityFeed.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Käyttäjä:";
             // 
-            // priorityLabel
+            // comboBox1
             // 
-            this.priorityLabel.AutoSize = true;
-            this.priorityLabel.Location = new System.Drawing.Point(22, 61);
-            this.priorityLabel.Name = "priorityLabel";
-            this.priorityLabel.Size = new System.Drawing.Size(38, 13);
-            this.priorityLabel.TabIndex = 8;
-            this.priorityLabel.Text = "Priority";
-            this.priorityLabel.Visible = false;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(64, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 12;
+            this.comboBox1.Text = "- Valitse -";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(51, 57);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Lisää";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(132, 57);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Poista";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Location = new System.Drawing.Point(922, 5);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(216, 88);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "groupBox3";
             // 
             // Viewer
             // 
@@ -313,6 +368,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1150, 891);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.otsikko);
             this.Controls.Add(this.userStory);
             this.Controls.Add(this.groupBox2);
@@ -329,6 +385,8 @@
             this.groupBox2.PerformLayout();
             this.userStory.ResumeLayout(false);
             this.userStory.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +417,10 @@
         private System.Windows.Forms.Label otsikko;
         private System.Windows.Forms.TextBox priorityFeed;
         private System.Windows.Forms.Label priorityLabel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

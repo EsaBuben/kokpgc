@@ -120,7 +120,7 @@ namespace TestIt
            // delete project entity.
            string query = @"
            DELETE FROM test
-           WHERE test_id = '@testid'";
+           WHERE test_id = @testid";
            MySqlCommand cmd = CallStack(query);
            cmd.Parameters.AddWithValue("@testid", testId);
            cmd.ExecuteNonQuery();
