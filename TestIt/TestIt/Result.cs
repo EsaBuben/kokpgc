@@ -40,7 +40,7 @@ namespace TestIt
         this.comment = comment;
       }
 
-      public int getStatus(int status){
+      public int getStatus(){
         return (int)this.status;
       }
 
@@ -56,6 +56,7 @@ namespace TestIt
 
       public string Status{
         get{return this.status_list[((int)this.status)];}
+
       }
 
       public string Comment{
@@ -69,13 +70,13 @@ namespace TestIt
       }
 
       public int Ref_test_id{
-        get{return this.Ref_test_id;}
-        set{this.Ref_test_id = value;}
+        get{return this.ref_test_id;}
+        set{this.ref_test_id = value;}
       }
 
       public int Ref_user_id{
-        get{return this.Ref_user_id;}
-        set{this.Ref_user_id = value;}
+        get{return this.ref_user_id;}
+        set{this.ref_user_id = value;}
       }
     }
 }

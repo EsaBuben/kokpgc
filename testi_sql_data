@@ -3,26 +3,26 @@ INSERT INTO project (Project_Name)
 VALUES ('Quantum Harmony Initiative'),
        ('Nebula Nexus Exploration'),
        ('Cerulean Dreamscape Odyssey');
-       
+
 INSERT INTO functionality (functionality_name, ref_project_id)
 VALUES ('User Authentication', (SELECT project_id FROM project WHERE project_name = 'Quantum Harmony Initiative')),
        ('Task Tracking System', (SELECT project_id FROM project WHERE project_name = 'Nebula Nexus Exploration')),
        ('Data Visualization Module',(SELECT project_id FROM project WHERE project_name = 'Nebula Nexus Exploration'));
-   
+
 INSERT INTO user (user_name)
 VALUES ('Alice'),
        ('Bob'),
        ('Charlie');
-       
+
 INSERT INTO test (name, priority, responsible_user_id, ref_functionality_id)
 VALUES ('Unit Test 1',10, (SELECT user_id FROM user WHERE user_name = 'Bob'), (SELECT functionality_id FROM functionality WHERE functionality_name = 'User Authentication')),
        ('Integration Test A',4, (SELECT user_id FROM user WHERE user_name = 'Bob'), (SELECT functionality_id FROM functionality WHERE functionality_name = 'Data Visualization Module')),
        ('Performance Test XYZ',1, (SELECT user_id FROM user WHERE user_name = 'Alice'), (SELECT functionality_id FROM functionality WHERE functionality_name = 'Data Visualization Module'));
 
-INSERT INTO result (comment, time, ref_user_id, ref_test_id, acceptance)
-VALUES ('Test passed successfully', '2023-12-01 14:30:00', (SELECT user_id FROM user WHERE user_name = 'Bob'), (SELECT test_id FROM test WHERE name = 'Unit Test 1'), 'accepted'),
-       ('Issues identified and reported', '2023-12-02 10:45:00', (SELECT user_id FROM user WHERE user_name = 'Charlie'), (SELECT test_id FROM test WHERE name = 'Integration Test A'), 'results reported'),
-       ('Currently under testing', '2023-12-03 09:15:00', (SELECT user_id FROM user WHERE user_name = 'Charlie'), (SELECT test_id FROM test WHERE name = 'Performance Test XYZ'), 'currently under testing');       
+INSERT INTO result (comment, time, ref_user_id, ref_test_id, status)
+VALUES ('Test passed successfully', '2023-12-01 14:30:00', (SELECT user_id FROM user WHERE user_name = 'Bob'), (SELECT test_id FROM test WHERE name = 'Unit Test 1'), 3),
+       ('Issues identified and reported', '2023-12-02 10:45:00', (SELECT user_id FROM user WHERE user_name = 'Charlie'), (SELECT test_id FROM test WHERE name = 'Integration Test A'), 2),
+       ('Currently under testing', '2023-12-03 09:15:00', (SELECT user_id FROM user WHERE user_name = 'Charlie'), (SELECT test_id FROM test WHERE name = 'Performance Test XYZ'), 1);
 
 
 INSERT INTO userstory (ref_functionality_id, given_text, when_text, then_text)
