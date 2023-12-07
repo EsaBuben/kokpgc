@@ -25,7 +25,7 @@ namespace TestIt
             valitutPalat = new int[7];
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
-            this.comboBox1.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+            this.projectUserDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -197,10 +197,15 @@ namespace TestIt
         private void button5_Click(object sender, EventArgs e)
         {
           //remove user
-          Object selected_obj = comboBox1.SelectedItem;
+          Object selected_obj = projectUserDropDown.SelectedItem;
           Controller.RemoveItem(((User)selected_obj).UserID, DataObjectType.User);
-          comboBox1.Items.Remove(selected_obj);
-          comboBox1.SelectedIndex = comboBox1.Items.Count - 1;
+          projectUserDropDown.Items.Remove(selected_obj);
+          projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }
