@@ -30,7 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.Taulukko = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.addBox = new System.Windows.Forms.GroupBox();
             this.priorityLabel = new System.Windows.Forms.Label();
             this.priorityFeed = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -52,8 +52,8 @@
             this.userStoryButton = new System.Windows.Forms.Button();
             this.otsikko = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.addUserButton = new System.Windows.Forms.Button();
+            this.removeUserButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.userNameFeed = new System.Windows.Forms.TextBox();
             this.rooliFeed = new System.Windows.Forms.TextBox();
@@ -70,8 +70,11 @@
             this.projectUserDropDown = new System.Windows.Forms.ComboBox();
             this.testIDLabel = new System.Windows.Forms.Label();
             this.testIdFeed = new System.Windows.Forms.TextBox();
+            this.updateUserstory = new System.Windows.Forms.Button();
+            this.updtAddBox = new System.Windows.Forms.Button();
+            this.removeUsrStryButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.addBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.userStory.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -109,26 +112,27 @@
             this.Taulukko.TabIndex = 1;
             this.Taulukko.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // groupBox1
+            // addBox
             // 
-            this.groupBox1.Controls.Add(this.priorityLabel);
-            this.groupBox1.Controls.Add(this.priorityFeed);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.text_label1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(32, 98);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(207, 126);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add";
+            this.addBox.Controls.Add(this.updtAddBox);
+            this.addBox.Controls.Add(this.priorityLabel);
+            this.addBox.Controls.Add(this.priorityFeed);
+            this.addBox.Controls.Add(this.button2);
+            this.addBox.Controls.Add(this.text_label1);
+            this.addBox.Controls.Add(this.label1);
+            this.addBox.Location = new System.Drawing.Point(32, 98);
+            this.addBox.Margin = new System.Windows.Forms.Padding(2);
+            this.addBox.Name = "addBox";
+            this.addBox.Padding = new System.Windows.Forms.Padding(2);
+            this.addBox.Size = new System.Drawing.Size(207, 161);
+            this.addBox.TabIndex = 2;
+            this.addBox.TabStop = false;
+            this.addBox.Text = "Add Project";
             // 
             // priorityLabel
             // 
             this.priorityLabel.AutoSize = true;
-            this.priorityLabel.Location = new System.Drawing.Point(22, 61);
+            this.priorityLabel.Location = new System.Drawing.Point(19, 54);
             this.priorityLabel.Name = "priorityLabel";
             this.priorityLabel.Size = new System.Drawing.Size(38, 13);
             this.priorityLabel.TabIndex = 8;
@@ -137,7 +141,7 @@
             // 
             // priorityFeed
             // 
-            this.priorityFeed.Location = new System.Drawing.Point(75, 61);
+            this.priorityFeed.Location = new System.Drawing.Point(75, 54);
             this.priorityFeed.Name = "priorityFeed";
             this.priorityFeed.Size = new System.Drawing.Size(100, 20);
             this.priorityFeed.TabIndex = 7;
@@ -146,7 +150,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(22, 97);
+            this.button2.Location = new System.Drawing.Point(22, 133);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 24);
@@ -274,6 +278,8 @@
             // 
             // userStory
             // 
+            this.userStory.Controls.Add(this.removeUsrStryButton);
+            this.userStory.Controls.Add(this.updateUserstory);
             this.userStory.Controls.Add(this.funcIdFeed);
             this.userStory.Controls.Add(this.funcIdText);
             this.userStory.Controls.Add(this.userStoryButton);
@@ -285,7 +291,7 @@
             this.userStory.Controls.Add(this.whenFeed);
             this.userStory.Location = new System.Drawing.Point(32, 354);
             this.userStory.Name = "userStory";
-            this.userStory.Size = new System.Drawing.Size(207, 177);
+            this.userStory.Size = new System.Drawing.Size(207, 203);
             this.userStory.TabIndex = 9;
             this.userStory.TabStop = false;
             this.userStory.Text = "UserStory";
@@ -312,7 +318,7 @@
             // 
             this.userStoryButton.Location = new System.Drawing.Point(22, 145);
             this.userStoryButton.Name = "userStoryButton";
-            this.userStoryButton.Size = new System.Drawing.Size(106, 23);
+            this.userStoryButton.Size = new System.Drawing.Size(92, 23);
             this.userStoryButton.TabIndex = 9;
             this.userStoryButton.Text = "Add UserStory";
             this.userStoryButton.UseVisualStyleBackColor = true;
@@ -338,25 +344,25 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Käyttäjä:";
             // 
-            // button4
+            // addUserButton
             // 
-            this.button4.Location = new System.Drawing.Point(12, 125);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Lisää";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.addUserButton.Location = new System.Drawing.Point(12, 125);
+            this.addUserButton.Name = "addUserButton";
+            this.addUserButton.Size = new System.Drawing.Size(75, 23);
+            this.addUserButton.TabIndex = 13;
+            this.addUserButton.Text = "Add User";
+            this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // removeUserButton
             // 
-            this.button5.Location = new System.Drawing.Point(126, 125);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Poista";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.removeUserButton.Location = new System.Drawing.Point(109, 125);
+            this.removeUserButton.Name = "removeUserButton";
+            this.removeUserButton.Size = new System.Drawing.Size(92, 23);
+            this.removeUserButton.TabIndex = 14;
+            this.removeUserButton.Text = "Remove User";
+            this.removeUserButton.UseVisualStyleBackColor = true;
+            this.removeUserButton.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupBox3
             // 
@@ -365,10 +371,10 @@
             this.groupBox3.Controls.Add(this.projectIdFeed);
             this.groupBox3.Controls.Add(this.rooliFeed);
             this.groupBox3.Controls.Add(this.userNameFeed);
-            this.groupBox3.Controls.Add(this.button5);
+            this.groupBox3.Controls.Add(this.removeUserButton);
             this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.button4);
-            this.groupBox3.Location = new System.Drawing.Point(32, 557);
+            this.groupBox3.Controls.Add(this.addUserButton);
+            this.groupBox3.Location = new System.Drawing.Point(245, 316);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(207, 154);
             this.groupBox3.TabIndex = 15;
@@ -461,12 +467,12 @@
             this.projectUserBox.Controls.Add(this.addToTest);
             this.projectUserBox.Controls.Add(this.projectUserLabel);
             this.projectUserBox.Controls.Add(this.projectUserDropDown);
-            this.projectUserBox.Location = new System.Drawing.Point(942, 305);
+            this.projectUserBox.Location = new System.Drawing.Point(479, 327);
             this.projectUserBox.Name = "projectUserBox";
-            this.projectUserBox.Size = new System.Drawing.Size(197, 153);
+            this.projectUserBox.Size = new System.Drawing.Size(206, 143);
             this.projectUserBox.TabIndex = 17;
             this.projectUserBox.TabStop = false;
-            this.projectUserBox.Text = "Projektin tekijät";
+            this.projectUserBox.Text = "Vastuu henkilö";
             // 
             // addToTest
             // 
@@ -512,6 +518,34 @@
             this.testIdFeed.Size = new System.Drawing.Size(100, 20);
             this.testIdFeed.TabIndex = 5;
             // 
+            // updateUserstory
+            // 
+            this.updateUserstory.Location = new System.Drawing.Point(115, 145);
+            this.updateUserstory.Name = "updateUserstory";
+            this.updateUserstory.Size = new System.Drawing.Size(86, 23);
+            this.updateUserstory.TabIndex = 12;
+            this.updateUserstory.Text = "Update";
+            this.updateUserstory.UseVisualStyleBackColor = true;
+            // 
+            // updtAddBox
+            // 
+            this.updtAddBox.Location = new System.Drawing.Point(115, 133);
+            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2);
+            this.updtAddBox.Name = "updtAddBox";
+            this.updtAddBox.Size = new System.Drawing.Size(63, 24);
+            this.updtAddBox.TabIndex = 9;
+            this.updtAddBox.Text = "Update";
+            this.updtAddBox.UseVisualStyleBackColor = true;
+            // 
+            // removeUsrStryButton
+            // 
+            this.removeUsrStryButton.Location = new System.Drawing.Point(25, 174);
+            this.removeUsrStryButton.Name = "removeUsrStryButton";
+            this.removeUsrStryButton.Size = new System.Drawing.Size(92, 23);
+            this.removeUsrStryButton.TabIndex = 13;
+            this.removeUsrStryButton.Text = "Remove";
+            this.removeUsrStryButton.UseVisualStyleBackColor = true;
+            // 
             // Viewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,15 +558,15 @@
             this.Controls.Add(this.otsikko);
             this.Controls.Add(this.userStory);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.addBox);
             this.Controls.Add(this.Taulukko);
             this.Controls.Add(this.button1);
             this.Name = "Viewer";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Viewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.addBox.ResumeLayout(false);
+            this.addBox.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.userStory.ResumeLayout(false);
@@ -552,7 +586,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView Taulukko;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox addBox;
         private System.Windows.Forms.TextBox whenFeed;
         private System.Windows.Forms.TextBox givenFeed;
         private System.Windows.Forms.TextBox text_label1;
@@ -574,8 +608,8 @@
         private System.Windows.Forms.TextBox priorityFeed;
         private System.Windows.Forms.Label priorityLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button addUserButton;
+        private System.Windows.Forms.Button removeUserButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox userNameFeed;
         private System.Windows.Forms.Label rooliLabel;
@@ -592,5 +626,8 @@
         private System.Windows.Forms.ComboBox projectUserDropDown;
         private System.Windows.Forms.TextBox testIdFeed;
         private System.Windows.Forms.Label testIDLabel;
+        private System.Windows.Forms.Button updateUserstory;
+        private System.Windows.Forms.Button updtAddBox;
+        private System.Windows.Forms.Button removeUsrStryButton;
     }
 }
