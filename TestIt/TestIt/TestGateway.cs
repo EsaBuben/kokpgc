@@ -55,6 +55,7 @@ namespace TestIt
         return id;
         }
 
+
       public List<Object> SelectAll()
        {
            string query = "SELECT * FROM test";
@@ -153,6 +154,10 @@ namespace TestIt
             }
             reader.Close();
             return test;
+        }
+        public void Update()
+        {
+
         }
 
 
