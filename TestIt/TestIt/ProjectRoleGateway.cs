@@ -1,17 +1,18 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data.SqlClient;
-
+using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace TestIt
 {
-    class ProjectRoleGateway:AbstractGateway, IGateway
+    class ProjectRoleGateway : AbstractGateway, IGateway
     {
-        public ProjectGateway():base(){}
+        public ProjectRoleGateway():base(){}
 
         public void Insert(Object obj)
         {
@@ -23,7 +24,7 @@ namespace TestIt
           (@ref_project_id, @ref_user_id, @role)
           ";
 
-          MysqlCommand cmd = CallStack(query);
+          MySqlCommand cmd = CallStack(query);
 
           cmd.Parameters.AddWithValue("@ref_project_id", pr.Ref_proj_id);
           cmd.Parameters.AddWithValue("@ref_user_id", pr.Ref_proj_id);
@@ -42,10 +43,12 @@ namespace TestIt
         }
 
         public void Delete(int testid){
-
+          return;
         }
 
-        public void Update(Object obj){}
+        public void Update(Object obj){
+          return;
+        }
 
         public Object Find(string name){
           return null;

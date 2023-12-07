@@ -25,7 +25,7 @@ namespace TestIt
             valitutPalat = new int[7];
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
-            this.projectUserDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+            this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -61,19 +61,17 @@ namespace TestIt
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 otsikko.Text = curry.ToString();
                 userStory.Visible = false;
+                priorityFeed.Visible = false;
+                priorityLabel.Visible = false;
                 if (curry == DataObjectType.Functionality)
                 {
                     userStory.Visible = true;
                 }
-                else if (curry == DataObjectType.Test)
+
+                if (curry == DataObjectType.Test)
                 {
                     priorityFeed.Visible = true;
                     priorityLabel.Visible = true;
-                }
-                else
-                {
-                    priorityFeed.Visible = false;
-                    priorityLabel.Visible = false;
                 }
             }
         }
