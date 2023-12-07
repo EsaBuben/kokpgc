@@ -193,5 +193,15 @@ namespace TestIt
           Controller.AddNew(user, DataObjectType.User);
           text_label1.Text = "";
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+          //remove user
+          Object selected_obj = comboBox1.SelectedItem;
+          Controller.RemoveItem(((User)selected_obj).UserID, DataObjectType.User);
+          comboBox1.Items.Remove(selected_obj);
+          comboBox1.SelectedIndex = comboBox1.Items.Count - 1;
+
+        }
     }
 }
