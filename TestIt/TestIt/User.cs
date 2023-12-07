@@ -12,10 +12,10 @@ namespace TestIt
     {
         private int user_id;
         private string user_name;
-        private string profile_name;
+        //private string profile_name;
 
-        
-        public User() 
+
+        public User()
         {
 
         }
@@ -31,15 +31,19 @@ namespace TestIt
         }
 
         public int UserID
-        { 
+        {
             get { return user_id; }
             set { this.user_id = value;}
         }
 
         public string UserName
         {
-            get { return user_name; } 
+            get { return user_name; }
             set { this.user_name = value;}
+        }
+
+        public override string ToString(){
+          return $"{this.user_name}";
         }
 
     }

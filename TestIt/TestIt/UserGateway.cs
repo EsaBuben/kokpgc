@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Navigation;
+//using System.Windows.Navigation;
 
 namespace TestIt
 {
     class UserGateway : AbstractGateway, IGateway
     {
         public UserGateway() : base()
-        { 
+        {
 
         }
         public void Insert(Object obj)
@@ -22,7 +22,7 @@ namespace TestIt
                            " VALUES ('" + user.UserName + "')";
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
-            query = "SELECT user_id FROM user WHERE user_name = '" + user.UserName + "')";
+            query = "SELECT user_id FROM user WHERE user_name = '" + user.UserName + "'";
             commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
             while (reader.Read())
@@ -41,8 +41,8 @@ namespace TestIt
             User usr = new User();
             while (reader.Read())
             {
-                usr = new User(reader.GetString(1), reader.GetInt32(0));               
-                
+                usr = new User(reader.GetString(1), reader.GetInt32(0));
+
             }
             reader.Close();
             return usr;
@@ -76,6 +76,6 @@ namespace TestIt
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }
-        
+
     }
 }

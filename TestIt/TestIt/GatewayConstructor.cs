@@ -25,6 +25,7 @@ namespace TestIt
             this.gateway = new ResultGateway();
             break;
           case DataObjectType.User:
+            this.gateway = new UserGateway();
             break;
           default:
             this.gateway = null;

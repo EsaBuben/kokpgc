@@ -25,6 +25,7 @@ namespace TestIt
             valitutPalat = new int[7];
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
+            this.comboBox1.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -116,7 +117,7 @@ namespace TestIt
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
             Controller.RemoveItem(Convert.ToInt32(textBox1.Text), curry);
             bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
             Taulukko.DataSource = bindingSource;
@@ -132,7 +133,7 @@ namespace TestIt
             givenFeed.Text = "";
             whenFeed.Text = "";
             thenFeed.Text = "";
-            
+
         }
         private void Viewer_Load(object sender, EventArgs e)
         {
@@ -182,6 +183,15 @@ namespace TestIt
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+          //add user
+          User user = new User();
+          user.UserName = text_label1.Text;
+          Controller.AddNew(user, DataObjectType.User);
+          text_label1.Text = "";
         }
     }
 }
