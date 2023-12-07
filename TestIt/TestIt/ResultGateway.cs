@@ -40,7 +40,7 @@ namespace TestIt
 
         string query = @"
         SELECT result_id FROM result
-        WHERE ref_user_id = '@ref_user_id' AND ref_test_id = '@ref_test_id' AND status = @status ";
+        WHERE ref_user_id = @ref_user_id AND ref_test_id = @ref_test_id AND status = @status ";
 
         MySqlCommand cmd = CallStack(query);
         cmd.Parameters.AddWithValue("@ref_user_id", result.Ref_user_id);
@@ -113,7 +113,7 @@ namespace TestIt
            // delete project entity.
            string query = @"
            DELETE FROM result
-           WHERE result_id = '@id'";
+           WHERE result_id = @id";
            MySqlCommand cmd = CallStack(query);
            cmd.Parameters.AddWithValue("@id", id);
            cmd.ExecuteNonQuery();
@@ -127,8 +127,8 @@ namespace TestIt
           Result result = (Result)obj;
           string query = @"
           UPDATE result
-          SET status = '@status', comment = @comment
-          WHERE result_id = '@id'";
+          SET status = @status, comment = @comment
+          WHERE result_id = @id";
           MySqlCommand cmd = CallStack(query);
           cmd.Parameters.AddWithValue("@status", result.getStatus());
           cmd.Parameters.AddWithValue("@comment", result.Comment);
