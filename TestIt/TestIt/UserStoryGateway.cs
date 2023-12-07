@@ -97,10 +97,10 @@ namespace TestIt
             reader.Close();
             return uStory;
         }
-        public void Delete(int projectId)
+        public void Delete(int refFuncId)
         {
             // delete project entity.
-            string query = "DELETE FROM project WHERE Project_ID = '" + projectId + "'";
+            string query = "DELETE FROM userstory WHERE ref_functionality_id = '" + refFuncId + "'";
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }

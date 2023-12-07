@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.addBox = new System.Windows.Forms.GroupBox();
+            this.updtAddBox = new System.Windows.Forms.Button();
             this.priorityLabel = new System.Windows.Forms.Label();
             this.priorityFeed = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,6 +48,8 @@
             this.Then = new System.Windows.Forms.Label();
             this.thenFeed = new System.Windows.Forms.TextBox();
             this.userStory = new System.Windows.Forms.GroupBox();
+            this.removeUsrStryButton = new System.Windows.Forms.Button();
+            this.updateUserstory = new System.Windows.Forms.Button();
             this.funcIdFeed = new System.Windows.Forms.TextBox();
             this.funcIdText = new System.Windows.Forms.Label();
             this.userStoryButton = new System.Windows.Forms.Button();
@@ -55,24 +58,23 @@
             this.addUserButton = new System.Windows.Forms.Button();
             this.removeUserButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.userNameFeed = new System.Windows.Forms.TextBox();
-            this.rooliFeed = new System.Windows.Forms.TextBox();
-            this.projectIdFeed = new System.Windows.Forms.TextBox();
-            this.rooliLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.rooliLabel = new System.Windows.Forms.Label();
+            this.projectIdFeed = new System.Windows.Forms.TextBox();
+            this.rooliFeed = new System.Windows.Forms.TextBox();
+            this.userNameFeed = new System.Windows.Forms.TextBox();
             this.chooseUserBox = new System.Windows.Forms.GroupBox();
-            this.userDropDown = new System.Windows.Forms.ComboBox();
-            this.userLabel = new System.Windows.Forms.Label();
             this.userButton = new System.Windows.Forms.Button();
+            this.userLabel = new System.Windows.Forms.Label();
+            this.userDropDown = new System.Windows.Forms.ComboBox();
             this.projectUserBox = new System.Windows.Forms.GroupBox();
+            this.testIdFeed = new System.Windows.Forms.TextBox();
+            this.testIDLabel = new System.Windows.Forms.Label();
             this.addToTest = new System.Windows.Forms.Button();
             this.projectUserLabel = new System.Windows.Forms.Label();
             this.projectUserDropDown = new System.Windows.Forms.ComboBox();
-            this.testIDLabel = new System.Windows.Forms.Label();
-            this.testIdFeed = new System.Windows.Forms.TextBox();
-            this.updateUserstory = new System.Windows.Forms.Button();
-            this.updtAddBox = new System.Windows.Forms.Button();
-            this.removeUsrStryButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.addBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -114,6 +116,8 @@
             // 
             // addBox
             // 
+            this.addBox.Controls.Add(this.label3);
+            this.addBox.Controls.Add(this.textBox2);
             this.addBox.Controls.Add(this.updtAddBox);
             this.addBox.Controls.Add(this.priorityLabel);
             this.addBox.Controls.Add(this.priorityFeed);
@@ -128,6 +132,17 @@
             this.addBox.TabIndex = 2;
             this.addBox.TabStop = false;
             this.addBox.Text = "Add Project";
+            // 
+            // updtAddBox
+            // 
+            this.updtAddBox.Location = new System.Drawing.Point(115, 133);
+            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2);
+            this.updtAddBox.Name = "updtAddBox";
+            this.updtAddBox.Size = new System.Drawing.Size(63, 24);
+            this.updtAddBox.TabIndex = 9;
+            this.updtAddBox.Text = "Update";
+            this.updtAddBox.UseVisualStyleBackColor = true;
+            this.updtAddBox.Click += new System.EventHandler(this.updtAddBox_Click);
             // 
             // priorityLabel
             // 
@@ -227,7 +242,7 @@
             this.groupBox2.Size = new System.Drawing.Size(207, 84);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Remove";
+            this.groupBox2.Text = "Remove Project, Functonality";
             // 
             // button3
             // 
@@ -297,6 +312,24 @@
             this.userStory.Text = "UserStory";
             this.userStory.Visible = false;
             this.userStory.Enter += new System.EventHandler(this.userStory_Enter);
+            // 
+            // removeUsrStryButton
+            // 
+            this.removeUsrStryButton.Location = new System.Drawing.Point(25, 174);
+            this.removeUsrStryButton.Name = "removeUsrStryButton";
+            this.removeUsrStryButton.Size = new System.Drawing.Size(92, 23);
+            this.removeUsrStryButton.TabIndex = 13;
+            this.removeUsrStryButton.Text = "Remove";
+            this.removeUsrStryButton.UseVisualStyleBackColor = true;
+            // 
+            // updateUserstory
+            // 
+            this.updateUserstory.Location = new System.Drawing.Point(115, 145);
+            this.updateUserstory.Name = "updateUserstory";
+            this.updateUserstory.Size = new System.Drawing.Size(86, 23);
+            this.updateUserstory.TabIndex = 12;
+            this.updateUserstory.Text = "Update";
+            this.updateUserstory.UseVisualStyleBackColor = true;
             // 
             // funcIdFeed
             // 
@@ -381,26 +414,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lisää käyttäjä";
             // 
-            // userNameFeed
+            // label5
             // 
-            this.userNameFeed.Location = new System.Drawing.Point(81, 30);
-            this.userNameFeed.Name = "userNameFeed";
-            this.userNameFeed.Size = new System.Drawing.Size(100, 20);
-            this.userNameFeed.TabIndex = 15;
-            // 
-            // rooliFeed
-            // 
-            this.rooliFeed.Location = new System.Drawing.Point(81, 56);
-            this.rooliFeed.Name = "rooliFeed";
-            this.rooliFeed.Size = new System.Drawing.Size(100, 20);
-            this.rooliFeed.TabIndex = 16;
-            // 
-            // projectIdFeed
-            // 
-            this.projectIdFeed.Location = new System.Drawing.Point(81, 82);
-            this.projectIdFeed.Name = "projectIdFeed";
-            this.projectIdFeed.Size = new System.Drawing.Size(100, 20);
-            this.projectIdFeed.TabIndex = 17;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 13);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Project ID:";
             // 
             // rooliLabel
             // 
@@ -412,14 +433,26 @@
             this.rooliLabel.Text = "Rooli:";
             this.rooliLabel.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label5
+            // projectIdFeed
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Project ID:";
+            this.projectIdFeed.Location = new System.Drawing.Point(81, 82);
+            this.projectIdFeed.Name = "projectIdFeed";
+            this.projectIdFeed.Size = new System.Drawing.Size(100, 20);
+            this.projectIdFeed.TabIndex = 17;
+            // 
+            // rooliFeed
+            // 
+            this.rooliFeed.Location = new System.Drawing.Point(81, 56);
+            this.rooliFeed.Name = "rooliFeed";
+            this.rooliFeed.Size = new System.Drawing.Size(100, 20);
+            this.rooliFeed.TabIndex = 16;
+            // 
+            // userNameFeed
+            // 
+            this.userNameFeed.Location = new System.Drawing.Point(81, 30);
+            this.userNameFeed.Name = "userNameFeed";
+            this.userNameFeed.Size = new System.Drawing.Size(100, 20);
+            this.userNameFeed.TabIndex = 15;
             // 
             // chooseUserBox
             // 
@@ -433,14 +466,14 @@
             this.chooseUserBox.TabStop = false;
             this.chooseUserBox.Text = "Valitse käyttäjä";
             // 
-            // userDropDown
+            // userButton
             // 
-            this.userDropDown.FormattingEnabled = true;
-            this.userDropDown.Location = new System.Drawing.Point(69, 17);
-            this.userDropDown.Name = "userDropDown";
-            this.userDropDown.Size = new System.Drawing.Size(121, 21);
-            this.userDropDown.TabIndex = 0;
-            this.userDropDown.Text = "- Choose user -";
+            this.userButton.Location = new System.Drawing.Point(10, 49);
+            this.userButton.Name = "userButton";
+            this.userButton.Size = new System.Drawing.Size(75, 23);
+            this.userButton.TabIndex = 2;
+            this.userButton.Text = "namiska";
+            this.userButton.UseVisualStyleBackColor = true;
             // 
             // userLabel
             // 
@@ -451,14 +484,14 @@
             this.userLabel.TabIndex = 1;
             this.userLabel.Text = "Käyttäjä:";
             // 
-            // userButton
+            // userDropDown
             // 
-            this.userButton.Location = new System.Drawing.Point(10, 49);
-            this.userButton.Name = "userButton";
-            this.userButton.Size = new System.Drawing.Size(75, 23);
-            this.userButton.TabIndex = 2;
-            this.userButton.Text = "namiska";
-            this.userButton.UseVisualStyleBackColor = true;
+            this.userDropDown.FormattingEnabled = true;
+            this.userDropDown.Location = new System.Drawing.Point(69, 17);
+            this.userDropDown.Name = "userDropDown";
+            this.userDropDown.Size = new System.Drawing.Size(121, 21);
+            this.userDropDown.TabIndex = 0;
+            this.userDropDown.Text = "- Choose user -";
             // 
             // projectUserBox
             // 
@@ -473,6 +506,23 @@
             this.projectUserBox.TabIndex = 17;
             this.projectUserBox.TabStop = false;
             this.projectUserBox.Text = "Vastuu henkilö";
+            // 
+            // testIdFeed
+            // 
+            this.testIdFeed.Location = new System.Drawing.Point(69, 49);
+            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2);
+            this.testIdFeed.Name = "testIdFeed";
+            this.testIdFeed.Size = new System.Drawing.Size(100, 20);
+            this.testIdFeed.TabIndex = 5;
+            // 
+            // testIDLabel
+            // 
+            this.testIDLabel.AutoSize = true;
+            this.testIDLabel.Location = new System.Drawing.Point(7, 49);
+            this.testIDLabel.Name = "testIDLabel";
+            this.testIDLabel.Size = new System.Drawing.Size(45, 13);
+            this.testIDLabel.TabIndex = 3;
+            this.testIDLabel.Text = "Test ID:";
             // 
             // addToTest
             // 
@@ -501,50 +551,25 @@
             this.projectUserDropDown.TabIndex = 0;
             this.projectUserDropDown.Text = "- Choose user -";
             // 
-            // testIDLabel
+            // label3
             // 
-            this.testIDLabel.AutoSize = true;
-            this.testIDLabel.Location = new System.Drawing.Point(7, 49);
-            this.testIDLabel.Name = "testIDLabel";
-            this.testIDLabel.Size = new System.Drawing.Size(45, 13);
-            this.testIDLabel.TabIndex = 3;
-            this.testIDLabel.Text = "Test ID:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Id to Update";
+            this.label3.Visible = false;
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
-            // testIdFeed
+            // textBox2
             // 
-            this.testIdFeed.Location = new System.Drawing.Point(69, 49);
-            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2);
-            this.testIdFeed.Name = "testIdFeed";
-            this.testIdFeed.Size = new System.Drawing.Size(100, 20);
-            this.testIdFeed.TabIndex = 5;
-            // 
-            // updateUserstory
-            // 
-            this.updateUserstory.Location = new System.Drawing.Point(115, 145);
-            this.updateUserstory.Name = "updateUserstory";
-            this.updateUserstory.Size = new System.Drawing.Size(86, 23);
-            this.updateUserstory.TabIndex = 12;
-            this.updateUserstory.Text = "Update";
-            this.updateUserstory.UseVisualStyleBackColor = true;
-            // 
-            // updtAddBox
-            // 
-            this.updtAddBox.Location = new System.Drawing.Point(115, 133);
-            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2);
-            this.updtAddBox.Name = "updtAddBox";
-            this.updtAddBox.Size = new System.Drawing.Size(63, 24);
-            this.updtAddBox.TabIndex = 9;
-            this.updtAddBox.Text = "Update";
-            this.updtAddBox.UseVisualStyleBackColor = true;
-            // 
-            // removeUsrStryButton
-            // 
-            this.removeUsrStryButton.Location = new System.Drawing.Point(25, 174);
-            this.removeUsrStryButton.Name = "removeUsrStryButton";
-            this.removeUsrStryButton.Size = new System.Drawing.Size(92, 23);
-            this.removeUsrStryButton.TabIndex = 13;
-            this.removeUsrStryButton.Text = "Remove";
-            this.removeUsrStryButton.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(91, 80);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(84, 20);
+            this.textBox2.TabIndex = 10;
+            this.textBox2.Visible = false;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // Viewer
             // 
@@ -629,5 +654,7 @@
         private System.Windows.Forms.Button updateUserstory;
         private System.Windows.Forms.Button updtAddBox;
         private System.Windows.Forms.Button removeUsrStryButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
