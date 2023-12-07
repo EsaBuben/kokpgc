@@ -9,46 +9,50 @@ using System.Data.SqlClient;
 
 namespace TestIt
 {
-    class ProjectRoleGateway:AbstractGateway, IGateway
+    class ProjectRoleGateway : AbstractGateway, IGateway
     {
-        public ProjectGateway():base(){}
+        public ProjectRoleGateway() : base() { }
 
         public void Insert(Object obj)
         {
-          ProjectRole pr = (ProjectRole)obj;
-          string query = @"
+            ProjectRole pr = (ProjectRole)obj;
+            string query = @"
           INSERT INTO projectrole
           (ref_project_id, ref_user_id, role)
           VALUES
           (@ref_project_id, @ref_user_id, @role)
           ";
 
-          MysqlCommand cmd = CallStack(query);
+            MySqlCommand cmd = CallStack(query);
 
-          cmd.Parameters.AddWithValue("@ref_project_id", pr.Ref_proj_id);
-          cmd.Parameters.AddWithValue("@ref_user_id", pr.Ref_proj_id);
-          cmd.Parameters.AddWithValue("@role", pr.Role);
+            cmd.Parameters.AddWithValue("@ref_project_id", pr.Ref_proj_id);
+            cmd.Parameters.AddWithValue("@ref_user_id", pr.Ref_proj_id);
+            cmd.Parameters.AddWithValue("@role", pr.Role);
 
-          cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
         }
 
-        public List<Object> SelectAll(){
-          return null;
+        public List<Object> SelectAll()
+        {
+            return null;
         }
 
 
-        public List<Object> SelectAll(int id){
-          return null;
+        public List<Object> SelectAll(int id)
+        {
+            return null;
         }
 
-        public void Delete(int testid){
+        public void Delete(int testid)
+        {
 
         }
 
-        public void Update(Object obj){}
+        public void Update(Object obj) { }
 
-        public Object Find(string name){
-          return null;
+        public Object Find(string name)
+        {
+            return null;
         }
     }
 }

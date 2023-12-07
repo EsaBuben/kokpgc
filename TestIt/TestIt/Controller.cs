@@ -58,13 +58,12 @@ namespace TestIt
             gateway.Delete(id);
         }
 
-        //public static List<Project> Listaa()
-        //{
-        //    //Projektien listaus
-        //    ProjectGateway progeWay = new ProjectGateway();
-        //    List<Project> allTheStuff = progeWay.SelectAll();
-        //    return allTheStuff;
-        //}
+        public static void Update(int id, DataObjectType tyyppi)
+        {
+            GatewayConstructor gateway = new GatewayConstructor(tyyppi);
+            gateway.Update(id);
+        }
+        
 
     }
 }

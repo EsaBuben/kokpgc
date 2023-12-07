@@ -108,6 +108,7 @@ namespace TestIt
                     Taulukko.DataSource = bindingSource;
                     break;
                 case DataObjectType.Result:
+
                     break;
                 case DataObjectType.User:
                     break;
@@ -205,6 +206,21 @@ namespace TestIt
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updtAddBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }
