@@ -31,6 +31,16 @@ namespace TestIt
             }
             reader.Close();
         }
+        public void Update(Object func)
+        {
+            // update functionality entity.
+            Functionality funky = (Functionality)func;
+            string query = "UPDATE functionality" +
+                           " SET functionality_name = '" + funky.FunctionalityName + "'" +
+                           " WHERE functionality_id = '" + funky.FunctionalityID + "'";
+            MySqlCommand commandDatabase = CallStack(query);
+            commandDatabase.ExecuteNonQuery();
+        }
         
         public Object Find(string functionalityName)
         {

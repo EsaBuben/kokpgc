@@ -27,6 +27,17 @@ namespace TestIt
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }
+        public void Update(Object obj)
+        {
+            UserStory story = (UserStory)obj;
+            string query = "UPDATE userstory" +
+                " SET given_text = '" + story.Given + "'," +
+                " when_text = '" + story.When + "'," +
+                " then_text = '" + story.Then + "'" +
+                " WHERE ref_functionality_id = '" + story.FunctionalityID + "'";
+            MySqlCommand commandDatabase = CallStack(query);
+            commandDatabase.ExecuteNonQuery();
+        }
 
         public Object Find(string t)
         {

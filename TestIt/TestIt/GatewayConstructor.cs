@@ -52,5 +52,9 @@ namespace TestIt
         {
             return this.gateway.Find(t);
         }
+        public void Update(Object obj)
+        {
+            this.gateway.Update(obj);
+        }
     }
 }

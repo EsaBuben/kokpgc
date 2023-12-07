@@ -31,11 +31,22 @@ namespace TestIt
             }
             reader.Close();
         }
+        public void Update(Object obj)
+        {
+            // update project entity.
+            Project proge = (Project)obj;
+            string query = "UPDATE project " +
+                           "SET Project_Name = '" + proge.ProjectName + "' " +
+                           "WHERE Project_ID = '" + proge.ProjectID + "'";
+            MySqlCommand commandDatabase = CallStack(query);
+            commandDatabase.ExecuteNonQuery();
+        }
 
         public Object Find(string projectName)
         {
             // find project entity.
-            string query = "SELECT * FROM project WHERE Project_Name = '" + projectName + "'";
+            string query = "SELECT * FROM project " +
+                           "WHERE Project_Name = '" + projectName + "'";
             MySqlCommand commandDatabase = CallStack(query);
             MySqlDataReader reader = commandDatabase.ExecuteReader();
             Project proge = new Project(projectName);
