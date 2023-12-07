@@ -123,8 +123,22 @@ namespace TestIt
             return null;
         }
 
+        public void Update(Object obj){
+          Result result = (Result)obj;
+          string query = @"
+          UPDATE result
+          SET status = '@status', comment = @comment
+          WHERE result_id = '@id'";
+          MySqlCommand cmd = CallStack(query);
+          cmd.Parameters.AddWithValue("@status", result.getStatus());
+          cmd.Parameters.AddWithValue("@comment", result.Comment);
+          cmd.Parameters.AddWithValue("@id", result.ID);
+
+          cmd.ExecuteNonQuery();
+      }
+
     }
-    
+
 
 
 }
