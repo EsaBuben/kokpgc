@@ -32,6 +32,17 @@ namespace TestIt
             reader.Close();
         }
 
+        public void Update(Object user)
+        {
+            // update user entity.
+            User useri = (User)user;
+            string query = "UPDATE user" +
+                           " SET user_name = '" + useri.UserName + "'" +
+                           " WHERE user_id = '" + useri.UserID + "'";
+            MySqlCommand commandDatabase = CallStack(query);
+            commandDatabase.ExecuteNonQuery();
+        }
+
         public Object Find(string username)
         {
             string query = "SELECT * FROM user" +
