@@ -1,5 +1,4 @@
 ﻿using System;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace TestIt
 {
-    public class ProjectRoleGateway:AbstractGateway, IGateway
+    class ProjectRoleGateway:AbstractGateway, IGateway
     {
         public ProjectGateway():base(){}
 
@@ -22,7 +21,7 @@ namespace TestIt
           (ref_project_id, ref_user_id, role)
           VALUES
           (@ref_project_id, @ref_user_id, @role)
-          "
+          ";
 
           MysqlCommand cmd = CallStack(query);
 
@@ -46,8 +45,10 @@ namespace TestIt
 
         }
 
+        public void Update(Object obj){}
+
         public Object Find(string name){
-          
+          return null;
         }
     }
 }
