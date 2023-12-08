@@ -53,6 +53,16 @@ namespace TestIt
         get{return this.result_id;}
         set{this.result_id = value;}
       }
+      
+      public int Ref_user_id{
+        get{return this.ref_user_id;}
+        set{this.ref_user_id = value;}
+      }
+
+      public int Ref_test_id{
+        get{return this.ref_test_id;}
+        set{this.ref_test_id = value;}
+      }
 
       public string Status{
         get{return this.status_list[((int)this.status)];}
@@ -69,14 +79,5 @@ namespace TestIt
         set{this.time = value;}
       }
 
-      public int Ref_test_id{
-        get{return this.ref_test_id;}
-        set{this.ref_test_id = value;}
-      }
-
-      public int Ref_user_id{
-        get{return this.ref_user_id;}
-        set{this.ref_user_id = value;}
-      }
     }
 }
