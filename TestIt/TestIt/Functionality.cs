@@ -38,7 +38,7 @@ namespace TestIt
         public Functionality(string functionalityName, int refID)
         {
             this.functionalityName = functionalityName;
-            this.functionalityID = refID;
+            this.refID = refID;
         }
         public Functionality(string name, int refID, string given, string when, string then)
         {

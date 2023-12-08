@@ -112,7 +112,6 @@ namespace TestIt
                     priorityFeed.Text = "";
                     bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                     Taulukko.DataSource = bindingSource;
-
                     break;
                 case DataObjectType.Result:
 
@@ -154,7 +153,9 @@ namespace TestIt
             }
             else if (curry == DataObjectType.Functionality)
             {
-                this.juttu = new Functionality(text_label1.Text, Convert.ToInt32(updateIdFeed.Text));
+                Functionality abba = new Functionality(text_label1.Text);
+                abba.FunctionalityID = Convert.ToInt32(updateIdFeed.Text);
+                this.juttu = abba;
                 Controller.Update(this.juttu, DataObjectType.Functionality);
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 Taulukko.DataSource = bindingSource;
