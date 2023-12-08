@@ -197,7 +197,7 @@ namespace TestIt
         {
           //add user
           User user = new User();
-          user.UserName = text_label1.Text;
+          user.UserName = userNameFeed.Text;
           Controller.AddNew(user, DataObjectType.User);
           text_label1.Text = "";
         }
@@ -205,10 +205,11 @@ namespace TestIt
         private void button5_Click(object sender, EventArgs e)
         {
           //remove user
-          Object selected_obj = projectUserDropDown.SelectedItem;
+          // Poista valitu käyttäjä button / userButton
+          Object selected_obj = userDropDown.SelectedItem;
           Controller.RemoveItem(((User)selected_obj).UserID, DataObjectType.User);
           projectUserDropDown.Items.Remove(selected_obj);
-          projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
+          projectUserDropDown.SelectedIndex = (userDropDown.Items.Count - 1);
 
         }
 
