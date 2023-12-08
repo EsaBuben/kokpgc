@@ -27,7 +27,7 @@ namespace TestIt
           MySqlCommand cmd = CallStack(query);
 
             cmd.Parameters.AddWithValue("@ref_project_id", pr.Ref_proj_id);
-            cmd.Parameters.AddWithValue("@ref_user_id", pr.Ref_proj_id);
+            cmd.Parameters.AddWithValue("@ref_user_id", pr.Ref_user_id);
             cmd.Parameters.AddWithValue("@role", pr.Role);
 
             cmd.ExecuteNonQuery();

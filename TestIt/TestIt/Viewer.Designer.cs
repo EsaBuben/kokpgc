@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+
             this.button1 = new System.Windows.Forms.Button();
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.addBox = new System.Windows.Forms.GroupBox();
@@ -105,7 +107,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
+
             this.button1.Location = new System.Drawing.Point(48, 32);
+
+            //this.button1.Location = new System.Drawing.Point(32, 21);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 52);
             this.button1.TabIndex = 0;
@@ -116,6 +123,7 @@
             // Taulukko
             // 
             this.Taulukko.BackgroundColor = System.Drawing.Color.Gray;
+
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,6 +152,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Taulukko.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            
             this.Taulukko.RowHeadersWidth = 62;
             this.Taulukko.RowTemplate.Height = 28;
             this.Taulukko.Size = new System.Drawing.Size(1260, 344);
@@ -163,9 +172,17 @@
             this.addBox.Controls.Add(this.text_label1);
             this.addBox.Controls.Add(this.label1);
             this.addBox.ForeColor = System.Drawing.Color.White;
+
             this.addBox.Location = new System.Drawing.Point(48, 90);
             this.addBox.Name = "addBox";
             this.addBox.Size = new System.Drawing.Size(310, 269);
+
+            //this.addBox.Location = new System.Drawing.Point(32, 98);
+            this.addBox.Margin = new System.Windows.Forms.Padding(2);
+            //this.addBox.Name = "addBox";
+            this.addBox.Padding = new System.Windows.Forms.Padding(2);
+            //this.addBox.Size = new System.Drawing.Size(207, 161);
+
             this.addBox.TabIndex = 2;
             this.addBox.TabStop = false;
             this.addBox.Text = "Add Project";
@@ -195,7 +212,12 @@
             // 
             this.updtAddBox.BackColor = System.Drawing.Color.Silver;
             this.updtAddBox.ForeColor = System.Drawing.Color.Black;
+
             this.updtAddBox.Location = new System.Drawing.Point(172, 195);
+
+            //this.updtAddBox.Location = new System.Drawing.Point(115, 127);
+            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2);
+
             this.updtAddBox.Name = "updtAddBox";
             this.updtAddBox.Size = new System.Drawing.Size(94, 37);
             this.updtAddBox.TabIndex = 9;
@@ -229,7 +251,12 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Silver;
             this.button2.ForeColor = System.Drawing.Color.Black;
+
             this.button2.Location = new System.Drawing.Point(38, 195);
+
+            //this.button2.Location = new System.Drawing.Point(25, 127);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 37);
             this.button2.TabIndex = 6;
@@ -240,7 +267,12 @@
             // text_label1
             // 
             this.text_label1.BackColor = System.Drawing.Color.Gray;
+
             this.text_label1.Location = new System.Drawing.Point(118, 25);
+
+            //this.text_label1.Location = new System.Drawing.Point(75, 23);
+            this.text_label1.Margin = new System.Windows.Forms.Padding(2);
+
             this.text_label1.Name = "text_label1";
             this.text_label1.Size = new System.Drawing.Size(142, 26);
             this.text_label1.TabIndex = 3;
@@ -258,7 +290,12 @@
             // whenFeed
             // 
             this.whenFeed.BackColor = System.Drawing.Color.Gray;
+
             this.whenFeed.Location = new System.Drawing.Point(122, 129);
+
+            //this.whenFeed.Location = new System.Drawing.Point(81, 84);
+            this.whenFeed.Margin = new System.Windows.Forms.Padding(2);
+
             this.whenFeed.Name = "whenFeed";
             this.whenFeed.Size = new System.Drawing.Size(148, 26);
             this.whenFeed.TabIndex = 5;
@@ -267,7 +304,12 @@
             // givenFeed
             // 
             this.givenFeed.BackColor = System.Drawing.Color.Gray;
+
             this.givenFeed.Location = new System.Drawing.Point(122, 82);
+
+            //this.givenFeed.Location = new System.Drawing.Point(81, 53);
+            this.givenFeed.Margin = new System.Windows.Forms.Padding(2);
+
             this.givenFeed.Name = "givenFeed";
             this.givenFeed.Size = new System.Drawing.Size(148, 26);
             this.givenFeed.TabIndex = 4;
@@ -397,6 +439,7 @@
             this.removeUsrStryButton.TabIndex = 13;
             this.removeUsrStryButton.Text = "Remove";
             this.removeUsrStryButton.UseVisualStyleBackColor = false;
+            this.removeUsrStryButton.Click += new System.EventHandler(this.removeUsrStryButton_Click);
             // 
             // updateUserstory
             // 
@@ -568,7 +611,11 @@
             this.userButton.Location = new System.Drawing.Point(15, 75);
             this.userButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userButton.Name = "userButton";
+
             this.userButton.Size = new System.Drawing.Size(194, 35);
+
+            //this.userButton.Size = new System.Drawing.Size(149, 23);
+
             this.userButton.TabIndex = 2;
             this.userButton.Text = "Remove selected user";
             this.userButton.UseVisualStyleBackColor = false;
@@ -618,7 +665,12 @@
             // testIdFeed
             // 
             this.testIdFeed.BackColor = System.Drawing.Color.Gray;
+
             this.testIdFeed.Location = new System.Drawing.Point(104, 75);
+
+            //this.testIdFeed.Location = new System.Drawing.Point(69, 49);
+            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2);
+
             this.testIdFeed.Name = "testIdFeed";
             this.testIdFeed.Size = new System.Drawing.Size(148, 26);
             this.testIdFeed.TabIndex = 5;
@@ -667,6 +719,7 @@
             this.projectUserDropDown.TabIndex = 0;
             this.projectUserDropDown.Text = "- Choose user -";
             this.projectUserDropDown.SelectedIndexChanged += new System.EventHandler(this.projectUserDropDown_SelectedIndexChanged);
+
             // 
             // changeStatus
             // 
@@ -771,6 +824,7 @@
             this.statusDrop.Text = "- Choose status -";
             this.statusDrop.Visible = false;
             this.statusDrop.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+
             // 
             // Viewer
             // 

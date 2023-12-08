@@ -31,13 +31,17 @@ namespace TestIt
                 string a = Convert.ToString(((UserStory)obj).FunctionalityID);
                 if (gateway.Find(a) != null)
                 {
-                   return null;
-                } else gateway.Insert(obj);
-                  return obj;
+                    return null;
+                }
+                else gateway.Insert(obj);
+                return obj;
             }
-            gateway.Insert(obj);
+            else
+            {
+                gateway.Insert(obj);
 
-            return obj;
+                return obj;
+            }
 
         }
         public static List<Object> Listaa(DataObjectType type)

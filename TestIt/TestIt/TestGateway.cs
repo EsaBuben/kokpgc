@@ -59,7 +59,10 @@ namespace TestIt
 
       public List<Object> SelectAll()
        {
-           string query = "SELECT * FROM test";
+         string query = @"
+         SELECT test_id, ref_functionality_id, responsible_user_id, priority, name, status
+         FROM test
+         LEFT OUTER JOIN result ON ref_test_id = test_id";
            MySqlCommand cmd = CallStack(query);
            MySqlDataReader reader = cmd.ExecuteReader();
            List<Object> testlist = new List<Object>();
@@ -71,7 +74,9 @@ namespace TestIt
                test.ref_func_id = reader.GetInt32(1);
                test.Priority = reader.GetInt32(3);
                test.Name = reader.GetString(4);
-
+               if(!reader.IsDBNull(5)){
+               test.setStatus(reader.GetInt32(5));
+               }
                if(!reader.IsDBNull(reader.GetOrdinal("responsible_user_id"))){
                  test.Responsible_user_id = reader.GetInt32(2);
                }
@@ -88,8 +93,9 @@ namespace TestIt
         public List<Object> SelectAll(int id)
         {
             string query = @"
-            SELECT *
+            SELECT test_id, ref_functionality_id, responsible_user_id, priority, name, status
             FROM test
+            LEFT OUTER JOIN result ON ref_test_id = test_id
             WHERE ref_functionality_id = @id";
             MySqlCommand cmd = CallStack(query);
             cmd.Parameters.AddWithValue("@id", id);
@@ -103,7 +109,9 @@ namespace TestIt
                 test.ref_func_id = reader.GetInt32(1);
                 test.Priority = reader.GetInt32(3);
                 test.Name = reader.GetString(4);
-
+                if(!reader.IsDBNull(5)){
+                test.setStatus(reader.GetInt32(5));
+                }
                 if(!reader.IsDBNull(reader.GetOrdinal("responsible_user_id"))){
                   test.Responsible_user_id = reader.GetInt32(2);
                 }
