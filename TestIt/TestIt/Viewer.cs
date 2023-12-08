@@ -36,6 +36,7 @@ namespace TestIt
             if (curry == DataObjectType.Functionality)
             {
                 otsikko.Text = curry.ToString();
+                addBox.Text = "Add " + curry.ToString();
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 Taulukko.DataSource = bindingSource;
                 userStory.Visible = true;
@@ -43,6 +44,7 @@ namespace TestIt
             else
             {
                 otsikko.Text = curry.ToString();
+                addBox.Text = "Add " + curry.ToString();
                 userStory.Visible = false;
                 bindingSource.DataSource = Controller.Listaa(curry);
                 Taulukko.DataSource = bindingSource;
@@ -61,6 +63,7 @@ namespace TestIt
                 valitutPalat[(int)curry] = (int)Taulukko[1, e.RowIndex].Value;
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 otsikko.Text = curry.ToString();
+                addBox.Text = "Add " + curry.ToString();
                 userStory.Visible = false;
                 priorityFeed.Visible = false;
                 priorityLabel.Visible = false;
