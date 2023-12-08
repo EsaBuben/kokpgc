@@ -40,12 +40,26 @@ namespace TestIt
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 Taulukko.DataSource = bindingSource;
                 userStory.Visible = true;
+                priorityFeed.Visible = false;
+                priorityLabel.Visible = false;
+            }
+            else if (curry == DataObjectType.Test)
+            {
+                otsikko.Text = curry.ToString();
+                addBox.Text = "Add " + curry.ToString();
+                userStory.Visible = false;
+                priorityFeed.Visible = true;
+                priorityLabel.Visible = true;
+                bindingSource.DataSource = Controller.Listaa(curry);
+                Taulukko.DataSource = bindingSource;
             }
             else
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
                 userStory.Visible = false;
+                priorityFeed.Visible = false;
+                priorityLabel.Visible = false;
                 bindingSource.DataSource = Controller.Listaa(curry);
                 Taulukko.DataSource = bindingSource;
             }
@@ -256,9 +270,9 @@ namespace TestIt
         {
           //add user
           User user = new User();
-          user.UserName = text_label1.Text;
+          user.UserName = userNameFeed.Text;
           Controller.AddNew(user, DataObjectType.User);
-          text_label1.Text = "";
+          userNameFeed.Text = "";
           //if labela are labelb not embty
           if(!(projectIdFeed.Text == "" || rooliFeed.Text == "")){
             ProjectRole pr = new ProjectRole();
@@ -266,6 +280,8 @@ namespace TestIt
             pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
             pr.Role = rooliFeed.Text;
             Controller.AddNew(pr, DataObjectType.ProjectRole);
+                projectIdFeed.Text = "";
+                rooliFeed.Text = "";
           }
         }
 
