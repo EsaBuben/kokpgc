@@ -58,10 +58,10 @@ namespace TestIt
             gateway.Delete(id);
         }
 
-        public static void Update(int id, DataObjectType tyyppi)
+        public static void Update(Object obj, DataObjectType tyyppi)
         {
             GatewayConstructor gateway = new GatewayConstructor(tyyppi);
-            gateway.Update(id);
+            gateway.Update(obj);
         }
 
         public static List<Object> getProjectUsers(int project_id){

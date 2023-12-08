@@ -31,6 +31,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.addBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.updateIdFeed = new System.Windows.Forms.TextBox();
             this.updtAddBox = new System.Windows.Forms.Button();
             this.priorityLabel = new System.Windows.Forms.Label();
             this.priorityFeed = new System.Windows.Forms.TextBox();
@@ -73,8 +75,6 @@
             this.addToTest = new System.Windows.Forms.Button();
             this.projectUserLabel = new System.Windows.Forms.Label();
             this.projectUserDropDown = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.addBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -117,7 +117,7 @@
             // addBox
             // 
             this.addBox.Controls.Add(this.label3);
-            this.addBox.Controls.Add(this.textBox2);
+            this.addBox.Controls.Add(this.updateIdFeed);
             this.addBox.Controls.Add(this.updtAddBox);
             this.addBox.Controls.Add(this.priorityLabel);
             this.addBox.Controls.Add(this.priorityFeed);
@@ -132,6 +132,24 @@
             this.addBox.TabIndex = 2;
             this.addBox.TabStop = false;
             this.addBox.Text = "Add Project";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Id to Update";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
+            // 
+            // updateIdFeed
+            // 
+            this.updateIdFeed.Location = new System.Drawing.Point(91, 80);
+            this.updateIdFeed.Name = "updateIdFeed";
+            this.updateIdFeed.Size = new System.Drawing.Size(84, 20);
+            this.updateIdFeed.TabIndex = 10;
+            this.updateIdFeed.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // updtAddBox
             // 
@@ -330,6 +348,7 @@
             this.updateUserstory.TabIndex = 12;
             this.updateUserstory.Text = "Update";
             this.updateUserstory.UseVisualStyleBackColor = true;
+            this.updateUserstory.Click += new System.EventHandler(this.updateUserstory_Click);
             // 
             // funcIdFeed
             // 
@@ -551,32 +570,12 @@
             this.projectUserDropDown.TabIndex = 0;
             this.projectUserDropDown.Text = "- Choose user -";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 80);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Id to Update";
-            this.label3.Visible = false;
-            this.label3.Click += new System.EventHandler(this.label3_Click_1);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(91, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(84, 20);
-            this.textBox2.TabIndex = 10;
-            this.textBox2.Visible = false;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
-            // 
             // Viewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1150, 749);
+            this.ClientSize = new System.Drawing.Size(1199, 749);
             this.Controls.Add(this.projectUserBox);
             this.Controls.Add(this.chooseUserBox);
             this.Controls.Add(this.groupBox3);
@@ -655,6 +654,6 @@
         private System.Windows.Forms.Button updtAddBox;
         private System.Windows.Forms.Button removeUsrStryButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox updateIdFeed;
     }
 }
