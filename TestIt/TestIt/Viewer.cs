@@ -25,7 +25,8 @@ namespace TestIt
             valitutPalat = new int[7];
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
-            this.projectUserDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+            this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,19 +65,21 @@ namespace TestIt
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
                 userStory.Visible = false;
+                priorityFeed.Visible = false;
+                priorityLabel.Visible = false;
                 if (curry == DataObjectType.Functionality)
                 {
                     userStory.Visible = true;
                 }
-                else if (curry == DataObjectType.Test)
+
+                if (curry == DataObjectType.Test)
                 {
+                    //priority
                     priorityFeed.Visible = true;
                     priorityLabel.Visible = true;
-                }
-                else
-                {
-                    priorityFeed.Visible = false;
-                    priorityLabel.Visible = false;
+                    //responsibility
+                    this.projectUserDropDown.Items.AddRange(Controller.getProjectUsers(valitutPalat[1]).ToArray());
+
                 }
             }
         }
@@ -109,6 +112,7 @@ namespace TestIt
                     priorityFeed.Text = "";
                     bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                     Taulukko.DataSource = bindingSource;
+
                     break;
                 case DataObjectType.Result:
 
@@ -207,6 +211,11 @@ namespace TestIt
           projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
 
         }
+
+        private void AddResponsibleUser(object sender, EventArgs e){
+
+        }
+
 
         private void label3_Click(object sender, EventArgs e)
         {
