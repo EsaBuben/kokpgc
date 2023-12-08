@@ -11,7 +11,8 @@ namespace TestIt
       private int testID;
       private int refFunctionalityID;
       private string name;
-      //private Status status;
+      private string[] status_list = {"to be tested","currently under testing","results reported","accepted"};
+      private ResultStatus status;
       private int priority;
       //private string instructions;
       private int resp_user_id;
@@ -39,6 +40,15 @@ namespace TestIt
         this.priority = priority;
         this.refFunctionalityID = refFunctionalityID;
       }
+
+      public int getStatus(){
+        return (int)this.status;
+      }
+
+      public void setStatus(int status){
+        this.status = (ResultStatus)status;
+      }
+
         public string Name
         {
             get { return this.name; }
@@ -59,6 +69,12 @@ namespace TestIt
             get { return this.resp_user_id; }
             set { this.resp_user_id = value; }
         }
+
+        public string Status{
+          get{return this.status_list[((int)this.status)];}
+
+        }
+
         public int ref_func_id{
         get{return this.refFunctionalityID;}
         set{this.refFunctionalityID = value;}
@@ -69,7 +85,7 @@ namespace TestIt
 
 
 
-      
+
 
       public override string ToString(){
         return $"{this.testID}: {this.name}";
