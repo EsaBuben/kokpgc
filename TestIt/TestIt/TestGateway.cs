@@ -161,10 +161,9 @@ namespace TestIt
             // update test entity.
             Test testi = (Test)test;
             string query = "UPDATE test" +
-                           " SET test_name = '" + testi.Name + "'" +
-                           " priority = '" + testi.Priority + "'," +
-                           " ref_functionality_id = '" + testi.ref_func_id + "'," +
-                           " responsible_user_id = '" + testi.Responsible_user_id + "'," +
+                           " SET name = '" + testi.Name + "'," +
+                           " priority = " + testi.Priority + "," +
+                           " ref_functionality_id = " + testi.ref_func_id + "" +
                            " WHERE test_id = '" + testi.ID + "'";
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();

@@ -32,7 +32,8 @@ namespace TestIt
         this.refFunctionalityID = refFunctionalityID;
       }
 
-      public Test(int testid, string name, int priority,  int refFunctionalityID){
+      public Test( string name, int priority,  int refFunctionalityID, int testid)
+        {
         this.testID = testid;
         this.name = name;
         this.priority = priority;

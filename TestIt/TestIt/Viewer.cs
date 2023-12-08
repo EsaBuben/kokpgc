@@ -143,6 +143,63 @@ namespace TestIt
             thenFeed.Text = "";
 
         }
+        private void updtAddBox_Click(object sender, EventArgs e)
+        {
+            if (curry == DataObjectType.Project)
+            {
+                this.juttu = new Project(text_label1.Text, Convert.ToInt32(updateIdFeed.Text));
+                Controller.Update(this.juttu, DataObjectType.Project);
+                bindingSource.DataSource = Controller.Listaa(curry);
+                Taulukko.DataSource = bindingSource;
+            }
+            else if (curry == DataObjectType.Functionality)
+            {
+                this.juttu = new Functionality(text_label1.Text, Convert.ToInt32(updateIdFeed.Text));
+                Controller.Update(this.juttu, DataObjectType.Functionality);
+                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                Taulukko.DataSource = bindingSource;
+            }
+            else if (curry == DataObjectType.Test)
+            {
+                this.juttu = new Test(text_label1.Text, Convert.ToInt32(priorityFeed.Text), valitutPalat[(int)curry], Convert.ToInt32(updateIdFeed.Text));
+                Controller.Update(this.juttu, DataObjectType.Test);
+                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                Taulukko.DataSource = bindingSource;
+                priorityFeed.Text = "";
+            }
+            text_label1.Text = "";
+            updateIdFeed.Text = "";
+            
+        }
+        private void updateUserstory_Click(object sender, EventArgs e)
+        {
+            this.juttu = new UserStory(Convert.ToInt32(funcIdFeed.Text), givenFeed.Text, whenFeed.Text, thenFeed.Text);
+            Controller.Update(this.juttu, DataObjectType.UserStory);
+            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+            Taulukko.DataSource = bindingSource;
+            funcIdFeed.Text = "";
+            givenFeed.Text = "";
+            whenFeed.Text = "";
+            thenFeed.Text = "";
+        }
+        //private void button4_Click(object sender, EventArgs e)
+        //{
+        //    //add user
+        //    User user = new User();
+        //    user.UserName = text_label1.Text;
+        //    Controller.AddNew(user, DataObjectType.User);
+        //    text_label1.Text = "";
+        //}
+
+        //private void button5_Click(object sender, EventArgs e)
+        //{
+        //    //remove user
+        //    Object selected_obj = projectUserDropDown.SelectedItem;
+        //    Controller.RemoveItem(((User)selected_obj).UserID, DataObjectType.User);
+        //    projectUserDropDown.Items.Remove(selected_obj);
+        //    projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
+
+        //}
         private void Viewer_Load(object sender, EventArgs e)
         {
 
@@ -193,6 +250,7 @@ namespace TestIt
 
         }
 
+
         private void button4_Click(object sender, EventArgs e)
         {
           //add user
@@ -228,6 +286,7 @@ namespace TestIt
 
         }
 
+
         private void AddResponsibleUser(object sender, EventArgs e){
 
         }
@@ -238,11 +297,7 @@ namespace TestIt
 
         }
 
-        private void updtAddBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void label3_Click_1(object sender, EventArgs e)
         {
 
@@ -252,5 +307,7 @@ namespace TestIt
         {
 
         }
+
+
     }
 }
