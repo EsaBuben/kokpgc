@@ -200,6 +200,14 @@ namespace TestIt
           user.UserName = userNameFeed.Text;
           Controller.AddNew(user, DataObjectType.User);
           text_label1.Text = "";
+          //if labela are labelb not embty
+          if(!(projectIdFeed.Text = "" || rooliFeed.Text = "")){
+            ProjectRole pr = new ProjectRole();
+            pr.Ref_user_id = user.UserID;
+            pr.Ref_proj_id = projectIdFeed.Text;
+            pr.Role = rooliFeed.Text;
+            Controller.AddNew(pr, DataObjectType.ProjectRole);
+          }
         }
 
         private void button5_Click(object sender, EventArgs e)
