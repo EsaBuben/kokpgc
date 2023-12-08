@@ -201,10 +201,10 @@ namespace TestIt
           Controller.AddNew(user, DataObjectType.User);
           text_label1.Text = "";
           //if labela are labelb not embty
-          if(!(projectIdFeed.Text = "" || rooliFeed.Text = "")){
+          if(!(projectIdFeed.Text == "" || rooliFeed.Text == "")){
             ProjectRole pr = new ProjectRole();
             pr.Ref_user_id = user.UserID;
-            pr.Ref_proj_id = projectIdFeed.Text;
+            pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
             pr.Role = rooliFeed.Text;
             Controller.AddNew(pr, DataObjectType.ProjectRole);
           }
@@ -218,6 +218,12 @@ namespace TestIt
           projectUserDropDown.Items.Remove(selected_obj);
           projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
 
+        }
+
+        private void add_to_test_click(object sender, EventArgs e)
+        {
+          //remove user
+        
         }
 
         private void AddResponsibleUser(object sender, EventArgs e){
