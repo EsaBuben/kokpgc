@@ -182,24 +182,24 @@ namespace TestIt
             whenFeed.Text = "";
             thenFeed.Text = "";
         }
-        private void button4_Click(object sender, EventArgs e)
-        {
-            //add user
-            User user = new User();
-            user.UserName = text_label1.Text;
-            Controller.AddNew(user, DataObjectType.User);
-            text_label1.Text = "";
-        }
+        //private void button4_Click(object sender, EventArgs e)
+        //{
+        //    //add user
+        //    User user = new User();
+        //    user.UserName = text_label1.Text;
+        //    Controller.AddNew(user, DataObjectType.User);
+        //    text_label1.Text = "";
+        //}
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            //remove user
-            Object selected_obj = projectUserDropDown.SelectedItem;
-            Controller.RemoveItem(((User)selected_obj).UserID, DataObjectType.User);
-            projectUserDropDown.Items.Remove(selected_obj);
-            projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
+        //private void button5_Click(object sender, EventArgs e)
+        //{
+        //    //remove user
+        //    Object selected_obj = projectUserDropDown.SelectedItem;
+        //    Controller.RemoveItem(((User)selected_obj).UserID, DataObjectType.User);
+        //    projectUserDropDown.Items.Remove(selected_obj);
+        //    projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
 
-        }
+        //}
         private void Viewer_Load(object sender, EventArgs e)
         {
 

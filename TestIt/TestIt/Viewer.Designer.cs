@@ -179,7 +179,7 @@
             this.updateIdFeed.Size = new System.Drawing.Size(124, 26);
             this.updateIdFeed.TabIndex = 10;
             this.updateIdFeed.Visible = false;
-            this.updateIdFeed.TextChanged += new System.EventHandler(this.updateIdFeed_TextChanged_1);
+            this.updateIdFeed.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // updtAddBox
             // 
