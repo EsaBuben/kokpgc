@@ -197,9 +197,9 @@ namespace TestIt
         {
           //add user
           User user = new User();
-          user.UserName = text_label1.Text;
+          user.UserName = userNameFeed.Text;
           Controller.AddNew(user, DataObjectType.User);
-          text_label1.Text = "";
+          userNameFeed.Text = "";
           //if labela are labelb not embty
           if(!(projectIdFeed.Text == "" || rooliFeed.Text == "")){
             ProjectRole pr = new ProjectRole();
@@ -207,6 +207,8 @@ namespace TestIt
             pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
             pr.Role = rooliFeed.Text;
             Controller.AddNew(pr, DataObjectType.ProjectRole);
+            rooliFeed.Text ="";
+            projectIdFeed.Text = "";
           }
         }
 
@@ -223,7 +225,7 @@ namespace TestIt
         private void add_to_test_click(object sender, EventArgs e)
         {
           //remove user
-        
+
         }
 
         private void AddResponsibleUser(object sender, EventArgs e){
