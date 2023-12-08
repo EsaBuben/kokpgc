@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.addBox = new System.Windows.Forms.GroupBox();
@@ -96,7 +96,7 @@
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.button1.Location = new System.Drawing.Point(32, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(181, 56);
             this.button1.TabIndex = 0;
@@ -107,35 +107,35 @@
             // Taulukko
             // 
             this.Taulukko.BackgroundColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Taulukko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Taulukko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.Taulukko.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Taulukko.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Taulukko.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Taulukko.DefaultCellStyle = dataGridViewCellStyle17;
             this.Taulukko.Location = new System.Drawing.Point(244, 98);
-            this.Taulukko.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Taulukko.Margin = new System.Windows.Forms.Padding(2);
             this.Taulukko.Name = "Taulukko";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Taulukko.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Taulukko.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.Taulukko.RowHeadersWidth = 62;
             this.Taulukko.RowTemplate.Height = 28;
             this.Taulukko.Size = new System.Drawing.Size(895, 190);
@@ -154,9 +154,9 @@
             this.addBox.Controls.Add(this.label1);
             this.addBox.ForeColor = System.Drawing.Color.White;
             this.addBox.Location = new System.Drawing.Point(32, 98);
-            this.addBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBox.Margin = new System.Windows.Forms.Padding(2);
             this.addBox.Name = "addBox";
-            this.addBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBox.Padding = new System.Windows.Forms.Padding(2);
             this.addBox.Size = new System.Drawing.Size(207, 161);
             this.addBox.TabIndex = 2;
             this.addBox.TabStop = false;
@@ -186,7 +186,7 @@
             this.updtAddBox.BackColor = System.Drawing.Color.Silver;
             this.updtAddBox.ForeColor = System.Drawing.Color.Black;
             this.updtAddBox.Location = new System.Drawing.Point(115, 127);
-            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2);
             this.updtAddBox.Name = "updtAddBox";
             this.updtAddBox.Size = new System.Drawing.Size(63, 24);
             this.updtAddBox.TabIndex = 9;
@@ -219,7 +219,7 @@
             this.button2.BackColor = System.Drawing.Color.Silver;
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(25, 127);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 24);
             this.button2.TabIndex = 6;
@@ -231,7 +231,7 @@
             // 
             this.text_label1.BackColor = System.Drawing.Color.Gray;
             this.text_label1.Location = new System.Drawing.Point(75, 23);
-            this.text_label1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.text_label1.Margin = new System.Windows.Forms.Padding(2);
             this.text_label1.Name = "text_label1";
             this.text_label1.Size = new System.Drawing.Size(100, 20);
             this.text_label1.TabIndex = 3;
@@ -251,7 +251,7 @@
             // 
             this.whenFeed.BackColor = System.Drawing.Color.Gray;
             this.whenFeed.Location = new System.Drawing.Point(81, 84);
-            this.whenFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.whenFeed.Margin = new System.Windows.Forms.Padding(2);
             this.whenFeed.Name = "whenFeed";
             this.whenFeed.Size = new System.Drawing.Size(100, 20);
             this.whenFeed.TabIndex = 5;
@@ -261,7 +261,7 @@
             // 
             this.givenFeed.BackColor = System.Drawing.Color.Gray;
             this.givenFeed.Location = new System.Drawing.Point(81, 53);
-            this.givenFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.givenFeed.Margin = new System.Windows.Forms.Padding(2);
             this.givenFeed.Name = "givenFeed";
             this.givenFeed.Size = new System.Drawing.Size(100, 20);
             this.givenFeed.TabIndex = 4;
@@ -383,6 +383,7 @@
             this.removeUsrStryButton.TabIndex = 13;
             this.removeUsrStryButton.Text = "Remove";
             this.removeUsrStryButton.UseVisualStyleBackColor = false;
+            this.removeUsrStryButton.Click += new System.EventHandler(this.removeUsrStryButton_Click);
             // 
             // updateUserstory
             // 
@@ -550,7 +551,7 @@
             this.userButton.ForeColor = System.Drawing.Color.Black;
             this.userButton.Location = new System.Drawing.Point(10, 49);
             this.userButton.Name = "userButton";
-            this.userButton.Size = new System.Drawing.Size(75, 23);
+            this.userButton.Size = new System.Drawing.Size(149, 23);
             this.userButton.TabIndex = 2;
             this.userButton.Text = "Remove selected user";
             this.userButton.UseVisualStyleBackColor = false;
@@ -574,6 +575,7 @@
             this.userDropDown.Size = new System.Drawing.Size(121, 21);
             this.userDropDown.TabIndex = 0;
             this.userDropDown.Text = "- Choose user -";
+            this.userDropDown.SelectedIndexChanged += new System.EventHandler(this.userDropDown_SelectedIndexChanged);
             // 
             // projectUserBox
             // 
@@ -594,7 +596,7 @@
             // 
             this.testIdFeed.BackColor = System.Drawing.Color.Gray;
             this.testIdFeed.Location = new System.Drawing.Point(69, 49);
-            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2);
             this.testIdFeed.Name = "testIdFeed";
             this.testIdFeed.Size = new System.Drawing.Size(100, 20);
             this.testIdFeed.TabIndex = 5;
@@ -638,6 +640,7 @@
             this.projectUserDropDown.Size = new System.Drawing.Size(121, 21);
             this.projectUserDropDown.TabIndex = 0;
             this.projectUserDropDown.Text = "- Choose user -";
+            this.projectUserDropDown.SelectedIndexChanged += new System.EventHandler(this.projectUserDropDown_SelectedIndexChanged);
             // 
             // Viewer
             // 

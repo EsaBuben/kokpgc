@@ -26,7 +26,6 @@ namespace TestIt
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -83,6 +82,7 @@ namespace TestIt
                 priorityLabel.Visible = false;
                 if (curry == DataObjectType.Functionality)
                 {
+                    projectIdFeed.Text = valitutPalat[(int)curry].ToString();
                     userStory.Visible = true;
                 }
 
@@ -128,9 +128,6 @@ namespace TestIt
                     Taulukko.DataSource = bindingSource;
                     break;
                 case DataObjectType.Result:
-
-                    break;
-                case DataObjectType.User:
                     break;
                 default:
                     break;
@@ -196,6 +193,55 @@ namespace TestIt
             givenFeed.Text = "";
             whenFeed.Text = "";
             thenFeed.Text = "";
+        }
+        private void removeUsrStryButton_Click(object sender, EventArgs e)
+        {
+            Controller.RemoveItem(Convert.ToInt32(funcIdFeed.Text), DataObjectType.UserStory);
+            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+            Taulukko.DataSource = bindingSource;
+            funcIdFeed.Text = "";
+            givenFeed.Text = "";
+            whenFeed.Text = "";
+            thenFeed.Text = "";
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //add user
+            User user = new User();
+            user.UserName = userNameFeed.Text;
+            Controller.AddNew(user, DataObjectType.User);
+            userNameFeed.Text = "";
+            //if labela are labelb not embty
+            if (!(projectIdFeed.Text == "" || rooliFeed.Text == ""))
+            {
+                ProjectRole pr = new ProjectRole();
+                pr.Ref_user_id = user.UserID;
+                pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
+                pr.Role = rooliFeed.Text;
+                Controller.AddNew(pr, DataObjectType.ProjectRole);
+                projectIdFeed.Text = "";
+                rooliFeed.Text = "";
+            }
+            this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //remove user
+            Object selected_obj = projectUserDropDown.SelectedItem;
+            Controller.RemoveItem(((User)selected_obj).UserID, DataObjectType.User);
+            projectUserDropDown.Items.Remove(selected_obj);
+            projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
+            this.userDropDown.Items.Clear();
+            this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+
+        }
+
+        private void add_to_test_click(object sender, EventArgs e)
+        {
+            //remove user
+
         }
         //private void button4_Click(object sender, EventArgs e)
         //{
@@ -266,40 +312,7 @@ namespace TestIt
         }
 
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-          //add user
-          User user = new User();
-          user.UserName = userNameFeed.Text;
-          Controller.AddNew(user, DataObjectType.User);
-          userNameFeed.Text = "";
-          //if labela are labelb not embty
-          if(!(projectIdFeed.Text == "" || rooliFeed.Text == "")){
-            ProjectRole pr = new ProjectRole();
-            pr.Ref_user_id = user.UserID;
-            pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
-            pr.Role = rooliFeed.Text;
-            Controller.AddNew(pr, DataObjectType.ProjectRole);
-                projectIdFeed.Text = "";
-                rooliFeed.Text = "";
-          }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-          //remove user
-          Object selected_obj = projectUserDropDown.SelectedItem;
-          Controller.RemoveItem(((User)selected_obj).UserID, DataObjectType.User);
-          projectUserDropDown.Items.Remove(selected_obj);
-          projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
-
-        }
-
-        private void add_to_test_click(object sender, EventArgs e)
-        {
-          //remove user
         
-        }
 
 
         private void AddResponsibleUser(object sender, EventArgs e){
@@ -323,6 +336,14 @@ namespace TestIt
 
         }
 
+        private void userDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void projectUserDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
