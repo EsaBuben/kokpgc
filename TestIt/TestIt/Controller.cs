@@ -68,7 +68,8 @@ namespace TestIt
             gateway.Update(obj);
         }
 
-        public static List<Object> getProjectUsers(int project_id){
+        public static List<Object> getProjectUsers(int project_id)
+        {
           GatewayConstructor gateway = new GatewayConstructor(DataObjectType.ProjectRole);
           List<Object> proj_role_list = gateway.SelectAll(project_id);
           UserGateway usergateway = new UserGateway();
@@ -81,6 +82,11 @@ namespace TestIt
           }
           return project_users;
         }
+        public static void SetResponsibleUser(User user, int id)
+        {
+            TestGateway gateway = new TestGateway();
+            gateway.UpdateResponsibleUser(user, id);
 
+        }
     }
 }

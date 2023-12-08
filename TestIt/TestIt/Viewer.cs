@@ -18,6 +18,8 @@ namespace TestIt
         int[] valitutPalat;
         BindingSource bindingSource = new BindingSource();
         DataObjectType curry = DataObjectType.Project;
+        List<User> users = new List<User>();
+        
 
         public Viewer()
         {
@@ -26,6 +28,7 @@ namespace TestIt
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+            users = Controller.Listaa(DataObjectType.User).Cast<User>().ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -228,19 +231,26 @@ namespace TestIt
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //remove user
-            Object selected_obj = projectUserDropDown.SelectedItem;
+            Object selected_obj = userDropDown.SelectedItem;
             Controller.RemoveItem(((User)selected_obj).UserID, DataObjectType.User);
-            projectUserDropDown.Items.Remove(selected_obj);
-            projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
+            userDropDown.Items.Remove(selected_obj);
+            userDropDown.SelectedIndex = userDropDown.Items.Count - 1;
             this.userDropDown.Items.Clear();
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+            userDropDown.Text = "";
 
         }
 
         private void add_to_test_click(object sender, EventArgs e)
         {
-            //remove user
+            //add responsible user to test
+            Object selected_obj = projectUserDropDown.SelectedItem;
+            User user = users.Find(x => x.UserName == selected_obj.ToString());
+            Controller.SetResponsibleUser(user, Convert.ToInt32(testIdFeed.Text));
+            this.projectUserDropDown.Items.Clear();
+            this.projectUserDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+            testIdFeed.Text = "";
+            projectUserDropDown.Text = "";
 
         }
         //private void button4_Click(object sender, EventArgs e)

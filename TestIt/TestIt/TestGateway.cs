@@ -176,6 +176,17 @@ namespace TestIt
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }
+        //update responsible user
+        public void UpdateResponsibleUser(User user, int id)
+        {
+            // update test entity.
+            
+            string query = "UPDATE test" +
+                           " SET responsible_user_id = " + user.UserID + "" +
+                           " WHERE test_id = '" + id + "'";
+            MySqlCommand commandDatabase = CallStack(query);
+            commandDatabase.ExecuteNonQuery();
+        }
 
 
 
