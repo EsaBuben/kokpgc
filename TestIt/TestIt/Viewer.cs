@@ -42,6 +42,9 @@ namespace TestIt
                 userStory.Visible = true;
                 priorityFeed.Visible = false;
                 priorityLabel.Visible = false;
+                statusDrop.Visible = false;
+                statusLabel.Visible = false;
+                respoUser.Visible = false;
             }
             else if (curry == DataObjectType.Test)
             {
@@ -50,7 +53,21 @@ namespace TestIt
                 userStory.Visible = false;
                 priorityFeed.Visible = true;
                 priorityLabel.Visible = true;
-                bindingSource.DataSource = Controller.Listaa(curry);
+                changeStatus.Visible = true;
+                statusDrop.Visible = false;
+                statusLabel.Visible = false;
+                respoUser.Visible = true;
+                bindingSource.DataSource = Controller.Listaa(valitutPalat[2],curry);
+                Taulukko.DataSource = bindingSource;
+            }
+            else if (curry == DataObjectType.Result)
+            {
+                otsikko.Text = curry.ToString();
+                addBox.Text = "Add " + curry.ToString();
+                statusLabel.Visible = true;
+                statusDrop.Visible = true;
+                respoUser.Visible = false;
+                bindingSource.DataSource = Controller.Listaa(valitutPalat[3],curry);
                 Taulukko.DataSource = bindingSource;
             }
             else
@@ -60,6 +77,10 @@ namespace TestIt
                 userStory.Visible = false;
                 priorityFeed.Visible = false;
                 priorityLabel.Visible = false;
+                changeStatus.Visible = false;
+                statusDrop.Visible = false;
+                statusLabel.Visible = false;
+                respoUser.Visible = false;
                 bindingSource.DataSource = Controller.Listaa(curry);
                 Taulukko.DataSource = bindingSource;
             }
@@ -81,6 +102,7 @@ namespace TestIt
                 userStory.Visible = false;
                 priorityFeed.Visible = false;
                 priorityLabel.Visible = false;
+                changeStatus.Visible = false;
                 if (curry == DataObjectType.Functionality)
                 {
                     userStory.Visible = true;
@@ -91,9 +113,17 @@ namespace TestIt
                     //priority
                     priorityFeed.Visible = true;
                     priorityLabel.Visible = true;
+                    changeStatus.Visible= true;
+                    respoUser.Visible = true;
                     //responsibility
                     this.projectUserDropDown.Items.AddRange(Controller.getProjectUsers(valitutPalat[1]).ToArray());
 
+                }
+                if (curry == DataObjectType.Result)
+                {
+                    statusDrop.Visible = true;
+                    statusLabel.Visible = true;
+                    respoUser.Visible= false;
                 }
             }
         }
@@ -323,6 +353,24 @@ namespace TestIt
 
         }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void userDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void projectUserDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void projectUserBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
