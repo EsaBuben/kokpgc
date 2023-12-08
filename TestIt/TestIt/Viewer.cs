@@ -18,9 +18,6 @@ namespace TestIt
         int[] valitutPalat;
         BindingSource bindingSource = new BindingSource();
         DataObjectType curry = DataObjectType.Project;
-        List<User> users = new List<User>();
-        
-
         public Viewer()
         {
             InitializeComponent();
@@ -28,7 +25,6 @@ namespace TestIt
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
-            users = Controller.Listaa(DataObjectType.User).Cast<User>().ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -168,11 +164,18 @@ namespace TestIt
         }
         private void button3_Click(object sender, EventArgs e)
         {
-
             Controller.RemoveItem(Convert.ToInt32(textBox1.Text), curry);
-            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
-            Taulukko.DataSource = bindingSource;
-            textBox1.Text = "";
+
+            if (curry == DataObjectType.Project)
+            {
+                bindingSource.DataSource = Controller.Listaa(curry);
+                Taulukko.DataSource = bindingSource;
+                textBox1.Text = "";
+            }
+            else 
+                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                Taulukko.DataSource = bindingSource;
+                textBox1.Text = "";
         }
         private void userStoryButton_Click(object sender, EventArgs e)
         {
@@ -255,8 +258,11 @@ namespace TestIt
                 projectIdFeed.Text = "";
                 rooliFeed.Text = "";
             }
+            this.userDropDown.Items.Clear();
+            projectUserDropDown.Items.Clear();
+            projectUserDropDown.Items.AddRange(Controller.getProjectUsers(valitutPalat[1]).ToArray());
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
-
+            
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -275,12 +281,14 @@ namespace TestIt
         {
             //add responsible user to test
             Object selected_obj = projectUserDropDown.SelectedItem;
-            User user = users.Find(x => x.UserName == selected_obj.ToString());
+            User user = (User)selected_obj;
             Controller.SetResponsibleUser(user, Convert.ToInt32(testIdFeed.Text));
             this.projectUserDropDown.Items.Clear();
             this.projectUserDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
             testIdFeed.Text = "";
             projectUserDropDown.Text = "";
+            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+            Taulukko.DataSource = bindingSource;
 
         }
         //private void button4_Click(object sender, EventArgs e)
