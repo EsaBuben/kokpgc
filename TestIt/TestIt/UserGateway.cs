@@ -60,6 +60,25 @@ namespace TestIt
 
         }
 
+        public Object FindById(int id){
+          string query = @"
+          SELECT * FROM user
+          WHERE user_id = @id";
+          MySqlCommand commandDatabase = CallStack(query);
+          commandDatabase.Parameters.AddWithValue("@id", id);
+          MySqlDataReader reader = commandDatabase.ExecuteReader();
+
+          User usr = new User();
+          while (reader.Read())
+          {
+              usr = new User(reader.GetString(1), reader.GetInt32(0));
+
+          }
+          reader.Close();
+          return usr;
+        }
+
+
         public List<Object> SelectAll()
         {
             string query = "SELECT * FROM user";

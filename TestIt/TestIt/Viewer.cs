@@ -26,6 +26,7 @@ namespace TestIt
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,8 +71,12 @@ namespace TestIt
 
                 if (curry == DataObjectType.Test)
                 {
+                    //priority
                     priorityFeed.Visible = true;
                     priorityLabel.Visible = true;
+                    //responsibility
+                    this.projectUserDropDown.Items.AddRange(Controller.getProjectUsers(valitutPalat[1]).ToArray());
+
                 }
             }
         }
@@ -104,6 +109,7 @@ namespace TestIt
                     priorityFeed.Text = "";
                     bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                     Taulukko.DataSource = bindingSource;
+
                     break;
                 case DataObjectType.Result:
 
@@ -202,6 +208,11 @@ namespace TestIt
           projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
 
         }
+
+        private void AddResponsibleUser(object sender, EventArgs e){
+
+        }
+
 
         private void label3_Click(object sender, EventArgs e)
         {

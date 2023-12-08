@@ -35,3 +35,12 @@ INSERT INTO instruction (ref_test_id, info)
 VALUES ((SELECT test_id FROM test WHERE name = 'Unit Test 1'), 'Ensure all unit test cases cover the functionality thoroughly'),
        ((SELECT test_id FROM test WHERE name = 'Integration Test A'), 'Integrate components A and B and verify their interaction'),
        ((SELECT test_id FROM test WHERE name = 'Performance Test XYZ'), 'Run performance tests for scenario XYZ and analyze resource usage');
+
+INSERT INTO projectrole (ref_project_id, ref_user_id, role)
+VALUES (
+(SELECT project_id FROM project WHERE Project_Name = 'Quantum Harmony Initiative'),
+(SELECT user_id FROM user WHERE user_name = 'Charlie'), "Scrum master"),
+((SELECT project_id FROM project WHERE Project_Name = 'Nebula Nexus Exploration'),
+(SELECT user_id FROM user WHERE user_name = 'Alice'), "product owner"),
+((SELECT project_id FROM project WHERE Project_Name = 'Cerulean Dreamscape Odyssey'),
+(SELECT user_id FROM user WHERE user_name = 'Bob'), "käsien heiluttelija");
