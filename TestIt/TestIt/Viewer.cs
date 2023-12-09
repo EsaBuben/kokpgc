@@ -120,6 +120,7 @@ namespace TestIt
                     changeStatus.Visible= true;
                     respoUser.Visible = true;
                     //responsibility
+                    this.projectUserDropDown.Items.Clear();
                     this.projectUserDropDown.Items.AddRange(Controller.getProjectUsers(valitutPalat[1]).ToArray());
 
                 }
@@ -277,7 +278,6 @@ namespace TestIt
                 pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
                 pr.Role = rooliFeed.Text;
                 Controller.AddNew(pr, DataObjectType.ProjectRole);
-                projectIdFeed.Text = "";
                 rooliFeed.Text = "";
             }
             this.userDropDown.Items.Clear();
