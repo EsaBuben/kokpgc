@@ -89,5 +89,10 @@ namespace TestIt
             gateway.UpdateResponsibleUser(user, id);
 
         }
+
+        public static void RemoveProjectRole(ProjectRole pr){
+          ProjectRoleGateway prw = new ProjectRoleGateway();
+          prw.Delete(pr);
+        }
     }
 }

@@ -516,12 +516,18 @@ namespace TestIt
 
         public void removeRole_click(object sender, EventArgs e){
           ProjectRole pr = new ProjectRole();
+          pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
+          pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
+          pr.Role = rooliFeed.Text;
           Controller.RemoveProjectRole(pr, DataObjectType.ProjectRole);
 
         }
 
         public void updateRole_click(object sender, EventArgs e){
           ProjectRole pr = new ProjectRole();
+          pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
+          pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
+          pr.Role = rooliFeed.Text;
           Constroller.Update(pr, DataObjectType.ProjectRole);
         }
 
