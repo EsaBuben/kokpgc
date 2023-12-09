@@ -409,6 +409,7 @@ namespace TestIt
                 chart.DataSource = null;
                 chart.Visible = false;
             }
+        }
         private void changestatus_test_click(object sender, EventArgs e){
           if(!(userDropDown.SelectedIndex < 0 )){
             Object selected_obj = userDropDown.SelectedItem;
@@ -455,7 +456,7 @@ namespace TestIt
         private void signin_Click(object sender, EventArgs e)
         {
             chosenOne = (User)userDropDown.SelectedItem;
-            signedAs.Text = "Signed in as : " + chosenOne.UserName;
+            signedAs.Text = "Signed in as : " + chosenOne.UserName + " " + chosenOne.UserID;
         }
         private void button9_Click(object sender, EventArgs e)
         {

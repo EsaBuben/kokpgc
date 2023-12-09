@@ -103,6 +103,7 @@ namespace TestIt
         {
             ResultGateway gateway = new ResultGateway();
             return gateway.GetComments(id);
+        }
 
         public static void RemoveProjectRole(ProjectRole pr){
           ProjectRoleGateway prw = new ProjectRoleGateway();
