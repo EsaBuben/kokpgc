@@ -103,6 +103,8 @@
             this.button8 = new System.Windows.Forms.Button();
             this.remorespo = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.signin = new System.Windows.Forms.Button();
+            this.signedAs = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.addBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -597,16 +599,17 @@
             // 
             // chooseUserBox
             // 
+            this.chooseUserBox.Controls.Add(this.signin);
             this.chooseUserBox.Controls.Add(this.button9);
             this.chooseUserBox.Controls.Add(this.userButton);
             this.chooseUserBox.Controls.Add(this.userLabel);
             this.chooseUserBox.Controls.Add(this.userDropDown);
             this.chooseUserBox.ForeColor = System.Drawing.Color.White;
-            this.chooseUserBox.Location = new System.Drawing.Point(1332, 6);
+            this.chooseUserBox.Location = new System.Drawing.Point(1262, 6);
             this.chooseUserBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chooseUserBox.Name = "chooseUserBox";
             this.chooseUserBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.chooseUserBox.Size = new System.Drawing.Size(294, 150);
+            this.chooseUserBox.Size = new System.Drawing.Size(364, 150);
             this.chooseUserBox.TabIndex = 16;
             this.chooseUserBox.TabStop = false;
             this.chooseUserBox.Text = "Choose user";
@@ -930,7 +933,6 @@
             this.button8.TabIndex = 22;
             this.button8.Text = "Show chart";
             this.button8.UseVisualStyleBackColor = false;
-            this.button8.Visible = false;
             // 
             // remorespo
             // 
@@ -947,12 +949,34 @@
             // 
             this.button9.BackColor = System.Drawing.Color.Silver;
             this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(14, 62);
+            this.button9.Location = new System.Drawing.Point(152, 62);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(160, 38);
+            this.button9.Size = new System.Drawing.Size(171, 38);
             this.button9.TabIndex = 23;
             this.button9.Text = "Show all comments";
             this.button9.UseVisualStyleBackColor = false;
+            // 
+            // signin
+            // 
+            this.signin.BackColor = System.Drawing.Color.Silver;
+            this.signin.ForeColor = System.Drawing.Color.Black;
+            this.signin.Location = new System.Drawing.Point(14, 62);
+            this.signin.Name = "signin";
+            this.signin.Size = new System.Drawing.Size(120, 38);
+            this.signin.TabIndex = 24;
+            this.signin.Text = "Sign in";
+            this.signin.UseVisualStyleBackColor = false;
+            // 
+            // signedAs
+            // 
+            this.signedAs.AutoSize = true;
+            this.signedAs.ForeColor = System.Drawing.Color.White;
+            this.signedAs.Location = new System.Drawing.Point(547, 101);
+            this.signedAs.Name = "signedAs";
+            this.signedAs.Size = new System.Drawing.Size(108, 20);
+            this.signedAs.TabIndex = 23;
+            this.signedAs.Text = "Signed in as : ";
+            this.signedAs.Click += new System.EventHandler(this.label11_Click);
             // 
             // Viewer
             // 
@@ -961,6 +985,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1725, 1152);
+            this.Controls.Add(this.signedAs);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.Instructions);
             this.Controls.Add(this.instBox);
@@ -1073,5 +1098,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button remorespo;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button signin;
+        private System.Windows.Forms.Label signedAs;
     }
 }
