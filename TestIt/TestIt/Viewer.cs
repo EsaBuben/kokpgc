@@ -29,7 +29,7 @@ namespace TestIt
             this.statusDrop.Items.AddRange(status_list);
             otsikko.Text = curry.ToString();
 
-            statusDrop.Visible = true;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
