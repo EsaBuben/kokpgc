@@ -107,6 +107,8 @@
     <Compile Include="FunctionalityGateway.cs" />
     <Compile Include="GatewayConstructor.cs" />
     <Compile Include="IGateway.cs" />
+    <Compile Include="Instructions.cs" />
+    <Compile Include="InstructionsGateway.cs" />
     <Compile Include="mysqlexample.cs" />
     <Compile Include="ProjectGateway.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
