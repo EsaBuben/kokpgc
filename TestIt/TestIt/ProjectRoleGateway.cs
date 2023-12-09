@@ -71,12 +71,45 @@ namespace TestIt
         }
 
         public void Update(Object obj){
-          return;
+          ProjectRole pr = (ProjectRole)obj;
+
+          string query = @"
+          UPDATE projectrole
+          SET role = @role
+          WHERE ref_project_id = @ref_proj AND
+          ref_user_id = @ref_user
+          ";
+
+          MySqlCommand cmd = CallStack(query);
+          cmd.Parameters.AddWithValue("@ref_proj", pr.Ref_proj_id);
+          cmd.Parameters.AddWithValue("@ref_user", pr.Ref_user_id);
+          cmd.Parameters.AddWithValue("@role", pr.Role);
+
+          cmd.ExecuteNonQuery();
+
+
         }
 
         public Object Find(string name)
         {
             return null;
         }
+
+        public void Delete(ProjectRole pr){
+          string query = @"
+          DELETE FROM projectrole
+          WHERE ref_project_id = @ref_proj AND
+          ref_user_id = @ref_user
+          ";
+
+          MySqlCommand cmd = CallStack(query);
+          cmd.Parameters.AddWithValue("@ref_proj", pr.Ref_proj_id);
+          cmd.Parameters.AddWithValue("@ref_user", pr.Ref_user_id);
+
+          cmd.ExecuteNonQuery();
+
+
+        }
+
     }
 }
