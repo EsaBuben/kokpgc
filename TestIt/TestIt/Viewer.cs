@@ -514,6 +514,16 @@ namespace TestIt
           }
         }
 
+        public void removeRole_click(object sender, EventArgs e){
+          ProjectRole pr = new ProjectRole();
+          Controller.RemoveProjectRole(pr, DataObjectType.ProjectRole);
+
+        }
+
+        public void updateRole_click(object sender, EventArgs e){
+          ProjectRole pr = new ProjectRole();
+          Constroller.Update(pr, DataObjectType.ProjectRole);
+        }
 
 
         private void label11_Click(object sender, EventArgs e)
