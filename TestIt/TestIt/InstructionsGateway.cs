@@ -104,13 +104,13 @@ namespace TestIt
             string query = @"
             UPDATE instruction
             SET info = @Instruction_Text
-            WHERE Instruction_ID = @Instruction_ID
+            WHERE ref_test_id = @ref_test_id
             ";
 
             MySqlCommand cmd = CallStack(query);
 
             cmd.Parameters.AddWithValue("@Instruction_Text", instr.InstructionText);
-            cmd.Parameters.AddWithValue("@Instruction_ID", instr.InstructionID);
+            cmd.Parameters.AddWithValue("@ref_test_id", instr.RefTestID);
 
             cmd.ExecuteNonQuery();
         }
@@ -123,7 +123,7 @@ namespace TestIt
                string query = @"
             SELECT *
             FROM instruction
-            WHERE Instruction_ID = @id
+            WHERE ref_test_id = @id
             ";
 
             MySqlCommand cmd = CallStack(query);

@@ -531,6 +531,14 @@ namespace TestIt
 
         }
 
+        private void Instructions_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void RemoInst_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
