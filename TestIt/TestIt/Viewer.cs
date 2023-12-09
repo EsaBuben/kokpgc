@@ -107,6 +107,8 @@ namespace TestIt
                 priorityFeed.Visible = false;
                 priorityLabel.Visible = false;
                 changeStatus.Visible = false;
+                Instructions.Visible = false;
+                instBox.Visible = false;
                 if (curry == DataObjectType.Functionality)
                 {
                     projectIdFeed.Text = valitutPalat[(int)curry].ToString();
@@ -120,6 +122,8 @@ namespace TestIt
                     priorityLabel.Visible = true;
                     changeStatus.Visible= true;
                     respoUser.Visible = true;
+                    Instructions.Visible = true;
+                    instBox.Visible = true;
                     //responsibility
                     this.projectUserDropDown.Items.Clear();
                     this.projectUserDropDown.Items.AddRange(Controller.getProjectUsers(valitutPalat[1]).ToArray());
