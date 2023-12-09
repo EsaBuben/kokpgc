@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.addBox = new System.Windows.Forms.GroupBox();
@@ -90,16 +90,19 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.instBox = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.instID = new System.Windows.Forms.TextBox();
-            this.instrCom = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.instrCom = new System.Windows.Forms.TextBox();
+            this.instID = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.Instructions = new System.Windows.Forms.ListBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.remorespo = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.addBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -108,7 +111,7 @@
             this.chooseUserBox.SuspendLayout();
             this.respoUser.SuspendLayout();
             this.changeStatus.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.instBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,7 +124,7 @@
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.button1.Location = new System.Drawing.Point(48, 32);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 52);
             this.button1.TabIndex = 0;
@@ -132,37 +135,37 @@
             // Taulukko
             // 
             this.Taulukko.BackgroundColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Taulukko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Taulukko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Taulukko.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Taulukko.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Taulukko.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Taulukko.Location = new System.Drawing.Point(366, 151);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Taulukko.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Taulukko.Location = new System.Drawing.Point(366, 164);
             this.Taulukko.Name = "Taulukko";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Taulukko.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Taulukko.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Taulukko.RowHeadersWidth = 62;
             this.Taulukko.RowTemplate.Height = 28;
-            this.Taulukko.Size = new System.Drawing.Size(1260, 345);
+            this.Taulukko.Size = new System.Drawing.Size(1260, 332);
             this.Taulukko.TabIndex = 1;
             this.Taulukko.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -180,9 +183,9 @@
             this.addBox.Controls.Add(this.label1);
             this.addBox.ForeColor = System.Drawing.Color.White;
             this.addBox.Location = new System.Drawing.Point(48, 89);
-            this.addBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBox.Margin = new System.Windows.Forms.Padding(2);
             this.addBox.Name = "addBox";
-            this.addBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBox.Padding = new System.Windows.Forms.Padding(2);
             this.addBox.Size = new System.Drawing.Size(310, 269);
             this.addBox.TabIndex = 2;
             this.addBox.TabStop = false;
@@ -236,7 +239,7 @@
             this.updtAddBox.BackColor = System.Drawing.Color.Silver;
             this.updtAddBox.ForeColor = System.Drawing.Color.Black;
             this.updtAddBox.Location = new System.Drawing.Point(172, 195);
-            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2);
             this.updtAddBox.Name = "updtAddBox";
             this.updtAddBox.Size = new System.Drawing.Size(94, 37);
             this.updtAddBox.TabIndex = 9;
@@ -271,7 +274,7 @@
             this.button2.BackColor = System.Drawing.Color.Silver;
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(38, 195);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 37);
             this.button2.TabIndex = 6;
@@ -283,7 +286,7 @@
             // 
             this.text_label1.BackColor = System.Drawing.Color.Gray;
             this.text_label1.Location = new System.Drawing.Point(118, 25);
-            this.text_label1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.text_label1.Margin = new System.Windows.Forms.Padding(2);
             this.text_label1.Name = "text_label1";
             this.text_label1.Size = new System.Drawing.Size(142, 26);
             this.text_label1.TabIndex = 3;
@@ -302,7 +305,7 @@
             // 
             this.whenFeed.BackColor = System.Drawing.Color.Gray;
             this.whenFeed.Location = new System.Drawing.Point(122, 129);
-            this.whenFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.whenFeed.Margin = new System.Windows.Forms.Padding(2);
             this.whenFeed.Name = "whenFeed";
             this.whenFeed.Size = new System.Drawing.Size(148, 26);
             this.whenFeed.TabIndex = 5;
@@ -312,7 +315,7 @@
             // 
             this.givenFeed.BackColor = System.Drawing.Color.Gray;
             this.givenFeed.Location = new System.Drawing.Point(122, 82);
-            this.givenFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.givenFeed.Margin = new System.Windows.Forms.Padding(2);
             this.givenFeed.Name = "givenFeed";
             this.givenFeed.Size = new System.Drawing.Size(148, 26);
             this.givenFeed.TabIndex = 4;
@@ -594,6 +597,7 @@
             // 
             // chooseUserBox
             // 
+            this.chooseUserBox.Controls.Add(this.button9);
             this.chooseUserBox.Controls.Add(this.userButton);
             this.chooseUserBox.Controls.Add(this.userLabel);
             this.chooseUserBox.Controls.Add(this.userDropDown);
@@ -602,7 +606,7 @@
             this.chooseUserBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chooseUserBox.Name = "chooseUserBox";
             this.chooseUserBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.chooseUserBox.Size = new System.Drawing.Size(294, 137);
+            this.chooseUserBox.Size = new System.Drawing.Size(294, 150);
             this.chooseUserBox.TabIndex = 16;
             this.chooseUserBox.TabStop = false;
             this.chooseUserBox.Text = "Choose user";
@@ -611,7 +615,7 @@
             // 
             this.userButton.BackColor = System.Drawing.Color.Silver;
             this.userButton.ForeColor = System.Drawing.Color.Black;
-            this.userButton.Location = new System.Drawing.Point(15, 75);
+            this.userButton.Location = new System.Drawing.Point(14, 108);
             this.userButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userButton.Name = "userButton";
             this.userButton.Size = new System.Drawing.Size(194, 35);
@@ -644,6 +648,7 @@
             // 
             // respoUser
             // 
+            this.respoUser.Controls.Add(this.remorespo);
             this.respoUser.Controls.Add(this.testIdFeed);
             this.respoUser.Controls.Add(this.testIDLabel);
             this.respoUser.Controls.Add(this.addToTest);
@@ -665,7 +670,7 @@
             // 
             this.testIdFeed.BackColor = System.Drawing.Color.Gray;
             this.testIdFeed.Location = new System.Drawing.Point(104, 75);
-            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2);
             this.testIdFeed.Name = "testIdFeed";
             this.testIdFeed.Size = new System.Drawing.Size(148, 26);
             this.testIdFeed.TabIndex = 5;
@@ -797,23 +802,27 @@
             this.comboBox1.TabIndex = 19;
             this.comboBox1.Text = "- Choose status -";
             // 
-            // chart1
+            // chart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(1176, 560);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(450, 462);
-            this.chart1.TabIndex = 19;
-            this.chart1.Text = "chart1";
-            this.chart1.Visible = false;
+            this.chart.BackColor = System.Drawing.Color.Silver;
+            this.chart.BackSecondaryColor = System.Drawing.Color.Silver;
+            this.chart.BorderlineColor = System.Drawing.Color.Silver;
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
+            this.chart.Location = new System.Drawing.Point(1176, 560);
+            this.chart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chart.Name = "chart";
+            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart.Series.Add(series1);
+            this.chart.Size = new System.Drawing.Size(450, 462);
+            this.chart.TabIndex = 19;
+            this.chart.Text = "chart1";
+            this.chart.Visible = false;
             // 
             // instBox
             // 
@@ -831,63 +840,7 @@
             this.instBox.TabIndex = 20;
             this.instBox.TabStop = false;
             this.instBox.Text = "Instructions by test ID:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(30, 63);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Test ID:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 108);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 20);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Comment:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // instID
-            // 
-            this.instID.BackColor = System.Drawing.Color.Gray;
-            this.instID.Location = new System.Drawing.Point(136, 57);
-            this.instID.Name = "instID";
-            this.instID.Size = new System.Drawing.Size(120, 26);
-            this.instID.TabIndex = 2;
-            // 
-            // instrCom
-            // 
-            this.instrCom.BackColor = System.Drawing.Color.Gray;
-            this.instrCom.Location = new System.Drawing.Point(136, 102);
-            this.instrCom.Name = "instrCom";
-            this.instrCom.Size = new System.Drawing.Size(120, 26);
-            this.instrCom.TabIndex = 3;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Silver;
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(22, 161);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 28);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Read";
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Silver;
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(136, 160);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(90, 29);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Add";
-            this.button6.UseVisualStyleBackColor = false;
+            this.instBox.Visible = false;
             // 
             // button7
             // 
@@ -900,6 +853,63 @@
             this.button7.Text = "Update";
             this.button7.UseVisualStyleBackColor = false;
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Silver;
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(136, 160);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(90, 29);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "Add";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Silver;
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(22, 161);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(86, 28);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Read";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // instrCom
+            // 
+            this.instrCom.BackColor = System.Drawing.Color.Gray;
+            this.instrCom.Location = new System.Drawing.Point(136, 102);
+            this.instrCom.Name = "instrCom";
+            this.instrCom.Size = new System.Drawing.Size(120, 26);
+            this.instrCom.TabIndex = 3;
+            // 
+            // instID
+            // 
+            this.instID.BackColor = System.Drawing.Color.Gray;
+            this.instID.Location = new System.Drawing.Point(136, 57);
+            this.instID.Name = "instID";
+            this.instID.Size = new System.Drawing.Size(120, 26);
+            this.instID.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(26, 108);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 20);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "Comment:";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 20);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Test ID:";
+            // 
             // Instructions
             // 
             this.Instructions.BackColor = System.Drawing.Color.Silver;
@@ -911,6 +921,39 @@
             this.Instructions.TabIndex = 21;
             this.Instructions.Visible = false;
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Silver;
+            this.button8.Location = new System.Drawing.Point(1494, 508);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(122, 41);
+            this.button8.TabIndex = 22;
+            this.button8.Text = "Show chart";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Visible = false;
+            // 
+            // remorespo
+            // 
+            this.remorespo.BackColor = System.Drawing.Color.Silver;
+            this.remorespo.ForeColor = System.Drawing.Color.Black;
+            this.remorespo.Location = new System.Drawing.Point(183, 158);
+            this.remorespo.Name = "remorespo";
+            this.remorespo.Size = new System.Drawing.Size(101, 34);
+            this.remorespo.TabIndex = 6;
+            this.remorespo.Text = "Remove";
+            this.remorespo.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Silver;
+            this.button9.ForeColor = System.Drawing.Color.Black;
+            this.button9.Location = new System.Drawing.Point(14, 62);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(160, 38);
+            this.button9.TabIndex = 23;
+            this.button9.Text = "Show all comments";
+            this.button9.UseVisualStyleBackColor = false;
+            // 
             // Viewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -918,9 +961,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1725, 1152);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.Instructions);
             this.Controls.Add(this.instBox);
-            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.chart);
             this.Controls.Add(this.changeStatus);
             this.Controls.Add(this.respoUser);
             this.Controls.Add(this.chooseUserBox);
@@ -950,7 +994,7 @@
             this.respoUser.PerformLayout();
             this.changeStatus.ResumeLayout(false);
             this.changeStatus.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
             this.instBox.ResumeLayout(false);
             this.instBox.PerformLayout();
             this.ResumeLayout(false);
@@ -1016,7 +1060,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox statusDrop;
         private System.Windows.Forms.Label statusLabel;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart;
         private System.Windows.Forms.GroupBox instBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -1026,5 +1070,8 @@
         private System.Windows.Forms.TextBox instrCom;
         private System.Windows.Forms.TextBox instID;
         private System.Windows.Forms.ListBox Instructions;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button remorespo;
+        private System.Windows.Forms.Button button9;
     }
 }
