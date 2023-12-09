@@ -314,6 +314,50 @@ namespace TestIt
             Taulukko.DataSource = bindingSource;
 
         }
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            //Read instructions by id
+            int testID = Convert.ToInt32(instID.Text);
+            Object instructions = Controller.Listaa(testID, DataObjectType.Instructions);
+            Instructions.Text = ((Instructions)instructions).InstructionText;
+            instID.Text = "";
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //add instructions to test
+            int testID = Convert.ToInt32(instID.Text);
+            string comment = instrCom.Text;
+            Object instructions = new Instructions(testID, comment);
+            Controller.AddNew(instructions, DataObjectType.Instructions);
+            instID.Text = "";
+            instrCom.Text = "";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //update instructions
+            int testID = Convert.ToInt32(instID.Text);
+            string comment = instrCom.Text;
+            Object instructions = new Instructions(testID, comment);
+            Controller.Update(instructions, DataObjectType.Instructions);
+            instID.Text = "";
+            instrCom.Text = "";
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         //private void button4_Click(object sender, EventArgs e)
         //{
         //    //add user
@@ -434,5 +478,7 @@ namespace TestIt
         {
 
         }
+
+        
     }
 }
