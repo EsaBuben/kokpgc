@@ -323,8 +323,8 @@ namespace TestIt
         {
             //Read instructions by id
             int testID = Convert.ToInt32(instID.Text);
-            Object instructions = Controller.Listaa(testID, DataObjectType.Instructions);
-            Instructions.Items.Add(instructions);
+            Instructions.Items.Clear();
+            Instructions.Items.AddRange(Controller.Listaa(testID, DataObjectType.Instructions).ToArray());
             instID.Text = "";
         }
 

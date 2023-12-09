@@ -78,8 +78,8 @@ namespace TestIt
                     Instructions instr = new Instructions();
 
                     instr.InstructionID = reader.GetInt32(0);
-                    instr.InstructionText = reader.GetString(1);
-                    instr.RefTestID = reader.GetInt32(2);
+                    instr.InstructionText = reader.GetString(2);
+                    instr.RefTestID = reader.GetInt32(1);
 
                     instrlist.Add(instr);
                 }

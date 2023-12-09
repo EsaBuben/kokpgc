@@ -63,5 +63,9 @@ namespace TestIt
                 refTestID = value;
             }
         }
+        public override string ToString()
+        {
+            return this.InstructionText;
+        }
     }
 }
