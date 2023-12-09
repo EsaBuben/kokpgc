@@ -19,7 +19,8 @@ namespace TestIt
         Result,
         User,
         UserStory,
-        ProjectRole
+        ProjectRole,
+        Instructions
     }
     public class Controller
     {

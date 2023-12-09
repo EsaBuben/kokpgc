@@ -30,6 +30,9 @@ namespace TestIt
           case DataObjectType.ProjectRole:
             this.gateway = new ProjectRoleGateway();
             break;
+          case DataObjectType.Instructions:
+            this.gateway = new InstructionsGateway();
+            break;
           default:
             this.gateway = null;
             break;

@@ -77,6 +77,7 @@ namespace TestIt
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                projectIdFeed.Text = "";
                 userStory.Visible = false;
                 priorityFeed.Visible = false;
                 priorityLabel.Visible = false;
@@ -444,5 +445,9 @@ namespace TestIt
 
         }
 
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
