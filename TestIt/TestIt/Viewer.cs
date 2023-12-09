@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,9 +27,8 @@ namespace TestIt
             Taulukko.DataSource = bindingSource;
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
             this.statusDrop.Items.AddRange(status_list);
+            this.comboBox1.Items.AddRange(status_list);
             otsikko.Text = curry.ToString();
-
-
         }
 
         //Back button
@@ -251,6 +250,21 @@ namespace TestIt
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 Taulukko.DataSource = bindingSource;
                 priorityFeed.Text = "";
+            }else if(curry == DataObjectType.Result){
+
+                if(!(statusDrop.SelectedIndex < 0 )){
+                  Result result = new Result();
+                  result.Comment = text_label1.Text;
+                  result.ID = Convert.ToInt32(updateIdFeed.Text);
+                  result.setStatus(statusDrop.SelectedIndex);
+                  this.juttu = result;
+                  Controller.Update(this.juttu, DataObjectType.Result);
+                  bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                  Taulukko.DataSource = bindingSource;
+              }else{
+                MessageBox.Show("No status selected :C");
+              }
+
             }
             text_label1.Text = "";
             updateIdFeed.Text = "";
@@ -478,6 +492,37 @@ namespace TestIt
         {
 
         }
+        private void changestatus_test_click(object sender, EventArgs e){
+          if(!(userDropDown.SelectedIndex < 0 )){
+            Object selected_obj = userDropDown.SelectedItem;
+            Result result = new Result();
+            result.Comment = textBox2.Text;
+            result.Ref_test_id = Convert.ToInt32(textBox3.Text);
+            result.Ref_user_id = ((User)selected_obj).UserID;
+            if(!(comboBox1.SelectedIndex < 0 )){
+              result.setStatus(comboBox1.SelectedIndex);
+            }else{
+              result.setStatus((int)ResultStatus.to_be_tested);
+            }
+            this.juttu = result;
+            Controller.AddNew(this.juttu, DataObjectType.Result);
+          }else{
+            MessageBox.Show("No user selected, plz slcd usr :C");
+          }
+        }
+
+        public void removeRole_click(object sender, EventArgs e){
+          ProjectRole pr = new ProjectRole();
+          Controller.RemoveProjectRole(pr, DataObjectType.ProjectRole);
+
+        }
+
+        public void updateRole_click(object sender, EventArgs e){
+          ProjectRole pr = new ProjectRole();
+          Constroller.Update(pr, DataObjectType.ProjectRole);
+        }
+
+
         private void label11_Click(object sender, EventArgs e)
         {
 
