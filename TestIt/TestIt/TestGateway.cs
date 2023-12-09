@@ -78,7 +78,11 @@ namespace TestIt
                test.setStatus(reader.GetInt32(5));
                }
                if(!reader.IsDBNull(reader.GetOrdinal("responsible_user_id"))){
-                 test.Responsible_user_id = reader.GetInt32(2);
+                 test.setResponsibleUserId(reader.GetInt32(2));
+                 UserGateway usergateway = new UserGateway();
+                 Object user = usergateway.FindById(reader.GetInt32(2));
+                 test.Responsible = ((User)user).UserName;
+
                }
                //else{
                //reader.GetOrdinal("responsible_user_id");
@@ -113,7 +117,10 @@ namespace TestIt
                 test.setStatus(reader.GetInt32(5));
                 }
                 if(!reader.IsDBNull(reader.GetOrdinal("responsible_user_id"))){
-                  test.Responsible_user_id = reader.GetInt32(2);
+                  test.setResponsibleUserId(reader.GetInt32(2));
+                  UserGateway usergateway = new UserGateway();
+                  Object user = usergateway.FindById(reader.GetInt32(2));
+                  test.Responsible = ((User)user).UserName;
                 }
                 //else{
                 //reader.GetOrdinal("responsible_user_id");
@@ -154,7 +161,10 @@ namespace TestIt
 
                 if (!reader.IsDBNull(reader.GetOrdinal("responsible_user_id")))
                 {
-                  test.Responsible_user_id = reader.GetInt32(2);
+                  test.setResponsibleUserId(reader.GetInt32(2));
+                  UserGateway usergateway = new UserGateway();
+                  Object user = usergateway.FindById(reader.GetInt32(2));
+                  test.Responsible = ((User)user).UserName;
                 }
                 //else{
                 //reader.GetOrdinal("responsible_user_id");
@@ -180,7 +190,7 @@ namespace TestIt
         public void UpdateResponsibleUser(User user, int id)
         {
             // update test entity.
-            
+
             string query = "UPDATE test" +
                            " SET responsible_user_id = " + user.UserID + "" +
                            " WHERE test_id = '" + id + "'";

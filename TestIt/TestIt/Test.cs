@@ -16,6 +16,7 @@ namespace TestIt
       private int priority;
       //private string instructions;
       private int resp_user_id;
+      private string resp_user_name;
       //private Result result;
       public Test(){
         this.name = "No name was given";
@@ -48,7 +49,15 @@ namespace TestIt
       public void setStatus(int status){
         this.status = (ResultStatus)status;
       }
+      public int getResponsibleUserId()
+      {
+        return this.resp_user_id;
+      }
+      public void setResponsibleUserId(int value)
+      {
+         this.resp_user_id = value;
 
+      }
         public string Name
         {
             get { return this.name; }
@@ -56,18 +65,18 @@ namespace TestIt
         }
         public int ID
         {
-        get{return this.testID;}
-        set{this.testID = value;}
+            get{return this.testID;}
+            set{this.testID = value;}
         }
         public int Priority
         {
             get { return this.priority; }
             set { this.priority = value; }
         }
-        public int Responsible_user_id
-        {
-            get { return this.resp_user_id; }
-            set { this.resp_user_id = value; }
+
+        public string Responsible{
+          get{return this.resp_user_name;}
+          set{this.resp_user_name = value;}
         }
 
         public string Status{
