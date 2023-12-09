@@ -392,6 +392,48 @@ namespace TestIt
 
         }
 
+        private void changestatus_test_click(object sender, EventArgs e){
+          if(!(userDropDown.SelectedIndex < 0 )){
+            Object selected_obj = userDropDown.SelectedItem;
+            Result result = new Result();
+            result.Comment = textBox2.Text;
+            result.Ref_test_id = Convert.ToInt32(textBox3.Text);
+            result.Ref_user_id = ((User)selected_obj).UserID;
+            if(!(comboBox1.SelectedIndex < 0 )){
+              result.setStatus(comboBox1.SelectedIndex);
+            }else{
+              result.setStatus((int)ResultStatus.to_be_tested);
+            }
+            this.juttu = result;
+            Controller.AddNew(this.juttu, DataObjectType.Result);
+          }else{
+            MessageBox.Show("No user selected, plz slcd usr :C");
+          }
+        }
+
+        public void removeRole_click(object sender, EventArgs e){
+          ProjectRole pr = new ProjectRole();
+          pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
+          pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
+          pr.Role = rooliFeed.Text;
+          Controller.RemoveProjectRole(pr);
+          userNameFeed.Text="";
+          rooliFeed.Text="";
+          projectIdFeed.Text="";
+          MessageBox.Show("Removed ROLE D:");
+        }
+
+        public void updateRole_click(object sender, EventArgs e){
+          ProjectRole pr = new ProjectRole();
+          pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
+          pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
+          pr.Role = rooliFeed.Text;
+          Controller.Update(pr, DataObjectType.ProjectRole);
+          userNameFeed.Text="";
+          rooliFeed.Text="";
+          projectIdFeed.Text="";
+          MessageBox.Show("Updated ROLE :D");
+        }
 
 
 
@@ -491,48 +533,6 @@ namespace TestIt
         private void label10_Click(object sender, EventArgs e)
         {
 
-        }
-        private void changestatus_test_click(object sender, EventArgs e){
-          if(!(userDropDown.SelectedIndex < 0 )){
-            Object selected_obj = userDropDown.SelectedItem;
-            Result result = new Result();
-            result.Comment = textBox2.Text;
-            result.Ref_test_id = Convert.ToInt32(textBox3.Text);
-            result.Ref_user_id = ((User)selected_obj).UserID;
-            if(!(comboBox1.SelectedIndex < 0 )){
-              result.setStatus(comboBox1.SelectedIndex);
-            }else{
-              result.setStatus((int)ResultStatus.to_be_tested);
-            }
-            this.juttu = result;
-            Controller.AddNew(this.juttu, DataObjectType.Result);
-          }else{
-            MessageBox.Show("No user selected, plz slcd usr :C");
-          }
-        }
-
-        public void removeRole_click(object sender, EventArgs e){
-          ProjectRole pr = new ProjectRole();
-          pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
-          pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
-          pr.Role = rooliFeed.Text;
-          Controller.RemoveProjectRole(pr);
-          userNameFeed.Text="";
-          rooliFeed.Text="";
-          projectIdFeed.Text="";
-          MessageBox.Show("Removed ROLE D:");
-        }
-
-        public void updateRole_click(object sender, EventArgs e){
-          ProjectRole pr = new ProjectRole();
-          pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
-          pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
-          pr.Role = rooliFeed.Text;
-          Controller.Update(pr, DataObjectType.ProjectRole);
-          userNameFeed.Text="";
-          rooliFeed.Text="";
-          projectIdFeed.Text="";
-          MessageBox.Show("Updated ROLE :D");
         }
 
 
