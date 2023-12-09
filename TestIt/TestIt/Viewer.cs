@@ -496,7 +496,6 @@ namespace TestIt
         {
 
         }
-<<<<<<< HEAD
         private void changestatus_test_click(object sender, EventArgs e){
           if(!(userDropDown.SelectedIndex < 0 )){
             Object selected_obj = userDropDown.SelectedItem;
@@ -515,9 +514,7 @@ namespace TestIt
             MessageBox.Show("No user selected, plz slcd usr :C");
           }
         }
-=======
 
-        
->>>>>>> f0b7389c56545860210686a837c93cff2c321672
+
     }
 }
