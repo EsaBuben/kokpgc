@@ -242,7 +242,7 @@ namespace TestIt
                 if(!(statusDrop.SelectedIndex < 0 )){
                   Result result = new Result();
                   result.Comment = text_label1.Text;
-                  result.ID = Convert.ToInt32(updateIdFeed.Text)
+                  result.ID = Convert.ToInt32(updateIdFeed.Text);
                   result.setStatus(statusDrop.SelectedIndex);
                   this.juttu = result;
                   Controller.Update(this.juttu, DataObjectType.Result);
