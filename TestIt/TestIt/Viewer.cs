@@ -16,6 +16,7 @@ namespace TestIt
     {
         private Object juttu = new Object();
         int[] valitutPalat;
+        private string[] status_list = {"to be tested","currently under testing","results reported","accepted"};
         BindingSource bindingSource = new BindingSource();
         DataObjectType curry = DataObjectType.Project;
         public Viewer()
@@ -25,6 +26,10 @@ namespace TestIt
             bindingSource.DataSource = Controller.Listaa(curry);
             Taulukko.DataSource = bindingSource;
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
+            this.statusDrop.Items.AddRange(status_list);
+            otsikko.Text = curry.ToString();
+
+            statusDrop.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -157,6 +162,23 @@ namespace TestIt
                     Taulukko.DataSource = bindingSource;
                     break;
                 case DataObjectType.Result:
+                    //Console.WriteLine(statusDrop.SelectedIndex);
+                    if(!(userDropDown.SelectedIndex < 0 )){
+                      Object selected_obj = userDropDown.SelectedItem;
+                      Result result = new Result();
+                      result.Comment = text_label1.Text;
+                      result.Ref_test_id = valitutPalat[(int)curry];
+                      result.Ref_user_id = ((User)selected_obj).UserID;
+                      if(!(statusDrop.SelectedIndex < 0 )){
+                        result.setStatus(statusDrop.SelectedIndex);
+                      }else{
+                        result.setStatus((int)ResultStatus.to_be_tested);
+                      }
+                      this.juttu = result;
+                      Controller.AddNew(this.juttu, DataObjectType.Result);
+                    }else{
+                      MessageBox.Show("No user selected, plz slcd usr :C");
+                    }
                     break;
                 default:
                     break;
@@ -172,7 +194,7 @@ namespace TestIt
                 Taulukko.DataSource = bindingSource;
                 textBox1.Text = "";
             }
-            else 
+            else
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 Taulukko.DataSource = bindingSource;
                 textBox1.Text = "";
@@ -217,7 +239,7 @@ namespace TestIt
             }
             text_label1.Text = "";
             updateIdFeed.Text = "";
-            
+
         }
         private void updateUserstory_Click(object sender, EventArgs e)
         {
@@ -262,7 +284,7 @@ namespace TestIt
             projectUserDropDown.Items.Clear();
             projectUserDropDown.Items.AddRange(Controller.getProjectUsers(valitutPalat[1]).ToArray());
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
-            
+
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -360,7 +382,7 @@ namespace TestIt
         }
 
 
-        
+
 
 
         private void AddResponsibleUser(object sender, EventArgs e){
@@ -373,7 +395,7 @@ namespace TestIt
 
         }
 
-        
+
         private void label3_Click_1(object sender, EventArgs e)
         {
 
