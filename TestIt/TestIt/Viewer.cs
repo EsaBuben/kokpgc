@@ -27,9 +27,8 @@ namespace TestIt
             Taulukko.DataSource = bindingSource;
             this.userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
             this.statusDrop.Items.AddRange(status_list);
+            this.comboBox1.Items.AddRange(status_list);
             otsikko.Text = curry.ToString();
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -448,6 +447,24 @@ namespace TestIt
         private void label10_Click(object sender, EventArgs e)
         {
 
+        }
+        private void changestatus_test_click(object sender, EventArgs e){
+          if(!(userDropDown.SelectedIndex < 0 )){
+            Object selected_obj = userDropDown.SelectedItem;
+            Result result = new Result();
+            result.Comment = textBox2.Text;
+            result.Ref_test_id = Convert.ToInt32(textBox3.Text);
+            result.Ref_user_id = ((User)selected_obj).UserID;
+            if(!(comboBox1.SelectedIndex < 0 )){
+              result.setStatus(comboBox1.SelectedIndex);
+            }else{
+              result.setStatus((int)ResultStatus.to_be_tested);
+            }
+            this.juttu = result;
+            Controller.AddNew(this.juttu, DataObjectType.Result);
+          }else{
+            MessageBox.Show("No user selected, plz slcd usr :C");
+          }
         }
     }
 }
