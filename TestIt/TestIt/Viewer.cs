@@ -576,6 +576,9 @@ namespace TestIt
 
         }
 
+        private void AddRole_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
