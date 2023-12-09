@@ -17,7 +17,7 @@ namespace TestIt
             Instructions instr = (Instructions)obj;
             string query = @"
             INSERT INTO
-            instructions (Instruction_Text, ref_test_id)
+            instruction (info, ref_test_id)
             VALUES
             (@Instruction_Text, @ref_test_id)
             ";
@@ -36,8 +36,8 @@ namespace TestIt
             int id = -1;
 
             string query = @"
-            SELECT Instruction_ID FROM instructions
-            WHERE Instruction_Text = @Instruction_Text AND ref_test_id = @ref_test_id ";
+            SELECT Instruction_ID FROM instruction
+            WHERE info = @Instruction_Text AND ref_test_id = @ref_test_id ";
 
             MySqlCommand cmd = CallStack(query);
             cmd.Parameters.AddWithValue("@Instruction_Text", instr.InstructionText);
@@ -62,7 +62,7 @@ namespace TestIt
         {
             string query = @"
             SELECT *
-            FROM instructions
+            FROM instruction
             WHERE ref_test_id = @ref_test_id
             ";
 
@@ -90,7 +90,7 @@ namespace TestIt
         public void Delete(int id)
         {
             string query = @"
-            DELETE FROM instructions
+            DELETE FROM instruction
             WHERE Instruction_ID = @id
             ";
 
@@ -102,8 +102,8 @@ namespace TestIt
         {
             Instructions instr = (Instructions)obj;
             string query = @"
-            UPDATE instructions
-            SET Instruction_Text = @Instruction_Text
+            UPDATE instruction
+            SET info = @Instruction_Text
             WHERE Instruction_ID = @Instruction_ID
             ";
 
@@ -122,7 +122,7 @@ namespace TestIt
         {
                string query = @"
             SELECT *
-            FROM instructions
+            FROM instruction
             WHERE Instruction_ID = @id
             ";
 
