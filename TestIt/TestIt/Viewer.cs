@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +31,7 @@ namespace TestIt
             otsikko.Text = curry.ToString();
         }
 
+        //Back button
         private void button1_Click(object sender, EventArgs e)
         {
             if (curry > 0)
@@ -89,6 +90,7 @@ namespace TestIt
             }
         }
 
+        //Taulukossa eteneminen
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -137,6 +139,7 @@ namespace TestIt
             }
         }
 
+        //Add box Add button
         private void button2_Click(object sender, EventArgs e)
         {
             switch (curry)
@@ -189,21 +192,8 @@ namespace TestIt
                     break;
             }
         }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Controller.RemoveItem(Convert.ToInt32(textBox1.Text), curry);
 
-            if (curry == DataObjectType.Project)
-            {
-                bindingSource.DataSource = Controller.Listaa(curry);
-                Taulukko.DataSource = bindingSource;
-                textBox1.Text = "";
-            }
-            else
-                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
-                Taulukko.DataSource = bindingSource;
-                textBox1.Text = "";
-        }
+        //Add box Remove button       
         private void userStoryButton_Click(object sender, EventArgs e)
         {
             this.juttu = new UserStory(Convert.ToInt32(funcIdFeed.Text), givenFeed.Text, whenFeed.Text, thenFeed.Text);
@@ -216,6 +206,25 @@ namespace TestIt
             thenFeed.Text = "";
 
         }
+
+        //Add box Update button
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Controller.RemoveItem(Convert.ToInt32(textBox1.Text), curry);
+
+            if (curry == DataObjectType.Project)
+            {
+                bindingSource.DataSource = Controller.Listaa(curry);
+                Taulukko.DataSource = bindingSource;
+                textBox1.Text = "";
+            }
+            else
+                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+            Taulukko.DataSource = bindingSource;
+            textBox1.Text = "";
+        }
+
+        //UserStory box Add userstory button
         private void updtAddBox_Click(object sender, EventArgs e)
         {
             if (curry == DataObjectType.Project)
@@ -261,6 +270,8 @@ namespace TestIt
             updateIdFeed.Text = "";
 
         }
+
+        //UserStory box Update userstory button
         private void updateUserstory_Click(object sender, EventArgs e)
         {
             this.juttu = new UserStory(Convert.ToInt32(funcIdFeed.Text), givenFeed.Text, whenFeed.Text, thenFeed.Text);
@@ -272,6 +283,8 @@ namespace TestIt
             whenFeed.Text = "";
             thenFeed.Text = "";
         }
+
+        //UserStory box Remove userstory button
         private void removeUsrStryButton_Click(object sender, EventArgs e)
         {
             Controller.RemoveItem(Convert.ToInt32(funcIdFeed.Text), DataObjectType.UserStory);
@@ -282,6 +295,8 @@ namespace TestIt
             whenFeed.Text = "";
             thenFeed.Text = "";
         }
+
+        //Add user box add user button
         private void button4_Click(object sender, EventArgs e)
         {
             //add user
@@ -306,6 +321,7 @@ namespace TestIt
 
         }
 
+        //Choose user Remove selected user button
         private void button5_Click(object sender, EventArgs e)
         {
             Object selected_obj = userDropDown.SelectedItem;
@@ -318,6 +334,7 @@ namespace TestIt
 
         }
 
+        //Responsible user Add user to test button
         private void add_to_test_click(object sender, EventArgs e)
         {
             //add responsible user to test
@@ -333,7 +350,7 @@ namespace TestIt
 
         }
 
-
+        //instructions buttons
         private void button5_Click_1(object sender, EventArgs e)
         {
             //Read instructions by id
@@ -342,7 +359,6 @@ namespace TestIt
             Instructions.Items.AddRange(Controller.Listaa(testID, DataObjectType.Instructions).ToArray());
             instID.Text = "";
         }
-
         private void button6_Click(object sender, EventArgs e)
         {
             //add instructions to test
@@ -350,10 +366,10 @@ namespace TestIt
             string comment = instrCom.Text;
             Object instructions = new Instructions(testID, comment);
             Controller.AddNew(instructions, DataObjectType.Instructions);
+            Instructions.Items.Clear();
             instID.Text = "";
             instrCom.Text = "";
         }
-
         private void button7_Click(object sender, EventArgs e)
         {
             //update instructions
@@ -361,8 +377,19 @@ namespace TestIt
             string comment = instrCom.Text;
             Object instructions = new Instructions(testID, comment);
             Controller.Update(instructions, DataObjectType.Instructions);
+            Instructions.Items.Clear();
+            Instructions.Items.AddRange(Controller.Listaa(testID, DataObjectType.Instructions).ToArray());
             instID.Text = "";
             instrCom.Text = "";
+        }
+        private void RemoInst_Click(object sender, EventArgs e)
+        {
+            //Remove instructions
+            int testID = Convert.ToInt32(instID.Text);
+            Controller.RemoveItem(testID, DataObjectType.Instructions);
+            Instructions.Items.Clear();
+            instID.Text = "";
+
         }
 
 
@@ -371,8 +398,7 @@ namespace TestIt
 
 
 
-
-
+        //ROSKIA
 
 
         //private void button4_Click(object sender, EventArgs e)
@@ -397,100 +423,71 @@ namespace TestIt
         {
 
         }
-
         private void text_label1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void text_label2_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void text_label3_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void label4_Click(object sender, EventArgs e)
         {
 
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
         private void userStory_Enter(object sender, EventArgs e)
         {
 
         }
-
         private void label2_Click_1(object sender, EventArgs e)
         {
 
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-
-
-
-
         private void AddResponsibleUser(object sender, EventArgs e){
 
         }
-
-
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
-
         private void label3_Click_1(object sender, EventArgs e)
         {
 
         }
-
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }
-
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
 		{}
-
-
-
         private void userDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-
         private void projectUserDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-
         private void projectUserBox_Enter(object sender, EventArgs e)
         {
 
         }
-
         private void label10_Click(object sender, EventArgs e)
         {
 
@@ -536,13 +533,7 @@ namespace TestIt
         {
 
         }
-
         private void Instructions_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void RemoInst_Click(object sender, EventArgs e)
         {
 
         }

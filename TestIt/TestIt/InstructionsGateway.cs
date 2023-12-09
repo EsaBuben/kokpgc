@@ -91,7 +91,7 @@ namespace TestIt
         {
             string query = @"
             DELETE FROM instruction
-            WHERE Instruction_ID = @id
+            WHERE ref_test_id = @id
             ";
 
             MySqlCommand cmd = CallStack(query);
