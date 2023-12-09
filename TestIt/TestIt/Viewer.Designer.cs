@@ -111,7 +111,7 @@
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.button1.Location = new System.Drawing.Point(32, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 34);
             this.button1.TabIndex = 0;
@@ -141,7 +141,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.Taulukko.DefaultCellStyle = dataGridViewCellStyle2;
             this.Taulukko.Location = new System.Drawing.Point(244, 98);
-            this.Taulukko.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Taulukko.Margin = new System.Windows.Forms.Padding(2);
             this.Taulukko.Name = "Taulukko";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
@@ -171,9 +171,9 @@
             this.addBox.Controls.Add(this.label1);
             this.addBox.ForeColor = System.Drawing.Color.White;
             this.addBox.Location = new System.Drawing.Point(32, 58);
-            this.addBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.addBox.Margin = new System.Windows.Forms.Padding(1);
             this.addBox.Name = "addBox";
-            this.addBox.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.addBox.Padding = new System.Windows.Forms.Padding(1);
             this.addBox.Size = new System.Drawing.Size(207, 175);
             this.addBox.TabIndex = 2;
             this.addBox.TabStop = false;
@@ -194,7 +194,7 @@
             this.statusDrop.BackColor = System.Drawing.Color.Gray;
             this.statusDrop.FormattingEnabled = true;
             this.statusDrop.Location = new System.Drawing.Point(65, 92);
-            this.statusDrop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.statusDrop.Margin = new System.Windows.Forms.Padding(2);
             this.statusDrop.Name = "statusDrop";
             this.statusDrop.Size = new System.Drawing.Size(110, 21);
             this.statusDrop.TabIndex = 3;
@@ -227,7 +227,7 @@
             this.updtAddBox.BackColor = System.Drawing.Color.Silver;
             this.updtAddBox.ForeColor = System.Drawing.Color.Black;
             this.updtAddBox.Location = new System.Drawing.Point(115, 127);
-            this.updtAddBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.updtAddBox.Margin = new System.Windows.Forms.Padding(1);
             this.updtAddBox.Name = "updtAddBox";
             this.updtAddBox.Size = new System.Drawing.Size(63, 24);
             this.updtAddBox.TabIndex = 9;
@@ -260,7 +260,7 @@
             this.button2.BackColor = System.Drawing.Color.Silver;
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(25, 127);
-            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 24);
             this.button2.TabIndex = 6;
@@ -272,7 +272,7 @@
             // 
             this.text_label1.BackColor = System.Drawing.Color.Gray;
             this.text_label1.Location = new System.Drawing.Point(79, 16);
-            this.text_label1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.text_label1.Margin = new System.Windows.Forms.Padding(1);
             this.text_label1.Name = "text_label1";
             this.text_label1.Size = new System.Drawing.Size(96, 20);
             this.text_label1.TabIndex = 3;
@@ -292,7 +292,7 @@
             // 
             this.whenFeed.BackColor = System.Drawing.Color.Gray;
             this.whenFeed.Location = new System.Drawing.Point(81, 84);
-            this.whenFeed.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.whenFeed.Margin = new System.Windows.Forms.Padding(1);
             this.whenFeed.Name = "whenFeed";
             this.whenFeed.Size = new System.Drawing.Size(100, 20);
             this.whenFeed.TabIndex = 5;
@@ -302,7 +302,7 @@
             // 
             this.givenFeed.BackColor = System.Drawing.Color.Gray;
             this.givenFeed.Location = new System.Drawing.Point(81, 53);
-            this.givenFeed.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.givenFeed.Margin = new System.Windows.Forms.Padding(1);
             this.givenFeed.Name = "givenFeed";
             this.givenFeed.Size = new System.Drawing.Size(100, 20);
             this.givenFeed.TabIndex = 4;
@@ -626,7 +626,7 @@
             // 
             this.testIdFeed.BackColor = System.Drawing.Color.Gray;
             this.testIdFeed.Location = new System.Drawing.Point(69, 49);
-            this.testIdFeed.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.testIdFeed.Margin = new System.Windows.Forms.Padding(1);
             this.testIdFeed.Name = "testIdFeed";
             this.testIdFeed.Size = new System.Drawing.Size(100, 20);
             this.testIdFeed.TabIndex = 5;
@@ -683,9 +683,9 @@
             this.changeStatus.Controls.Add(this.comboBox1);
             this.changeStatus.ForeColor = System.Drawing.Color.White;
             this.changeStatus.Location = new System.Drawing.Point(255, 330);
-            this.changeStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.changeStatus.Margin = new System.Windows.Forms.Padding(2);
             this.changeStatus.Name = "changeStatus";
-            this.changeStatus.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.changeStatus.Padding = new System.Windows.Forms.Padding(2);
             this.changeStatus.Size = new System.Drawing.Size(224, 138);
             this.changeStatus.TabIndex = 18;
             this.changeStatus.TabStop = false;
@@ -697,7 +697,7 @@
             this.button4.BackColor = System.Drawing.Color.Silver;
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(8, 103);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(64, 24);
             this.button4.TabIndex = 19;
@@ -708,7 +708,7 @@
             // 
             this.textBox3.BackColor = System.Drawing.Color.Gray;
             this.textBox3.Location = new System.Drawing.Point(91, 80);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(107, 20);
             this.textBox3.TabIndex = 24;
@@ -747,7 +747,7 @@
             // 
             this.textBox2.BackColor = System.Drawing.Color.Gray;
             this.textBox2.Location = new System.Drawing.Point(91, 56);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(107, 20);
             this.textBox2.TabIndex = 20;
@@ -757,7 +757,7 @@
             this.comboBox1.BackColor = System.Drawing.Color.Gray;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(91, 27);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(107, 21);
             this.comboBox1.TabIndex = 19;
@@ -769,7 +769,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(784, 364);
+            this.chart1.Location = new System.Drawing.Point(263, 474);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
