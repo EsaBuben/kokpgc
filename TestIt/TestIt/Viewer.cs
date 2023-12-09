@@ -332,17 +332,17 @@ namespace TestIt
             Taulukko.DataSource = bindingSource;
 
         }
-        private void button5_Click_1(object sender, EventArgs e)
+
+        private void button5_Click_2(object sender, EventArgs e)
         {
             //Read instructions by id
             int testID = Convert.ToInt32(instID.Text);
             Object instructions = Controller.Listaa(testID, DataObjectType.Instructions);
-            Instructions.Text = ((Instructions)instructions).InstructionText;
+            Instructions.Items.Add(instructions);
             instID.Text = "";
-
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
         {
             //add instructions to test
             int testID = Convert.ToInt32(instID.Text);
@@ -353,7 +353,7 @@ namespace TestIt
             instrCom.Text = "";
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click_1(object sender, EventArgs e)
         {
             //update instructions
             int testID = Convert.ToInt32(instID.Text);
@@ -362,9 +362,7 @@ namespace TestIt
             Controller.Update(instructions, DataObjectType.Instructions);
             instID.Text = "";
             instrCom.Text = "";
-
         }
-
 
 
 
@@ -514,6 +512,7 @@ namespace TestIt
             MessageBox.Show("No user selected, plz slcd usr :C");
           }
         }
+
 
 
     }
