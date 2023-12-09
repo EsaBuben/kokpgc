@@ -135,7 +135,47 @@ namespace TestIt
           cmd.Parameters.AddWithValue("@id", result.ID);
 
           cmd.ExecuteNonQuery();
-      }
+        }
+        //count how many tests all users have accepted individually
+        public List<Object> CountAcceptedTests()
+        {
+            List<Object> users = new List<Object>();
+            string query = @"
+            SELECT user_name, COUNT(*)
+            FROM result 
+            INNER JOIN user ON result.ref_user_id = user.user_id
+            WHERE status = 3
+            GROUP BY user.user_id";
+            MySqlCommand cmd = CallStack(query);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    users.Add(reader.GetString(0));
+                    users.Add(reader.GetInt32(1));
+                }
+                return users;
+            }
+            else return null;
+            
+        }
+        public List<string> GetComments(int id)
+        {
+            string query = @"
+            SELECT comment
+            FROM result
+            WHERE ref_user_id = @id";
+            MySqlCommand cmd = CallStack(query);
+            cmd.Parameters.AddWithValue("@id", id);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            List<string> resultlist = new List<string>();
+            while (reader.Read())
+            {
+                resultlist.Add(reader.GetString(0));
+            }
+            return resultlist;
+        }
 
     }
 

@@ -19,6 +19,7 @@ namespace TestIt
         private string[] status_list = {"to be tested","currently under testing","results reported","accepted"};
         BindingSource bindingSource = new BindingSource();
         DataObjectType curry = DataObjectType.Project;
+        private User chosenOne = new User();
         public Viewer()
         {
             InitializeComponent();
@@ -392,8 +393,38 @@ namespace TestIt
 
         }
 
+        //Show Chart button
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (chart.Visible.Equals(false))
+            {
+                chart.Visible = true;
+                chart.DataSource = Controller.CountAccepted();
+                chart.Series["Series1"].XValueMember = "user_name";
+                chart.Series["Series1"].YValueMembers = "count";
+                chart.DataBind();
+            }
+            else
+            {
+                chart.DataSource = null;
+                chart.Visible = false;
+            }
+        }
 
-
+        private void signin_Click(object sender, EventArgs e)
+        {
+            chosenOne = (User)userDropDown.SelectedItem;
+            signedAs.Text = "Signed in as : " + chosenOne.UserName;
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            string stringi = "";
+            foreach (string comment in Controller.GetComment(chosenOne.UserID))
+            {
+                stringi += comment + "\n";
+            }
+            MessageBox.Show(stringi);
+        }
 
 
 
@@ -512,14 +543,14 @@ namespace TestIt
         }
 
         public void removeRole_click(object sender, EventArgs e){
-          ProjectRole pr = new ProjectRole();
-          Controller.RemoveProjectRole(pr, DataObjectType.ProjectRole);
+        //  ProjectRole pr = new ProjectRole();
+        //  Controller.RemoveProjectRole(pr, DataObjectType.ProjectRole);
 
         }
 
         public void updateRole_click(object sender, EventArgs e){
           ProjectRole pr = new ProjectRole();
-          Constroller.Update(pr, DataObjectType.ProjectRole);
+          Controller.Update(pr, DataObjectType.ProjectRole);
         }
 
 
@@ -531,5 +562,7 @@ namespace TestIt
         {
 
         }
+
+
     }
 }
