@@ -83,7 +83,7 @@ namespace TestIt
           MySqlCommand cmd = CallStack(query);
           cmd.Parameters.AddWithValue("@ref_proj", pr.Ref_proj_id);
           cmd.Parameters.AddWithValue("@ref_user", pr.Ref_user_id);
-          cmd.Parameters.AddWithValue("@rrole", pr.Role);
+          cmd.Parameters.AddWithValue("@role", pr.Role);
 
           cmd.ExecuteNonQuery();
 
@@ -97,7 +97,7 @@ namespace TestIt
 
         public void Delete(ProjectRole pr){
           string query = @"
-          DELETE FROM ProjectRole
+          DELETE FROM projectrole
           WHERE ref_project_id = @ref_proj AND
           ref_user_id = @ref_user
           ";

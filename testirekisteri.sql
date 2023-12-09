@@ -259,8 +259,8 @@ ALTER TABLE `result`
 -- Constraints for table `test`
 --
 ALTER TABLE `test`
-  ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `test_ibfk_2` FOREIGN KEY (`responsible_user_id`) REFERENCES `user` (`user_id`);
+  ADD CONSTRAINT `test_ibfk_1` FOREIGN KEY (`ref_functionality_id`) REFERENCES `functionality` (`functionality_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  -- ADD CONSTRAINT `test_ibfk_2` FOREIGN KEY (`responsible_user_id`) REFERENCES `user` (`user_id`);
 
 
 --

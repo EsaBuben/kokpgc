@@ -193,7 +193,7 @@ namespace TestIt
             }
         }
 
-        //Add box Remove button       
+        //Add box Remove button
         private void userStoryButton_Click(object sender, EventArgs e)
         {
             this.juttu = new UserStory(Convert.ToInt32(funcIdFeed.Text), givenFeed.Text, whenFeed.Text, thenFeed.Text);
@@ -516,8 +516,11 @@ namespace TestIt
           pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
           pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
           pr.Role = rooliFeed.Text;
-          Controller.RemoveProjectRole(pr, DataObjectType.ProjectRole);
-
+          Controller.RemoveProjectRole(pr);
+          userNameFeed.Text="";
+          rooliFeed.Text="";
+          projectIdFeed.Text="";
+          MessageBox.Show("Removed ROLE D:");
         }
 
         public void updateRole_click(object sender, EventArgs e){
@@ -525,7 +528,11 @@ namespace TestIt
           pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
           pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
           pr.Role = rooliFeed.Text;
-          Constroller.Update(pr, DataObjectType.ProjectRole);
+          Controller.Update(pr, DataObjectType.ProjectRole);
+          userNameFeed.Text="";
+          rooliFeed.Text="";
+          projectIdFeed.Text="";
+          MessageBox.Show("Updated ROLE :D");
         }
 
 
