@@ -252,7 +252,7 @@ ALTER TABLE `projectrole`
 -- Constraints for table `result`
 --
 ALTER TABLE `result`
-  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`ref_test_id`) REFERENCES `test` (`test_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`ref_test_id`) REFERENCES `test` (`test_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`ref_user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
