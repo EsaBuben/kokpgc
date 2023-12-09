@@ -19,7 +19,7 @@ namespace TestIt
         {
         }
 
-        public Instructions(string instructionText, int refTestID)
+        public Instructions(int refTestID, string instructionText)
         {
             this.instructionText = instructionText;
             this.refTestID = refTestID;
