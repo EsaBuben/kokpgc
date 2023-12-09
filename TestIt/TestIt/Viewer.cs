@@ -237,6 +237,21 @@ namespace TestIt
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 Taulukko.DataSource = bindingSource;
                 priorityFeed.Text = "";
+            }else if(curry == DataObjectType.Result){
+
+                if(!(statusDrop.SelectedIndex < 0 )){
+                  Result result = new Result();
+                  result.Comment = text_label1.Text;
+                  result.ID = Convert.ToInt32(updateIdFeed.Text)
+                  result.setStatus(statusDrop.SelectedIndex);
+                  this.juttu = result;
+                  Controller.Update(this.juttu, DataObjectType.Result);
+                  bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                  Taulukko.DataSource = bindingSource;
+              }else{
+                MessageBox.Show("No status selected :C");
+              }
+
             }
             text_label1.Text = "";
             updateIdFeed.Text = "";
