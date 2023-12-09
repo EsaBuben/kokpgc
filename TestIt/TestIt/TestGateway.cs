@@ -63,8 +63,7 @@ namespace TestIt
          SELECT test_id, ref_functionality_id, responsible_user_id, priority, name, status
          FROM test
          LEFT OUTER JOIN result ON ref_test_id = test_id
-         GROUP BY test_id
-         HAVING MAX(time)";
+         GROUP BY test_id";
            MySqlCommand cmd = CallStack(query);
            MySqlDataReader reader = cmd.ExecuteReader();
            List<Object> testlist = new List<Object>();
@@ -103,8 +102,7 @@ namespace TestIt
             FROM test
             LEFT OUTER JOIN result ON ref_test_id = test_id
             WHERE ref_functionality_id = @id
-            GROUP BY test_id
-            HAVING MAX(time)";
+            GROUP BY test_id";
             MySqlCommand cmd = CallStack(query);
             cmd.Parameters.AddWithValue("@id", id);
             MySqlDataReader reader = cmd.ExecuteReader();
