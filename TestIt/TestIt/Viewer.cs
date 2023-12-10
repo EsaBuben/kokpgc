@@ -180,8 +180,25 @@ namespace TestIt
                       result.Comment = text_label1.Text;
                       result.Ref_test_id = valitutPalat[(int)curry];
                       result.Ref_user_id = ((User)selected_obj).UserID;
-                      if(!(statusDrop.SelectedIndex < 0 )){
-                        result.setStatus(statusDrop.SelectedIndex);
+                        if (statusDrop.SelectedIndex.Equals((int)ResultStatus.accepted))
+                        {
+                            if (chosenOne.UserID.Equals(Controller.GetResponsibleUser(valitutPalat[(int)curry])))
+                            {
+                                result.setStatus(statusDrop.SelectedIndex);
+                                this.juttu = result;
+                                Controller.AddNew(this.juttu, DataObjectType.Result);
+                                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                                Taulukko.DataSource = bindingSource;
+                                break;
+                            }
+                            else
+                            {
+                                MessageBox.Show("You are not responsible for this test");
+                                break;
+                            }
+
+                        } else if (!(statusDrop.SelectedIndex < 0 )){
+                          result.setStatus(statusDrop.SelectedIndex);
                       }else{
                         result.setStatus((int)ResultStatus.to_be_tested);
                       }
@@ -261,6 +278,19 @@ namespace TestIt
                   result.ID = Convert.ToInt32(updateIdFeed.Text);
                   result.setStatus(statusDrop.SelectedIndex);
                   this.juttu = result;
+                    if (statusDrop.SelectedIndex.Equals((int)ResultStatus.accepted))
+                    {
+                        if (chosenOne.UserID.Equals(Controller.GetResponsibleUser(valitutPalat[(int)curry])))
+                        {
+                            Controller.Update(this.juttu, DataObjectType.Result);
+                            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                            Taulukko.DataSource = bindingSource;
+                        } else
+                        {
+                            MessageBox.Show("You are not responsible for this test");
+                        }
+
+                    }
                   Controller.Update(this.juttu, DataObjectType.Result);
                   bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                   Taulukko.DataSource = bindingSource;
@@ -614,6 +644,26 @@ namespace TestIt
         }
 
         private void NameButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
 
         }
