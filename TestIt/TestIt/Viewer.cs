@@ -393,6 +393,7 @@ namespace TestIt
         }
 
         private void changestatus_test_click(object sender, EventArgs e){
+          //change status
           if(!(userDropDown.SelectedIndex < 0 )){
             Object selected_obj = userDropDown.SelectedItem;
             Result result = new Result();
@@ -412,6 +413,7 @@ namespace TestIt
         }
 
         public void removeRole_click(object sender, EventArgs e){
+          //remove projectrole basen on ref user id, ref project id
           ProjectRole pr = new ProjectRole();
           pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
           pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
@@ -424,6 +426,7 @@ namespace TestIt
         }
 
         public void updateRole_click(object sender, EventArgs e){
+            //update projectrole role basen on ref user id, ref project id
           ProjectRole pr = new ProjectRole();
           pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
           pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
@@ -435,9 +438,16 @@ namespace TestIt
           MessageBox.Show("Updated ROLE :D");
         }
 
-
-
-
+        public void removeResponsibleUser(object sender, EventArgs e){
+            //remove responsible
+            //set user id to -1
+            //this is checked in TestGateway SelectAll
+            User user = new User();
+            user.UserID = -1;
+            Controller.SetResponsibleUser(user, Convert.ToInt32(testIdFeed.Text));
+            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+            Taulukko.DataSource = bindingSource;
+        }
 
 
         //ROSKIA
