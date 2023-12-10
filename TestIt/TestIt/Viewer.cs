@@ -601,5 +601,19 @@ namespace TestIt
 
         }
 
+        private void label11_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
