@@ -61,6 +61,8 @@ namespace TestIt
                 statusDrop.Visible = false;
                 statusLabel.Visible = false;
                 respoUser.Visible = true;
+                instBox.Visible = true;
+                Instructions.Visible = true;
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[2],curry);
                 Taulukko.DataSource = bindingSource;
             }
