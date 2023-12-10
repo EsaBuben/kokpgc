@@ -532,6 +532,16 @@ namespace TestIt
             MessageBox.Show("New ROLE :D");
         }
 
+        private void NameText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         //ROSKIA
