@@ -208,7 +208,6 @@ namespace TestIt
             this.label3.Size = new System.Drawing.Size(66, 13);
             this.label3.TabIndex = 11;
             this.label3.Text = "Id to Update";
-            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // statusDrop
             // 
@@ -221,7 +220,6 @@ namespace TestIt
             this.statusDrop.TabIndex = 3;
             this.statusDrop.Text = "- Choose status -";
             this.statusDrop.Visible = false;
-            this.statusDrop.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // updateIdFeed
             // 
@@ -230,7 +228,6 @@ namespace TestIt
             this.updateIdFeed.Name = "updateIdFeed";
             this.updateIdFeed.Size = new System.Drawing.Size(92, 20);
             this.updateIdFeed.TabIndex = 10;
-            this.updateIdFeed.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // statusLabel
             // 
@@ -274,7 +271,7 @@ namespace TestIt
             this.priorityFeed.Size = new System.Drawing.Size(93, 20);
             this.priorityFeed.TabIndex = 7;
             this.priorityFeed.Visible = false;
-            this.priorityFeed.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             // 
             // button2
             // 
@@ -317,7 +314,6 @@ namespace TestIt
             this.whenFeed.Name = "whenFeed";
             this.whenFeed.Size = new System.Drawing.Size(100, 20);
             this.whenFeed.TabIndex = 5;
-            this.whenFeed.TextChanged += new System.EventHandler(this.text_label3_TextChanged);
             // 
             // givenFeed
             // 
@@ -327,7 +323,7 @@ namespace TestIt
             this.givenFeed.Name = "givenFeed";
             this.givenFeed.Size = new System.Drawing.Size(100, 20);
             this.givenFeed.TabIndex = 4;
-            this.givenFeed.TextChanged += new System.EventHandler(this.text_label2_TextChanged);
+
             // 
             // When
             // 
@@ -348,7 +344,6 @@ namespace TestIt
             this.Given.Size = new System.Drawing.Size(35, 13);
             this.Given.TabIndex = 1;
             this.Given.Text = "Given";
-            this.Given.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox2
             // 
@@ -383,7 +378,6 @@ namespace TestIt
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
             // 
@@ -393,7 +387,6 @@ namespace TestIt
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "ID to remove";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Then
             // 
@@ -433,7 +426,6 @@ namespace TestIt
             this.userStory.TabStop = false;
             this.userStory.Text = "UserStory";
             this.userStory.Visible = false;
-            this.userStory.Enter += new System.EventHandler(this.userStory_Enter);
             // 
             // removeUsrStryButton
             // 
@@ -498,7 +490,6 @@ namespace TestIt
             this.otsikko.Size = new System.Drawing.Size(95, 34);
             this.otsikko.TabIndex = 10;
             this.otsikko.Text = "Project";
-            this.otsikko.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // label2
             // 
@@ -594,7 +585,7 @@ namespace TestIt
             this.rooliLabel.Size = new System.Drawing.Size(32, 13);
             this.rooliLabel.TabIndex = 18;
             this.rooliLabel.Text = "Role:";
-            this.rooliLabel.Click += new System.EventHandler(this.label3_Click);
+
             // 
             // projectIdFeed
             // 
@@ -691,7 +682,6 @@ namespace TestIt
             this.userDropDown.Size = new System.Drawing.Size(121, 21);
             this.userDropDown.TabIndex = 0;
             this.userDropDown.Text = "- Choose user -";
-            this.userDropDown.SelectedIndexChanged += new System.EventHandler(this.userDropDown_SelectedIndexChanged);
             // 
             // respoUser
             // 
@@ -709,7 +699,6 @@ namespace TestIt
             this.respoUser.TabStop = false;
             this.respoUser.Text = "Responsible user";
             this.respoUser.Visible = false;
-            this.respoUser.Enter += new System.EventHandler(this.projectUserBox_Enter);
             // 
             // remorespo
             // 
@@ -772,7 +761,6 @@ namespace TestIt
             this.projectUserDropDown.Size = new System.Drawing.Size(121, 21);
             this.projectUserDropDown.TabIndex = 0;
             this.projectUserDropDown.Text = "- Choose user -";
-            this.projectUserDropDown.SelectedIndexChanged += new System.EventHandler(this.projectUserDropDown_SelectedIndexChanged);
             // 
             // changeStatus
             // 
@@ -805,7 +793,6 @@ namespace TestIt
             this.button4.TabIndex = 19;
             this.button4.Text = "Submit";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // textBox3
             // 
@@ -815,7 +802,6 @@ namespace TestIt
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(107, 20);
             this.textBox3.TabIndex = 24;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label8
             // 
@@ -855,7 +841,6 @@ namespace TestIt
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(107, 20);
             this.textBox2.TabIndex = 20;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_2);
             // 
             // comboBox1
             // 
@@ -867,7 +852,6 @@ namespace TestIt
             this.comboBox1.Size = new System.Drawing.Size(107, 21);
             this.comboBox1.TabIndex = 19;
             this.comboBox1.Text = "- Choose status -";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // chart
             // 
@@ -992,7 +976,6 @@ namespace TestIt
             this.label10.Size = new System.Drawing.Size(54, 13);
             this.label10.TabIndex = 1;
             this.label10.Text = "Comment:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -1016,7 +999,6 @@ namespace TestIt
             this.Instructions.Size = new System.Drawing.Size(207, 173);
             this.Instructions.TabIndex = 21;
             this.Instructions.Visible = false;
-            this.Instructions.SelectedIndexChanged += new System.EventHandler(this.Instructions_SelectedIndexChanged);
             // 
             // button8
             // 
@@ -1040,7 +1022,6 @@ namespace TestIt
             this.signedAs.Size = new System.Drawing.Size(74, 13);
             this.signedAs.TabIndex = 23;
             this.signedAs.Text = "Signed in as : ";
-            this.signedAs.Click += new System.EventHandler(this.label11_Click);
             // 
             // Viewer
             // 
