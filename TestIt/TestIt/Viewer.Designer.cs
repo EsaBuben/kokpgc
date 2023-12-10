@@ -297,7 +297,7 @@ namespace TestIt
             this.text_label1.Name = "text_label1";
             this.text_label1.Size = new System.Drawing.Size(96, 20);
             this.text_label1.TabIndex = 3;
-            this.text_label1.TextChanged += new System.EventHandler(this.text_label1_TextChanged);
+
             // 
             // label1
             // 
@@ -1066,7 +1066,6 @@ namespace TestIt
             this.Controls.Add(this.button1);
             this.Name = "Viewer";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Viewer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).EndInit();
             this.addBox.ResumeLayout(false);
             this.addBox.PerformLayout();

@@ -512,7 +512,18 @@ namespace TestIt
             }
             MessageBox.Show(stringi);
         }
-
+        private void AddRole_Click(object sender, EventArgs e)
+        {
+            ProjectRole pr = new ProjectRole();
+            pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
+            pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
+            pr.Role = rooliFeed.Text;
+            Controller.AddNew(pr, DataObjectType.ProjectRole);
+            userNameFeed.Text = "";
+            rooliFeed.Text = "";
+            projectIdFeed.Text = "";
+            MessageBox.Show("New ROLE :D");
+        }
 
 
 
@@ -537,14 +548,8 @@ namespace TestIt
         //    projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
 
         //}
-        private void Viewer_Load(object sender, EventArgs e)
-        {
 
-        }
-        private void text_label1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
         private void text_label2_TextChanged(object sender, EventArgs e)
         {
 
@@ -621,18 +626,7 @@ namespace TestIt
 
         }
 
-        private void AddRole_Click(object sender, EventArgs e)
-        {
-            ProjectRole pr = new ProjectRole();
-            pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
-            pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
-            pr.Role = rooliFeed.Text;
-            Controller.AddNew(pr, DataObjectType.ProjectRole);
-            userNameFeed.Text = "";
-            rooliFeed.Text = "";
-            projectIdFeed.Text = "";
-            MessageBox.Show("New ROLE :D");
-        }
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
