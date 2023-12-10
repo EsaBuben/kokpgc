@@ -41,6 +41,7 @@ namespace TestIt
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 Taulukko.DataSource = bindingSource;
                 userStory.Visible = true;
@@ -54,6 +55,7 @@ namespace TestIt
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 userStory.Visible = false;
                 priorityFeed.Visible = true;
                 priorityLabel.Visible = true;
@@ -61,6 +63,8 @@ namespace TestIt
                 statusDrop.Visible = false;
                 statusLabel.Visible = false;
                 respoUser.Visible = true;
+                instBox.Visible = true;
+                Instructions.Visible = true;
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[2],curry);
                 Taulukko.DataSource = bindingSource;
             }
@@ -68,6 +72,7 @@ namespace TestIt
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 statusLabel.Visible = true;
                 statusDrop.Visible = true;
                 respoUser.Visible = false;
@@ -78,6 +83,7 @@ namespace TestIt
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 projectIdFeed.Text = "";
                 userStory.Visible = false;
                 priorityFeed.Visible = false;
@@ -105,6 +111,7 @@ namespace TestIt
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 userStory.Visible = false;
                 priorityFeed.Visible = false;
                 priorityLabel.Visible = false;
@@ -178,14 +185,34 @@ namespace TestIt
                       result.Comment = text_label1.Text;
                       result.Ref_test_id = valitutPalat[(int)curry];
                       result.Ref_user_id = ((User)selected_obj).UserID;
-                      if(!(statusDrop.SelectedIndex < 0 )){
-                        result.setStatus(statusDrop.SelectedIndex);
+                        if (statusDrop.SelectedIndex.Equals((int)ResultStatus.accepted))
+                        {
+                            if (chosenOne.UserID.Equals(Controller.GetResponsibleUser(valitutPalat[(int)curry])))
+                            {
+                                result.setStatus(statusDrop.SelectedIndex);
+                                this.juttu = result;
+                                Controller.AddNew(this.juttu, DataObjectType.Result);
+                                bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                                Taulukko.DataSource = bindingSource;
+                                break;
+                            }
+                            else
+                            {
+                                MessageBox.Show("You are not responsible for this test");
+                                break;
+                            }
+
+                        } else if (!(statusDrop.SelectedIndex < 0 )){
+                          result.setStatus(statusDrop.SelectedIndex);
                       }else{
                         result.setStatus((int)ResultStatus.to_be_tested);
                       }
                       this.juttu = result;
                       Controller.AddNew(this.juttu, DataObjectType.Result);
-                    }else{
+                        bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                        Taulukko.DataSource = bindingSource;
+                    }
+                    else{
                       MessageBox.Show("No user selected, plz slcd usr :C");
                     }
                     break;
@@ -259,6 +286,19 @@ namespace TestIt
                   result.ID = Convert.ToInt32(updateIdFeed.Text);
                   result.setStatus(statusDrop.SelectedIndex);
                   this.juttu = result;
+                    if (statusDrop.SelectedIndex.Equals((int)ResultStatus.accepted))
+                    {
+                        if (chosenOne.UserID.Equals(Controller.GetResponsibleUser(valitutPalat[(int)curry])))
+                        {
+                            Controller.Update(this.juttu, DataObjectType.Result);
+                            bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                            Taulukko.DataSource = bindingSource;
+                        } else
+                        {
+                            MessageBox.Show("You are not responsible for this test");
+                        }
+
+                    }
                   Controller.Update(this.juttu, DataObjectType.Result);
                   bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                   Taulukko.DataSource = bindingSource;
@@ -480,18 +520,17 @@ namespace TestIt
             }
             MessageBox.Show(stringi);
         }
-
         private void AddRole_Click(object sender, EventArgs e)
         {
-          ProjectRole pr = new ProjectRole();
-          pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
-          pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
-          pr.Role = rooliFeed.Text;
-          Controller.AddNew(pr, DataObjectType.ProjectRole);
-          userNameFeed.Text="";
-          rooliFeed.Text="";
-          projectIdFeed.Text="";
-          MessageBox.Show("New ROLE :D");
+            ProjectRole pr = new ProjectRole();
+            pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
+            pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
+            pr.Role = rooliFeed.Text;
+            Controller.AddNew(pr, DataObjectType.ProjectRole);
+            userNameFeed.Text = "";
+            rooliFeed.Text = "";
+            projectIdFeed.Text = "";
+            MessageBox.Show("New ROLE :D");
         }
 
 
@@ -517,89 +556,7 @@ namespace TestIt
         //    projectUserDropDown.SelectedIndex = projectUserDropDown.Items.Count - 1;
 
         //}
-        private void Viewer_Load(object sender, EventArgs e)
-        {
 
-        }
-        private void text_label1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void text_label2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void text_label3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void userStory_Enter(object sender, EventArgs e)
-        {
-
-        }
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void AddResponsibleUser(object sender, EventArgs e){
-
-        }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-		{}
-        private void userDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void projectUserDropDown_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void projectUserBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Instructions_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }

@@ -109,5 +109,11 @@ namespace TestIt
           ProjectRoleGateway prw = new ProjectRoleGateway();
           prw.Delete(pr);
         }
+        //get responsible user from test
+        public static int GetResponsibleUser(int id)
+        {
+            TestGateway gateway = new TestGateway();
+            return gateway.GetResponsibleUser(id);
+        }
     }
 }

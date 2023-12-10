@@ -217,7 +217,37 @@ namespace TestIt
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }
-
+        //get responsible user from test
+        public int GetResponsibleUser(int id)
+        {
+            string query = @"
+            SELECT responsible_user_id
+            FROM test
+            WHERE test_id = @id";
+            MySqlCommand cmd = CallStack(query);
+            cmd.Parameters.AddWithValue("@id", id);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            User user = new User();
+            
+            while (reader.Read())
+            {
+                if (!reader.IsDBNull(0))
+                {
+                    user.UserID = reader.GetInt32(0);
+                }
+            }
+            if (user.UserID == 0)
+            {
+                reader.Close();
+                user.UserID = -1;
+                return user.UserID;
+            }
+            else
+            {
+                reader.Close();
+                return user.UserID;
+            }
+        }
 
 
 
