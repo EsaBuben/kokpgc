@@ -136,7 +136,6 @@ namespace TestIt
                     //responsibility
                     this.projectUserDropDown.Items.Clear();
                     this.projectUserDropDown.Items.AddRange(Controller.getProjectUsers(valitutPalat[1]).ToArray());
-
                 }
                 if (curry == DataObjectType.Result)
                 {
