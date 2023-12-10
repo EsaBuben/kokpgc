@@ -89,6 +89,21 @@ namespace TestIt
             gateway.UpdateResponsibleUser(user, id);
 
         }
+        public static void RemoveResponsibleUser(int id)
+        {
+            TestGateway gateway = new TestGateway();
+            gateway.RemoveResponsibleUser(id);
+        }
+        public static List<Object> CountAccepted()
+        {
+            ResultGateway gateway = new ResultGateway();
+            return gateway.CountAcceptedTests();
+        }
+        public static List<string> GetComment(int id)
+        {
+            ResultGateway gateway = new ResultGateway();
+            return gateway.GetComments(id);
+        }
 
         public static void RemoveProjectRole(ProjectRole pr){
           ProjectRoleGateway prw = new ProjectRoleGateway();

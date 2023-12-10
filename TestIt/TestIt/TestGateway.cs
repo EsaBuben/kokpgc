@@ -202,6 +202,17 @@ namespace TestIt
             MySqlCommand commandDatabase = CallStack(query);
             commandDatabase.ExecuteNonQuery();
         }
+        //remove responsible user
+        public void RemoveResponsibleUser(int id)
+        {
+            // update test entity.
+
+            string query = "UPDATE test" +
+                           " SET responsible_user_id = NULL" +
+                           " WHERE test_id = '" + id + "'";
+            MySqlCommand commandDatabase = CallStack(query);
+            commandDatabase.ExecuteNonQuery();
+        }
 
 
 

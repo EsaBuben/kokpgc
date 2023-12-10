@@ -30,12 +30,12 @@ namespace TestIt
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.addBox = new System.Windows.Forms.GroupBox();
@@ -69,6 +69,7 @@ namespace TestIt
             this.label2 = new System.Windows.Forms.Label();
             this.addUserButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.AddRole = new System.Windows.Forms.Button();
             this.UpdateRole = new System.Windows.Forms.Button();
             this.RemoveRole = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -99,6 +100,7 @@ namespace TestIt
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.instBox = new System.Windows.Forms.GroupBox();
+            this.RemoInst = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -109,7 +111,6 @@ namespace TestIt
             this.Instructions = new System.Windows.Forms.ListBox();
             this.button8 = new System.Windows.Forms.Button();
             this.signedAs = new System.Windows.Forms.Label();
-            this.RemoInst = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.addBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -121,9 +122,9 @@ namespace TestIt
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
             this.instBox.SuspendLayout();
             this.SuspendLayout();
-            //
+            // 
             // button1
-            //
+            // 
             this.button1.BackColor = System.Drawing.Color.Silver;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
             this.button1.FlatAppearance.BorderSize = 10;
@@ -138,46 +139,46 @@ namespace TestIt
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            //
+            // 
             // Taulukko
-            //
+            // 
             this.Taulukko.BackgroundColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Taulukko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Taulukko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Taulukko.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Taulukko.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Taulukko.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Taulukko.DefaultCellStyle = dataGridViewCellStyle2;
             this.Taulukko.Location = new System.Drawing.Point(366, 165);
             this.Taulukko.Name = "Taulukko";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Taulukko.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Taulukko.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Taulukko.RowHeadersWidth = 62;
             this.Taulukko.RowTemplate.Height = 28;
             this.Taulukko.Size = new System.Drawing.Size(1260, 332);
             this.Taulukko.TabIndex = 1;
             this.Taulukko.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            //
+            // 
             // addBox
-            //
+            // 
             this.addBox.Controls.Add(this.label3);
             this.addBox.Controls.Add(this.statusDrop);
             this.addBox.Controls.Add(this.updateIdFeed);
@@ -197,9 +198,9 @@ namespace TestIt
             this.addBox.TabIndex = 2;
             this.addBox.TabStop = false;
             this.addBox.Text = "Add Project";
-            //
+            // 
             // label3
-            //
+            // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(14, 97);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -208,9 +209,9 @@ namespace TestIt
             this.label3.TabIndex = 11;
             this.label3.Text = "Id to Update";
             this.label3.Click += new System.EventHandler(this.label3_Click_1);
-            //
+            // 
             // statusDrop
-            //
+            // 
             this.statusDrop.BackColor = System.Drawing.Color.Gray;
             this.statusDrop.FormattingEnabled = true;
             this.statusDrop.Location = new System.Drawing.Point(98, 142);
@@ -220,9 +221,9 @@ namespace TestIt
             this.statusDrop.Text = "- Choose status -";
             this.statusDrop.Visible = false;
             this.statusDrop.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            //
+            // 
             // updateIdFeed
-            //
+            // 
             this.updateIdFeed.BackColor = System.Drawing.Color.Gray;
             this.updateIdFeed.Location = new System.Drawing.Point(122, 97);
             this.updateIdFeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -230,9 +231,9 @@ namespace TestIt
             this.updateIdFeed.Size = new System.Drawing.Size(136, 26);
             this.updateIdFeed.TabIndex = 10;
             this.updateIdFeed.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
-            //
+            // 
             // statusLabel
-            //
+            // 
             this.statusLabel.AutoSize = true;
             this.statusLabel.Location = new System.Drawing.Point(18, 142);
             this.statusLabel.Name = "statusLabel";
@@ -240,9 +241,9 @@ namespace TestIt
             this.statusLabel.TabIndex = 0;
             this.statusLabel.Text = "Status:";
             this.statusLabel.Visible = false;
-            //
+            // 
             // updtAddBox
-            //
+            // 
             this.updtAddBox.BackColor = System.Drawing.Color.Silver;
             this.updtAddBox.ForeColor = System.Drawing.Color.Black;
             this.updtAddBox.Location = new System.Drawing.Point(172, 195);
@@ -253,9 +254,9 @@ namespace TestIt
             this.updtAddBox.Text = "Update";
             this.updtAddBox.UseVisualStyleBackColor = false;
             this.updtAddBox.Click += new System.EventHandler(this.updtAddBox_Click);
-            //
+            // 
             // priorityLabel
-            //
+            // 
             this.priorityLabel.AutoSize = true;
             this.priorityLabel.Location = new System.Drawing.Point(22, 62);
             this.priorityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -264,9 +265,9 @@ namespace TestIt
             this.priorityLabel.TabIndex = 8;
             this.priorityLabel.Text = "Priority";
             this.priorityLabel.Visible = false;
-            //
+            // 
             // priorityFeed
-            //
+            // 
             this.priorityFeed.BackColor = System.Drawing.Color.Gray;
             this.priorityFeed.Location = new System.Drawing.Point(122, 62);
             this.priorityFeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -275,9 +276,9 @@ namespace TestIt
             this.priorityFeed.TabIndex = 7;
             this.priorityFeed.Visible = false;
             this.priorityFeed.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            //
+            // 
             // button2
-            //
+            // 
             this.button2.BackColor = System.Drawing.Color.Silver;
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(38, 195);
@@ -288,9 +289,9 @@ namespace TestIt
             this.button2.Text = "Add";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            //
+            // 
             // text_label1
-            //
+            // 
             this.text_label1.BackColor = System.Drawing.Color.Gray;
             this.text_label1.Location = new System.Drawing.Point(118, 25);
             this.text_label1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -298,18 +299,18 @@ namespace TestIt
             this.text_label1.Size = new System.Drawing.Size(142, 26);
             this.text_label1.TabIndex = 3;
             this.text_label1.TextChanged += new System.EventHandler(this.text_label1_TextChanged);
-            //
+            // 
             // label1
-            //
+            // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(28, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nimi:";
-            //
+            // 
             // whenFeed
-            //
+            // 
             this.whenFeed.BackColor = System.Drawing.Color.Gray;
             this.whenFeed.Location = new System.Drawing.Point(122, 129);
             this.whenFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -317,9 +318,9 @@ namespace TestIt
             this.whenFeed.Size = new System.Drawing.Size(148, 26);
             this.whenFeed.TabIndex = 5;
             this.whenFeed.TextChanged += new System.EventHandler(this.text_label3_TextChanged);
-            //
+            // 
             // givenFeed
-            //
+            // 
             this.givenFeed.BackColor = System.Drawing.Color.Gray;
             this.givenFeed.Location = new System.Drawing.Point(122, 82);
             this.givenFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -327,18 +328,18 @@ namespace TestIt
             this.givenFeed.Size = new System.Drawing.Size(148, 26);
             this.givenFeed.TabIndex = 4;
             this.givenFeed.TextChanged += new System.EventHandler(this.text_label2_TextChanged);
-            //
+            // 
             // When
-            //
+            // 
             this.When.AutoSize = true;
             this.When.Location = new System.Drawing.Point(28, 129);
             this.When.Name = "When";
             this.When.Size = new System.Drawing.Size(51, 20);
             this.When.TabIndex = 2;
             this.When.Text = "When";
-            //
+            // 
             // Given
-            //
+            // 
             this.Given.AutoSize = true;
             this.Given.Location = new System.Drawing.Point(28, 82);
             this.Given.Name = "Given";
@@ -346,9 +347,9 @@ namespace TestIt
             this.Given.TabIndex = 1;
             this.Given.Text = "Given";
             this.Given.Click += new System.EventHandler(this.label2_Click);
-            //
+            // 
             // groupBox2
-            //
+            // 
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.label4);
@@ -361,9 +362,9 @@ namespace TestIt
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Remove Project, Functonality";
-            //
+            // 
             // button3
-            //
+            // 
             this.button3.BackColor = System.Drawing.Color.Firebrick;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -375,9 +376,9 @@ namespace TestIt
             this.button3.Text = "REMOVE";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            //
+            // 
             // textBox1
-            //
+            // 
             this.textBox1.BackColor = System.Drawing.Color.Gray;
             this.textBox1.Location = new System.Drawing.Point(122, 48);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -385,9 +386,9 @@ namespace TestIt
             this.textBox1.Size = new System.Drawing.Size(148, 26);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            //
+            // 
             // label4
-            //
+            // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(8, 52);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -396,9 +397,9 @@ namespace TestIt
             this.label4.TabIndex = 0;
             this.label4.Text = "ID to remove";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            //
+            // 
             // Then
-            //
+            // 
             this.Then.AutoSize = true;
             this.Then.Location = new System.Drawing.Point(28, 178);
             this.Then.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -406,18 +407,18 @@ namespace TestIt
             this.Then.Size = new System.Drawing.Size(45, 20);
             this.Then.TabIndex = 7;
             this.Then.Text = "Then";
-            //
+            // 
             // thenFeed
-            //
+            // 
             this.thenFeed.BackColor = System.Drawing.Color.Gray;
             this.thenFeed.Location = new System.Drawing.Point(122, 178);
             this.thenFeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.thenFeed.Name = "thenFeed";
             this.thenFeed.Size = new System.Drawing.Size(148, 26);
             this.thenFeed.TabIndex = 8;
-            //
+            // 
             // userStory
-            //
+            // 
             this.userStory.Controls.Add(this.removeUsrStryButton);
             this.userStory.Controls.Add(this.updateUserstory);
             this.userStory.Controls.Add(this.funcIdFeed);
@@ -440,9 +441,9 @@ namespace TestIt
             this.userStory.Text = "UserStory";
             this.userStory.Visible = false;
             this.userStory.Enter += new System.EventHandler(this.userStory_Enter);
-            //
+            // 
             // removeUsrStryButton
-            //
+            // 
             this.removeUsrStryButton.BackColor = System.Drawing.Color.Silver;
             this.removeUsrStryButton.ForeColor = System.Drawing.Color.Black;
             this.removeUsrStryButton.Location = new System.Drawing.Point(38, 268);
@@ -453,9 +454,9 @@ namespace TestIt
             this.removeUsrStryButton.Text = "Remove";
             this.removeUsrStryButton.UseVisualStyleBackColor = false;
             this.removeUsrStryButton.Click += new System.EventHandler(this.removeUsrStryButton_Click);
-            //
+            // 
             // updateUserstory
-            //
+            // 
             this.updateUserstory.BackColor = System.Drawing.Color.Silver;
             this.updateUserstory.ForeColor = System.Drawing.Color.Black;
             this.updateUserstory.Location = new System.Drawing.Point(172, 223);
@@ -466,18 +467,18 @@ namespace TestIt
             this.updateUserstory.Text = "Update";
             this.updateUserstory.UseVisualStyleBackColor = false;
             this.updateUserstory.Click += new System.EventHandler(this.updateUserstory_Click);
-            //
+            // 
             // funcIdFeed
-            //
+            // 
             this.funcIdFeed.BackColor = System.Drawing.Color.Gray;
             this.funcIdFeed.Location = new System.Drawing.Point(164, 31);
             this.funcIdFeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.funcIdFeed.Name = "funcIdFeed";
             this.funcIdFeed.Size = new System.Drawing.Size(106, 26);
             this.funcIdFeed.TabIndex = 11;
-            //
+            // 
             // funcIdText
-            //
+            // 
             this.funcIdText.AutoSize = true;
             this.funcIdText.Location = new System.Drawing.Point(12, 37);
             this.funcIdText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -485,9 +486,9 @@ namespace TestIt
             this.funcIdText.Size = new System.Drawing.Size(119, 20);
             this.funcIdText.TabIndex = 10;
             this.funcIdText.Text = "Functionality ID";
-            //
+            // 
             // userStoryButton
-            //
+            // 
             this.userStoryButton.BackColor = System.Drawing.Color.Silver;
             this.userStoryButton.ForeColor = System.Drawing.Color.Black;
             this.userStoryButton.Location = new System.Drawing.Point(33, 223);
@@ -498,9 +499,9 @@ namespace TestIt
             this.userStoryButton.Text = "Add UserStory";
             this.userStoryButton.UseVisualStyleBackColor = false;
             this.userStoryButton.Click += new System.EventHandler(this.userStoryButton_Click);
-            //
+            // 
             // otsikko
-            //
+            // 
             this.otsikko.AutoSize = true;
             this.otsikko.Font = new System.Drawing.Font("Bradley Hand ITC", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.otsikko.ForeColor = System.Drawing.Color.White;
@@ -511,9 +512,9 @@ namespace TestIt
             this.otsikko.TabIndex = 10;
             this.otsikko.Text = "Project";
             this.otsikko.Click += new System.EventHandler(this.label2_Click_1);
-            //
+            // 
             // label2
-            //
+            // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(14, 46);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -521,9 +522,9 @@ namespace TestIt
             this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 11;
             this.label2.Text = "User:";
-            //
+            // 
             // addUserButton
-            //
+            // 
             this.addUserButton.BackColor = System.Drawing.Color.Silver;
             this.addUserButton.ForeColor = System.Drawing.Color.Black;
             this.addUserButton.Location = new System.Drawing.Point(9, 200);
@@ -534,9 +535,10 @@ namespace TestIt
             this.addUserButton.Text = "Add User";
             this.addUserButton.UseVisualStyleBackColor = false;
             this.addUserButton.Click += new System.EventHandler(this.button4_Click);
-            //
+            // 
             // groupBox3
-            //
+            // 
+            this.groupBox3.Controls.Add(this.AddRole);
             this.groupBox3.Controls.Add(this.UpdateRole);
             this.groupBox3.Controls.Add(this.RemoveRole);
             this.groupBox3.Controls.Add(this.label5);
@@ -555,9 +557,22 @@ namespace TestIt
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Add user";
-            //
+            // 
+            // AddRole
+            // 
+            this.AddRole.BackColor = System.Drawing.Color.Silver;
+            this.AddRole.ForeColor = System.Drawing.Color.Black;
+            this.AddRole.Location = new System.Drawing.Point(9, 163);
+            this.AddRole.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AddRole.Name = "AddRole";
+            this.AddRole.Size = new System.Drawing.Size(112, 35);
+            this.AddRole.TabIndex = 24;
+            this.AddRole.Text = "Add Role";
+            this.AddRole.UseVisualStyleBackColor = false;
+            this.AddRole.Click += new System.EventHandler(this.AddRole_Click);
+            // 
             // UpdateRole
-            //
+            // 
             this.UpdateRole.BackColor = System.Drawing.Color.Silver;
             this.UpdateRole.ForeColor = System.Drawing.Color.Black;
             this.UpdateRole.Location = new System.Drawing.Point(130, 163);
@@ -567,10 +582,10 @@ namespace TestIt
             this.UpdateRole.TabIndex = 20;
             this.UpdateRole.Text = "Update Role";
             this.UpdateRole.UseVisualStyleBackColor = false;
-             this.UpdateRole.Click += new System.EventHandler(this.updateRole_click);
-            //
+            this.UpdateRole.Click += new System.EventHandler(this.updateRole_click);
+            // 
             // RemoveRole
-            //
+            // 
             this.RemoveRole.BackColor = System.Drawing.Color.Silver;
             this.RemoveRole.ForeColor = System.Drawing.Color.Black;
             this.RemoveRole.Location = new System.Drawing.Point(130, 200);
@@ -581,9 +596,9 @@ namespace TestIt
             this.RemoveRole.Text = "Remove Role";
             this.RemoveRole.UseVisualStyleBackColor = false;
             this.RemoveRole.Click += new System.EventHandler(this.removeRole_click);
-            //
+            // 
             // label5
-            //
+            // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(14, 126);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -591,9 +606,9 @@ namespace TestIt
             this.label5.Size = new System.Drawing.Size(83, 20);
             this.label5.TabIndex = 17;
             this.label5.Text = "Project ID:";
-            //
+            // 
             // rooliLabel
-            //
+            // 
             this.rooliLabel.AutoSize = true;
             this.rooliLabel.Location = new System.Drawing.Point(14, 86);
             this.rooliLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -602,36 +617,36 @@ namespace TestIt
             this.rooliLabel.TabIndex = 18;
             this.rooliLabel.Text = "Role:";
             this.rooliLabel.Click += new System.EventHandler(this.label3_Click);
-            //
+            // 
             // projectIdFeed
-            //
+            // 
             this.projectIdFeed.BackColor = System.Drawing.Color.Gray;
             this.projectIdFeed.Location = new System.Drawing.Point(122, 126);
             this.projectIdFeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.projectIdFeed.Name = "projectIdFeed";
             this.projectIdFeed.Size = new System.Drawing.Size(148, 26);
             this.projectIdFeed.TabIndex = 17;
-            //
+            // 
             // rooliFeed
-            //
+            // 
             this.rooliFeed.BackColor = System.Drawing.Color.Gray;
             this.rooliFeed.Location = new System.Drawing.Point(122, 86);
             this.rooliFeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rooliFeed.Name = "rooliFeed";
             this.rooliFeed.Size = new System.Drawing.Size(148, 26);
             this.rooliFeed.TabIndex = 16;
-            //
+            // 
             // userNameFeed
-            //
+            // 
             this.userNameFeed.BackColor = System.Drawing.Color.Gray;
             this.userNameFeed.Location = new System.Drawing.Point(122, 46);
             this.userNameFeed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userNameFeed.Name = "userNameFeed";
             this.userNameFeed.Size = new System.Drawing.Size(148, 26);
             this.userNameFeed.TabIndex = 15;
-            //
+            // 
             // chooseUserBox
-            //
+            // 
             this.chooseUserBox.Controls.Add(this.signin);
             this.chooseUserBox.Controls.Add(this.button9);
             this.chooseUserBox.Controls.Add(this.userButton);
@@ -646,9 +661,9 @@ namespace TestIt
             this.chooseUserBox.TabIndex = 16;
             this.chooseUserBox.TabStop = false;
             this.chooseUserBox.Text = "Choose user";
-            //
+            // 
             // signin
-            //
+            // 
             this.signin.BackColor = System.Drawing.Color.Silver;
             this.signin.ForeColor = System.Drawing.Color.Black;
             this.signin.Location = new System.Drawing.Point(14, 62);
@@ -657,9 +672,10 @@ namespace TestIt
             this.signin.TabIndex = 24;
             this.signin.Text = "Sign in";
             this.signin.UseVisualStyleBackColor = false;
-            //
+            this.signin.Click += new System.EventHandler(this.signin_Click);
+            // 
             // button9
-            //
+            // 
             this.button9.BackColor = System.Drawing.Color.Silver;
             this.button9.ForeColor = System.Drawing.Color.Black;
             this.button9.Location = new System.Drawing.Point(152, 62);
@@ -668,9 +684,10 @@ namespace TestIt
             this.button9.TabIndex = 23;
             this.button9.Text = "Show all comments";
             this.button9.UseVisualStyleBackColor = false;
-            //
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // userButton
-            //
+            // 
             this.userButton.BackColor = System.Drawing.Color.Silver;
             this.userButton.ForeColor = System.Drawing.Color.Black;
             this.userButton.Location = new System.Drawing.Point(14, 108);
@@ -681,9 +698,9 @@ namespace TestIt
             this.userButton.Text = "Remove selected user";
             this.userButton.UseVisualStyleBackColor = false;
             this.userButton.Click += new System.EventHandler(this.button5_Click);
-            //
+            // 
             // userLabel
-            //
+            // 
             this.userLabel.AutoSize = true;
             this.userLabel.Location = new System.Drawing.Point(10, 31);
             this.userLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -691,9 +708,9 @@ namespace TestIt
             this.userLabel.Size = new System.Drawing.Size(47, 20);
             this.userLabel.TabIndex = 1;
             this.userLabel.Text = "User:";
-            //
+            // 
             // userDropDown
-            //
+            // 
             this.userDropDown.BackColor = System.Drawing.Color.Gray;
             this.userDropDown.FormattingEnabled = true;
             this.userDropDown.Location = new System.Drawing.Point(104, 26);
@@ -703,9 +720,9 @@ namespace TestIt
             this.userDropDown.TabIndex = 0;
             this.userDropDown.Text = "- Choose user -";
             this.userDropDown.SelectedIndexChanged += new System.EventHandler(this.userDropDown_SelectedIndexChanged);
-            //
+            // 
             // respoUser
-            //
+            // 
             this.respoUser.Controls.Add(this.remorespo);
             this.respoUser.Controls.Add(this.testIdFeed);
             this.respoUser.Controls.Add(this.testIDLabel);
@@ -723,9 +740,9 @@ namespace TestIt
             this.respoUser.Text = "Responsible user";
             this.respoUser.Visible = false;
             this.respoUser.Enter += new System.EventHandler(this.projectUserBox_Enter);
-            //
+            // 
             // remorespo
-            //
+            // 
             this.remorespo.BackColor = System.Drawing.Color.Silver;
             this.remorespo.ForeColor = System.Drawing.Color.Black;
             this.remorespo.Location = new System.Drawing.Point(183, 158);
@@ -734,18 +751,18 @@ namespace TestIt
             this.remorespo.TabIndex = 6;
             this.remorespo.Text = "Remove";
             this.remorespo.UseVisualStyleBackColor = false;
-            //
+            // 
             // testIdFeed
-            //
+            // 
             this.testIdFeed.BackColor = System.Drawing.Color.Gray;
             this.testIdFeed.Location = new System.Drawing.Point(104, 75);
             this.testIdFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.testIdFeed.Name = "testIdFeed";
             this.testIdFeed.Size = new System.Drawing.Size(148, 26);
             this.testIdFeed.TabIndex = 5;
-            //
+            // 
             // testIDLabel
-            //
+            // 
             this.testIDLabel.AutoSize = true;
             this.testIDLabel.Location = new System.Drawing.Point(10, 75);
             this.testIDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -753,9 +770,9 @@ namespace TestIt
             this.testIDLabel.Size = new System.Drawing.Size(65, 20);
             this.testIDLabel.TabIndex = 3;
             this.testIDLabel.Text = "Test ID:";
-            //
+            // 
             // addToTest
-            //
+            // 
             this.addToTest.BackColor = System.Drawing.Color.Silver;
             this.addToTest.ForeColor = System.Drawing.Color.Black;
             this.addToTest.Location = new System.Drawing.Point(15, 157);
@@ -766,9 +783,9 @@ namespace TestIt
             this.addToTest.Text = "Add user to test";
             this.addToTest.UseVisualStyleBackColor = false;
             this.addToTest.Click += new System.EventHandler(this.add_to_test_click);
-            //
+            // 
             // projectUserLabel
-            //
+            // 
             this.projectUserLabel.AutoSize = true;
             this.projectUserLabel.Location = new System.Drawing.Point(10, 31);
             this.projectUserLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -776,9 +793,9 @@ namespace TestIt
             this.projectUserLabel.Size = new System.Drawing.Size(47, 20);
             this.projectUserLabel.TabIndex = 1;
             this.projectUserLabel.Text = "User:";
-            //
+            // 
             // projectUserDropDown
-            //
+            // 
             this.projectUserDropDown.BackColor = System.Drawing.Color.Gray;
             this.projectUserDropDown.FormattingEnabled = true;
             this.projectUserDropDown.Location = new System.Drawing.Point(104, 26);
@@ -788,9 +805,9 @@ namespace TestIt
             this.projectUserDropDown.TabIndex = 0;
             this.projectUserDropDown.Text = "- Choose user -";
             this.projectUserDropDown.SelectedIndexChanged += new System.EventHandler(this.projectUserDropDown_SelectedIndexChanged);
-            //
+            // 
             // changeStatus
-            //
+            // 
             this.changeStatus.Controls.Add(this.button4);
             this.changeStatus.Controls.Add(this.textBox3);
             this.changeStatus.Controls.Add(this.label8);
@@ -806,9 +823,9 @@ namespace TestIt
             this.changeStatus.TabStop = false;
             this.changeStatus.Text = "Change test status";
             this.changeStatus.Visible = false;
-            //
+            // 
             // button4
-            //
+            // 
             this.button4.BackColor = System.Drawing.Color.Silver;
             this.button4.ForeColor = System.Drawing.Color.Black;
             this.button4.Location = new System.Drawing.Point(12, 158);
@@ -817,52 +834,52 @@ namespace TestIt
             this.button4.TabIndex = 19;
             this.button4.Text = "Submit";
             this.button4.UseVisualStyleBackColor = false;
-            //
+            // 
             // textBox3
-            //
+            // 
             this.textBox3.BackColor = System.Drawing.Color.Gray;
             this.textBox3.Location = new System.Drawing.Point(136, 123);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(158, 26);
             this.textBox3.TabIndex = 24;
-            //
+            // 
             // label8
-            //
+            // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(14, 123);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 20);
             this.label8.TabIndex = 23;
             this.label8.Text = "Comment:";
-            //
+            // 
             // label7
-            //
+            // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(14, 86);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 20);
             this.label7.TabIndex = 22;
             this.label7.Text = "Test ID:";
-            //
+            // 
             // label6
-            //
+            // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(14, 45);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 20);
             this.label6.TabIndex = 21;
             this.label6.Text = "Status:";
-            //
+            // 
             // textBox2
-            //
+            // 
             this.textBox2.BackColor = System.Drawing.Color.Gray;
             this.textBox2.Location = new System.Drawing.Point(136, 86);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(158, 26);
             this.textBox2.TabIndex = 20;
-            //
+            // 
             // comboBox1
-            //
+            // 
             this.comboBox1.BackColor = System.Drawing.Color.Gray;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(136, 42);
@@ -870,31 +887,33 @@ namespace TestIt
             this.comboBox1.Size = new System.Drawing.Size(158, 28);
             this.comboBox1.TabIndex = 19;
             this.comboBox1.Text = "- Choose status -";
-            //
+            // 
             // chart
-            //
+            // 
             this.chart.BackColor = System.Drawing.Color.Silver;
             this.chart.BackSecondaryColor = System.Drawing.Color.Silver;
             this.chart.BorderlineColor = System.Drawing.Color.Silver;
-            chartArea2.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart.Legends.Add(legend2);
-            this.chart.Location = new System.Drawing.Point(1176, 560);
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
+            this.chart.Location = new System.Drawing.Point(1053, 560);
             this.chart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chart.Name = "chart";
-            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart.Series.Add(series2);
-            this.chart.Size = new System.Drawing.Size(450, 462);
+            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.chart.Series.Add(series1);
+            this.chart.Size = new System.Drawing.Size(573, 574);
             this.chart.TabIndex = 19;
             this.chart.Text = "chart1";
             this.chart.Visible = false;
-            //
+            // 
             // instBox
-            //
+            // 
             this.instBox.Controls.Add(this.RemoInst);
             this.instBox.Controls.Add(this.button7);
             this.instBox.Controls.Add(this.button6);
@@ -911,9 +930,21 @@ namespace TestIt
             this.instBox.TabStop = false;
             this.instBox.Text = "Instructions by test ID:";
             this.instBox.Visible = false;
-            //
+            // 
+            // RemoInst
+            // 
+            this.RemoInst.BackColor = System.Drawing.Color.Silver;
+            this.RemoInst.ForeColor = System.Drawing.Color.Black;
+            this.RemoInst.Location = new System.Drawing.Point(136, 205);
+            this.RemoInst.Name = "RemoInst";
+            this.RemoInst.Size = new System.Drawing.Size(90, 32);
+            this.RemoInst.TabIndex = 7;
+            this.RemoInst.Text = "Remove";
+            this.RemoInst.UseVisualStyleBackColor = false;
+            this.RemoInst.Click += new System.EventHandler(this.RemoInst_Click);
+            // 
             // button7
-            //
+            // 
             this.button7.BackColor = System.Drawing.Color.Silver;
             this.button7.ForeColor = System.Drawing.Color.Black;
             this.button7.Location = new System.Drawing.Point(22, 205);
@@ -923,9 +954,9 @@ namespace TestIt
             this.button7.Text = "Update";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            //
+            // 
             // button6
-            //
+            // 
             this.button6.BackColor = System.Drawing.Color.Silver;
             this.button6.ForeColor = System.Drawing.Color.Black;
             this.button6.Location = new System.Drawing.Point(136, 160);
@@ -935,9 +966,9 @@ namespace TestIt
             this.button6.Text = "Add";
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            //
+            // 
             // button5
-            //
+            // 
             this.button5.BackColor = System.Drawing.Color.Silver;
             this.button5.ForeColor = System.Drawing.Color.Black;
             this.button5.Location = new System.Drawing.Point(22, 162);
@@ -947,25 +978,25 @@ namespace TestIt
             this.button5.Text = "Read";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            //
+            // 
             // instrCom
-            //
+            // 
             this.instrCom.BackColor = System.Drawing.Color.Gray;
             this.instrCom.Location = new System.Drawing.Point(136, 102);
             this.instrCom.Name = "instrCom";
             this.instrCom.Size = new System.Drawing.Size(120, 26);
             this.instrCom.TabIndex = 3;
-            //
+            // 
             // instID
-            //
+            // 
             this.instID.BackColor = System.Drawing.Color.Gray;
             this.instID.Location = new System.Drawing.Point(136, 57);
             this.instID.Name = "instID";
             this.instID.Size = new System.Drawing.Size(120, 26);
             this.instID.TabIndex = 2;
-            //
+            // 
             // label10
-            //
+            // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(26, 108);
             this.label10.Name = "label10";
@@ -973,18 +1004,18 @@ namespace TestIt
             this.label10.TabIndex = 1;
             this.label10.Text = "Comment:";
             this.label10.Click += new System.EventHandler(this.label10_Click);
-            //
+            // 
             // label9
-            //
+            // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(30, 63);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 20);
             this.label9.TabIndex = 0;
             this.label9.Text = "Test ID:";
-            //
+            // 
             // Instructions
-            //
+            // 
             this.Instructions.BackColor = System.Drawing.Color.Silver;
             this.Instructions.FormattingEnabled = true;
             this.Instructions.HorizontalScrollbar = true;
@@ -996,9 +1027,9 @@ namespace TestIt
             this.Instructions.TabIndex = 21;
             this.Instructions.Visible = false;
             this.Instructions.SelectedIndexChanged += new System.EventHandler(this.Instructions_SelectedIndexChanged);
-            //
+            // 
             // button8
-            //
+            // 
             this.button8.BackColor = System.Drawing.Color.Silver;
             this.button8.Location = new System.Drawing.Point(1494, 508);
             this.button8.Name = "button8";
@@ -1006,32 +1037,21 @@ namespace TestIt
             this.button8.TabIndex = 22;
             this.button8.Text = "Show chart";
             this.button8.UseVisualStyleBackColor = false;
-            //
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
             // signedAs
-            //
+            // 
             this.signedAs.AutoSize = true;
             this.signedAs.ForeColor = System.Drawing.Color.White;
-            this.signedAs.Location = new System.Drawing.Point(548, 102);
+            this.signedAs.Location = new System.Drawing.Point(978, 101);
             this.signedAs.Name = "signedAs";
             this.signedAs.Size = new System.Drawing.Size(108, 20);
             this.signedAs.TabIndex = 23;
             this.signedAs.Text = "Signed in as : ";
             this.signedAs.Click += new System.EventHandler(this.label11_Click);
-            //
-            // RemoInst
-            //
-            this.RemoInst.BackColor = System.Drawing.Color.Silver;
-            this.RemoInst.ForeColor = System.Drawing.Color.Black;
-            this.RemoInst.Location = new System.Drawing.Point(136, 205);
-            this.RemoInst.Name = "RemoInst";
-            this.RemoInst.Size = new System.Drawing.Size(90, 32);
-            this.RemoInst.TabIndex = 7;
-            this.RemoInst.Text = "Remove";
-            this.RemoInst.UseVisualStyleBackColor = false;
-            this.RemoInst.Click += new System.EventHandler(this.RemoInst_Click);
-            //
+            // 
             // Viewer
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -1155,5 +1175,6 @@ namespace TestIt
         private Button RemoveRole;
         private Button UpdateRole;
         private Button RemoInst;
+        private Button AddRole;
     }
 }
