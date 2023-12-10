@@ -60,10 +60,13 @@ namespace TestIt
       public List<Object> SelectAll()
        {
          string query = @"
-         SELECT test_id, ref_functionality_id, responsible_user_id, priority, name, status
+         SELECT test_id, ref_functionality_id, responsible_user_id, priority, name, MAX(status)
          FROM test
          LEFT OUTER JOIN result ON ref_test_id = test_id
-         GROUP BY test_id";
+         GROUP BY test_id
+         ORDER BY status asc;
+         ";
+         // HAVING MAX(time) OR test_id NOT IN (SELECT ref_test_id FROM result)
            MySqlCommand cmd = CallStack(query);
            MySqlDataReader reader = cmd.ExecuteReader();
            List<Object> testlist = new List<Object>();
@@ -99,11 +102,12 @@ namespace TestIt
         public List<Object> SelectAll(int id)
         {
             string query = @"
-            SELECT test_id, ref_functionality_id, responsible_user_id, priority, name, status
+            SELECT test_id, ref_functionality_id, responsible_user_id, priority, name, MAX(status)
             FROM test
-            LEFT OUTER JOIN result ON ref_test_id = test_id
             WHERE ref_functionality_id = @id
-            GROUP BY test_id";
+            LEFT OUTER JOIN result ON ref_test_id = test_id
+            GROUP BY test_id
+            ORDER BY status asc;";
             MySqlCommand cmd = CallStack(query);
             cmd.Parameters.AddWithValue("@id", id);
             MySqlDataReader reader = cmd.ExecuteReader();
