@@ -30,12 +30,12 @@ namespace TestIt
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
             this.Taulukko = new System.Windows.Forms.DataGridView();
             this.addBox = new System.Windows.Forms.GroupBox();
@@ -78,6 +78,9 @@ namespace TestIt
             this.rooliFeed = new System.Windows.Forms.TextBox();
             this.userNameFeed = new System.Windows.Forms.TextBox();
             this.chooseUserBox = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.NameText = new System.Windows.Forms.TextBox();
+            this.NameUpdate = new System.Windows.Forms.Button();
             this.signin = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.userButton = new System.Windows.Forms.Button();
@@ -111,9 +114,6 @@ namespace TestIt
             this.Instructions = new System.Windows.Forms.ListBox();
             this.button8 = new System.Windows.Forms.Button();
             this.signedAs = new System.Windows.Forms.Label();
-            this.NameUpdate = new System.Windows.Forms.Button();
-            this.NameText = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Taulukko)).BeginInit();
             this.addBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -135,7 +135,7 @@ namespace TestIt
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.button1.Location = new System.Drawing.Point(48, 32);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 52);
             this.button1.TabIndex = 0;
@@ -151,35 +151,35 @@ namespace TestIt
             this.Taulukko.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Taulukko.BackgroundColor = System.Drawing.Color.Gray;
             this.Taulukko.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Taulukko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Taulukko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Taulukko.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Taulukko.Cursor = System.Windows.Forms.Cursors.Default;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Taulukko.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Taulukko.DefaultCellStyle = dataGridViewCellStyle2;
             this.Taulukko.Location = new System.Drawing.Point(366, 165);
             this.Taulukko.Name = "Taulukko";
             this.Taulukko.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Gray;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Taulukko.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Taulukko.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.Taulukko.RowHeadersWidth = 62;
             this.Taulukko.RowTemplate.Height = 28;
             this.Taulukko.Size = new System.Drawing.Size(1260, 332);
@@ -200,9 +200,9 @@ namespace TestIt
             this.addBox.Controls.Add(this.label1);
             this.addBox.ForeColor = System.Drawing.Color.White;
             this.addBox.Location = new System.Drawing.Point(48, 89);
-            this.addBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBox.Margin = new System.Windows.Forms.Padding(2);
             this.addBox.Name = "addBox";
-            this.addBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addBox.Padding = new System.Windows.Forms.Padding(2);
             this.addBox.Size = new System.Drawing.Size(310, 269);
             this.addBox.TabIndex = 2;
             this.addBox.TabStop = false;
@@ -253,7 +253,7 @@ namespace TestIt
             this.updtAddBox.BackColor = System.Drawing.Color.Silver;
             this.updtAddBox.ForeColor = System.Drawing.Color.Black;
             this.updtAddBox.Location = new System.Drawing.Point(172, 195);
-            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2);
             this.updtAddBox.Name = "updtAddBox";
             this.updtAddBox.Size = new System.Drawing.Size(94, 37);
             this.updtAddBox.TabIndex = 9;
@@ -287,7 +287,7 @@ namespace TestIt
             this.button2.BackColor = System.Drawing.Color.Silver;
             this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(38, 195);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 37);
             this.button2.TabIndex = 6;
@@ -299,7 +299,7 @@ namespace TestIt
             // 
             this.text_label1.BackColor = System.Drawing.Color.Gray;
             this.text_label1.Location = new System.Drawing.Point(118, 25);
-            this.text_label1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.text_label1.Margin = new System.Windows.Forms.Padding(2);
             this.text_label1.Name = "text_label1";
             this.text_label1.Size = new System.Drawing.Size(142, 26);
             this.text_label1.TabIndex = 3;
@@ -317,7 +317,7 @@ namespace TestIt
             // 
             this.whenFeed.BackColor = System.Drawing.Color.Gray;
             this.whenFeed.Location = new System.Drawing.Point(122, 129);
-            this.whenFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.whenFeed.Margin = new System.Windows.Forms.Padding(2);
             this.whenFeed.Name = "whenFeed";
             this.whenFeed.Size = new System.Drawing.Size(148, 26);
             this.whenFeed.TabIndex = 5;
@@ -326,7 +326,7 @@ namespace TestIt
             // 
             this.givenFeed.BackColor = System.Drawing.Color.Gray;
             this.givenFeed.Location = new System.Drawing.Point(122, 82);
-            this.givenFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.givenFeed.Margin = new System.Windows.Forms.Padding(2);
             this.givenFeed.Name = "givenFeed";
             this.givenFeed.Size = new System.Drawing.Size(148, 26);
             this.givenFeed.TabIndex = 4;
@@ -661,6 +661,35 @@ namespace TestIt
             this.chooseUserBox.TabStop = false;
             this.chooseUserBox.Text = "Choose user";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(332, 58);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(141, 20);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Update username:";
+            // 
+            // NameText
+            // 
+            this.NameText.BackColor = System.Drawing.Color.Gray;
+            this.NameText.Location = new System.Drawing.Point(336, 83);
+            this.NameText.Name = "NameText";
+            this.NameText.Size = new System.Drawing.Size(124, 26);
+            this.NameText.TabIndex = 26;
+            // 
+            // NameUpdate
+            // 
+            this.NameUpdate.BackColor = System.Drawing.Color.Silver;
+            this.NameUpdate.ForeColor = System.Drawing.Color.Black;
+            this.NameUpdate.Location = new System.Drawing.Point(351, 114);
+            this.NameUpdate.Name = "NameUpdate";
+            this.NameUpdate.Size = new System.Drawing.Size(91, 29);
+            this.NameUpdate.TabIndex = 25;
+            this.NameUpdate.Text = "Update";
+            this.NameUpdate.UseVisualStyleBackColor = false;
+            this.NameUpdate.Click += new System.EventHandler(this.NameUpdate_Click);
+            // 
             // signin
             // 
             this.signin.BackColor = System.Drawing.Color.Silver;
@@ -754,7 +783,7 @@ namespace TestIt
             // 
             this.testIdFeed.BackColor = System.Drawing.Color.Gray;
             this.testIdFeed.Location = new System.Drawing.Point(104, 75);
-            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2);
             this.testIdFeed.Name = "testIdFeed";
             this.testIdFeed.Size = new System.Drawing.Size(148, 26);
             this.testIdFeed.TabIndex = 5;
@@ -890,20 +919,20 @@ namespace TestIt
             this.chart.BackColor = System.Drawing.Color.Silver;
             this.chart.BackSecondaryColor = System.Drawing.Color.Silver;
             this.chart.BorderlineColor = System.Drawing.Color.Silver;
-            chartArea3.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chart.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart.Legends.Add(legend1);
             this.chart.Location = new System.Drawing.Point(1053, 560);
             this.chart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chart.Name = "chart";
-            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            series3.YValuesPerPoint = 2;
-            this.chart.Series.Add(series3);
+            this.chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.YValuesPerPoint = 2;
+            this.chart.Series.Add(series1);
             this.chart.Size = new System.Drawing.Size(573, 574);
             this.chart.TabIndex = 19;
             this.chart.Text = "chart1";
@@ -1043,35 +1072,6 @@ namespace TestIt
             this.signedAs.Size = new System.Drawing.Size(108, 20);
             this.signedAs.TabIndex = 23;
             this.signedAs.Text = "Signed in as : ";
-            // 
-            // NameUpdate
-            // 
-            this.NameUpdate.BackColor = System.Drawing.Color.Silver;
-            this.NameUpdate.ForeColor = System.Drawing.Color.Black;
-            this.NameUpdate.Location = new System.Drawing.Point(351, 114);
-            this.NameUpdate.Name = "NameUpdate";
-            this.NameUpdate.Size = new System.Drawing.Size(91, 29);
-            this.NameUpdate.TabIndex = 25;
-            this.NameUpdate.Text = "Update";
-            this.NameUpdate.UseVisualStyleBackColor = false;
-            this.NameUpdate.Click += new System.EventHandler(this.NameUpdate_Click);
-            // 
-            // NameText
-            // 
-            this.NameText.BackColor = System.Drawing.Color.Gray;
-            this.NameText.Location = new System.Drawing.Point(336, 83);
-            this.NameText.Name = "NameText";
-            this.NameText.Size = new System.Drawing.Size(124, 26);
-            this.NameText.TabIndex = 26;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(332, 58);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 20);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Update username:";
             // 
             // Viewer
             // 
