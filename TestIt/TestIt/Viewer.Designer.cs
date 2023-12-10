@@ -1063,7 +1063,6 @@ namespace TestIt
             this.NameText.Name = "NameText";
             this.NameText.Size = new System.Drawing.Size(124, 26);
             this.NameText.TabIndex = 26;
-            this.NameText.TextChanged += new System.EventHandler(this.NameText_TextChanged);
             // 
             // label11
             // 
