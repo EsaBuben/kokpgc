@@ -64,7 +64,7 @@ namespace TestIt
          FROM test
          LEFT OUTER JOIN result ON ref_test_id = test_id
          GROUP BY test_id
-         ORDER BY status asc;
+         ORDER BY MAX(status) DESC;
          ";
          // HAVING MAX(time) OR test_id NOT IN (SELECT ref_test_id FROM result)
            MySqlCommand cmd = CallStack(query);
@@ -104,10 +104,10 @@ namespace TestIt
             string query = @"
             SELECT test_id, ref_functionality_id, responsible_user_id, priority, name, MAX(status)
             FROM test
-            WHERE ref_functionality_id = @id
             LEFT OUTER JOIN result ON ref_test_id = test_id
+            WHERE ref_functionality_id = @id
             GROUP BY test_id
-            ORDER BY status asc;";
+            ORDER BY MAX(status) DESC;";
             MySqlCommand cmd = CallStack(query);
             cmd.Parameters.AddWithValue("@id", id);
             MySqlDataReader reader = cmd.ExecuteReader();
