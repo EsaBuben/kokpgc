@@ -78,9 +78,6 @@ namespace TestIt
             this.rooliFeed = new System.Windows.Forms.TextBox();
             this.userNameFeed = new System.Windows.Forms.TextBox();
             this.chooseUserBox = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.NameUpdate = new System.Windows.Forms.TextBox();
-            this.NameButton = new System.Windows.Forms.Button();
             this.signin = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.userButton = new System.Windows.Forms.Button();
@@ -134,8 +131,8 @@ namespace TestIt
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button1.Location = new System.Drawing.Point(48, 32);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(32, 21);
+            this.button1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 34);
             this.button1.TabIndex = 0;
@@ -194,11 +191,11 @@ namespace TestIt
             this.addBox.Controls.Add(this.text_label1);
             this.addBox.Controls.Add(this.label1);
             this.addBox.ForeColor = System.Drawing.Color.White;
-            this.addBox.Location = new System.Drawing.Point(48, 89);
-            this.addBox.Margin = new System.Windows.Forms.Padding(2);
+            this.addBox.Location = new System.Drawing.Point(32, 58);
+            this.addBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.addBox.Name = "addBox";
-            this.addBox.Padding = new System.Windows.Forms.Padding(2);
-            this.addBox.Size = new System.Drawing.Size(310, 269);
+            this.addBox.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.addBox.Size = new System.Drawing.Size(207, 175);
             this.addBox.TabIndex = 2;
             this.addBox.TabStop = false;
             this.addBox.Text = "Add Project";
@@ -250,8 +247,8 @@ namespace TestIt
             // 
             this.updtAddBox.BackColor = System.Drawing.Color.Silver;
             this.updtAddBox.ForeColor = System.Drawing.Color.Black;
-            this.updtAddBox.Location = new System.Drawing.Point(172, 195);
-            this.updtAddBox.Margin = new System.Windows.Forms.Padding(2);
+            this.updtAddBox.Location = new System.Drawing.Point(115, 127);
+            this.updtAddBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.updtAddBox.Name = "updtAddBox";
             this.updtAddBox.Size = new System.Drawing.Size(63, 24);
             this.updtAddBox.TabIndex = 9;
@@ -283,8 +280,8 @@ namespace TestIt
             // 
             this.button2.BackColor = System.Drawing.Color.Silver;
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(38, 195);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Location = new System.Drawing.Point(25, 127);
+            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 24);
             this.button2.TabIndex = 6;
@@ -295,8 +292,8 @@ namespace TestIt
             // text_label1
             // 
             this.text_label1.BackColor = System.Drawing.Color.Gray;
-            this.text_label1.Location = new System.Drawing.Point(118, 25);
-            this.text_label1.Margin = new System.Windows.Forms.Padding(2);
+            this.text_label1.Location = new System.Drawing.Point(79, 16);
+            this.text_label1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.text_label1.Name = "text_label1";
             this.text_label1.Size = new System.Drawing.Size(96, 20);
             this.text_label1.TabIndex = 3;
@@ -315,8 +312,8 @@ namespace TestIt
             // whenFeed
             // 
             this.whenFeed.BackColor = System.Drawing.Color.Gray;
-            this.whenFeed.Location = new System.Drawing.Point(122, 129);
-            this.whenFeed.Margin = new System.Windows.Forms.Padding(2);
+            this.whenFeed.Location = new System.Drawing.Point(81, 84);
+            this.whenFeed.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.whenFeed.Name = "whenFeed";
             this.whenFeed.Size = new System.Drawing.Size(100, 20);
             this.whenFeed.TabIndex = 5;
@@ -325,8 +322,8 @@ namespace TestIt
             // givenFeed
             // 
             this.givenFeed.BackColor = System.Drawing.Color.Gray;
-            this.givenFeed.Location = new System.Drawing.Point(122, 82);
-            this.givenFeed.Margin = new System.Windows.Forms.Padding(2);
+            this.givenFeed.Location = new System.Drawing.Point(81, 53);
+            this.givenFeed.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.givenFeed.Name = "givenFeed";
             this.givenFeed.Size = new System.Drawing.Size(100, 20);
             this.givenFeed.TabIndex = 4;
@@ -625,54 +622,18 @@ namespace TestIt
             // 
             // chooseUserBox
             // 
-            this.chooseUserBox.Controls.Add(this.label11);
-            this.chooseUserBox.Controls.Add(this.NameUpdate);
-            this.chooseUserBox.Controls.Add(this.NameButton);
             this.chooseUserBox.Controls.Add(this.signin);
             this.chooseUserBox.Controls.Add(this.button9);
             this.chooseUserBox.Controls.Add(this.userButton);
             this.chooseUserBox.Controls.Add(this.userLabel);
             this.chooseUserBox.Controls.Add(this.userDropDown);
             this.chooseUserBox.ForeColor = System.Drawing.Color.White;
-            this.chooseUserBox.Location = new System.Drawing.Point(1106, 6);
-            this.chooseUserBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chooseUserBox.Location = new System.Drawing.Point(841, 4);
             this.chooseUserBox.Name = "chooseUserBox";
-            this.chooseUserBox.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.chooseUserBox.Size = new System.Drawing.Size(520, 151);
+            this.chooseUserBox.Size = new System.Drawing.Size(243, 98);
             this.chooseUserBox.TabIndex = 16;
             this.chooseUserBox.TabStop = false;
             this.chooseUserBox.Text = "Choose user";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(371, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(110, 20);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Update name:";
-            this.label11.Click += new System.EventHandler(this.label11_Click_1);
-            // 
-            // NameUpdate
-            // 
-            this.NameUpdate.BackColor = System.Drawing.Color.Gray;
-            this.NameUpdate.Location = new System.Drawing.Point(358, 68);
-            this.NameUpdate.Name = "NameUpdate";
-            this.NameUpdate.Size = new System.Drawing.Size(133, 26);
-            this.NameUpdate.TabIndex = 26;
-            this.NameUpdate.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // NameButton
-            // 
-            this.NameButton.BackColor = System.Drawing.Color.Silver;
-            this.NameButton.ForeColor = System.Drawing.Color.Black;
-            this.NameButton.Location = new System.Drawing.Point(375, 108);
-            this.NameButton.Name = "NameButton";
-            this.NameButton.Size = new System.Drawing.Size(91, 30);
-            this.NameButton.TabIndex = 25;
-            this.NameButton.Text = "Update name";
-            this.NameButton.UseVisualStyleBackColor = false;
-            this.NameButton.Click += new System.EventHandler(this.NameButton_Click);
             // 
             // signin
             // 
@@ -766,8 +727,8 @@ namespace TestIt
             // testIdFeed
             // 
             this.testIdFeed.BackColor = System.Drawing.Color.Gray;
-            this.testIdFeed.Location = new System.Drawing.Point(104, 75);
-            this.testIdFeed.Margin = new System.Windows.Forms.Padding(2);
+            this.testIdFeed.Location = new System.Drawing.Point(69, 49);
+            this.testIdFeed.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.testIdFeed.Name = "testIdFeed";
             this.testIdFeed.Size = new System.Drawing.Size(100, 20);
             this.testIdFeed.TabIndex = 5;
@@ -844,6 +805,7 @@ namespace TestIt
             this.button4.TabIndex = 19;
             this.button4.Text = "Submit";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
             // textBox3
             // 
@@ -853,6 +815,7 @@ namespace TestIt
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(107, 20);
             this.textBox3.TabIndex = 24;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label8
             // 
@@ -892,6 +855,7 @@ namespace TestIt
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(107, 20);
             this.textBox2.TabIndex = 20;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_2);
             // 
             // comboBox1
             // 
@@ -903,6 +867,7 @@ namespace TestIt
             this.comboBox1.Size = new System.Drawing.Size(107, 21);
             this.comboBox1.TabIndex = 19;
             this.comboBox1.Text = "- Choose status -";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // chart
             // 
@@ -941,7 +906,8 @@ namespace TestIt
             this.instBox.Location = new System.Drawing.Point(255, 482);
             this.instBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.instBox.Name = "instBox";
-            this.instBox.Size = new System.Drawing.Size(336, 262);
+            this.instBox.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.instBox.Size = new System.Drawing.Size(193, 170);
             this.instBox.TabIndex = 20;
             this.instBox.TabStop = false;
             this.instBox.Text = "Instructions by test ID:";
@@ -1068,7 +1034,8 @@ namespace TestIt
             // 
             this.signedAs.AutoSize = true;
             this.signedAs.ForeColor = System.Drawing.Color.White;
-            this.signedAs.Location = new System.Drawing.Point(847, 101);
+            this.signedAs.Location = new System.Drawing.Point(652, 66);
+            this.signedAs.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.signedAs.Name = "signedAs";
             this.signedAs.Size = new System.Drawing.Size(74, 13);
             this.signedAs.TabIndex = 23;
@@ -1077,8 +1044,12 @@ namespace TestIt
             // 
             // Viewer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1150, 749);
+            this.Controls.Add(this.signedAs);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.Instructions);
             this.Controls.Add(this.instBox);
@@ -1196,8 +1167,5 @@ namespace TestIt
         private Button UpdateRole;
         private Button RemoInst;
         private Button AddRole;
-        private Label label11;
-        private TextBox NameUpdate;
-        private Button NameButton;
     }
 }

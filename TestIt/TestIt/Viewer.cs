@@ -511,18 +511,6 @@ namespace TestIt
             MessageBox.Show(stringi);
         }
 
-        private void AddRole_Click(object sender, EventArgs e)
-        {
-          ProjectRole pr = new ProjectRole();
-          pr.Ref_user_id = Convert.ToInt32(userNameFeed.Text);
-          pr.Ref_proj_id = Convert.ToInt32(projectIdFeed.Text);
-          pr.Role = rooliFeed.Text;
-          Controller.AddNew(pr, DataObjectType.ProjectRole);
-          userNameFeed.Text="";
-          rooliFeed.Text="";
-          projectIdFeed.Text="";
-          MessageBox.Show("New ROLE :D");
-        }
 
 
 
@@ -631,17 +619,7 @@ namespace TestIt
 
         }
 
-        private void label11_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NameButton_Click(object sender, EventArgs e)
+        private void AddRole_Click(object sender, EventArgs e)
         {
 
         }
