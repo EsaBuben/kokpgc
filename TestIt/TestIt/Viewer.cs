@@ -539,6 +539,14 @@ namespace TestIt
 
         private void NameUpdate_Click(object sender, EventArgs e)
         {
+            //update chosenOne user name
+            chosenOne.UserName = NameText.Text;
+            Controller.Update(chosenOne, DataObjectType.User);
+            NameText.Text = "";
+            signedAs.Text = "Signed in as : " + chosenOne.UserName + " " + chosenOne.UserID;
+            userDropDown.Text = chosenOne.UserName;
+            userDropDown.Items.Clear();
+            userDropDown.Items.AddRange(Controller.Listaa(DataObjectType.User).ToArray());
 
         }
 
