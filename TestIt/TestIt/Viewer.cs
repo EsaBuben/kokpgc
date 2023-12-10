@@ -41,6 +41,7 @@ namespace TestIt
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 Taulukko.DataSource = bindingSource;
                 userStory.Visible = true;
@@ -54,6 +55,7 @@ namespace TestIt
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 userStory.Visible = false;
                 priorityFeed.Visible = true;
                 priorityLabel.Visible = true;
@@ -70,6 +72,7 @@ namespace TestIt
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 statusLabel.Visible = true;
                 statusDrop.Visible = true;
                 respoUser.Visible = false;
@@ -80,6 +83,7 @@ namespace TestIt
             {
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 projectIdFeed.Text = "";
                 userStory.Visible = false;
                 priorityFeed.Visible = false;
@@ -107,6 +111,7 @@ namespace TestIt
                 bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
                 otsikko.Text = curry.ToString();
                 addBox.Text = "Add " + curry.ToString();
+                groupBox2.Text = "Remove " + curry.ToString();
                 userStory.Visible = false;
                 priorityFeed.Visible = false;
                 priorityLabel.Visible = false;
@@ -204,7 +209,10 @@ namespace TestIt
                       }
                       this.juttu = result;
                       Controller.AddNew(this.juttu, DataObjectType.Result);
-                    }else{
+                        bindingSource.DataSource = Controller.Listaa(valitutPalat[(int)curry], curry);
+                        Taulukko.DataSource = bindingSource;
+                    }
+                    else{
                       MessageBox.Show("No user selected, plz slcd usr :C");
                     }
                     break;
