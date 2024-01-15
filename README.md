@@ -1,4 +1,4 @@
 # KetteraohjelmistokehitysprojektiGigaChadit
  Ketterä ohjelmistokehitys projekti -kurssi
 
- :D
+C#, SQL, MySQL, XAMPP
